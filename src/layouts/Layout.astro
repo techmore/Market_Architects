@@ -6,10 +6,13 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Market Architects — the mental models of legendary founders, translated for small business owners." } = Astro.props;
+const { title, description = "Market Architects — the mental models of legendary founders, translated for small business owners.", image } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const siteUrl = "https://techmore.github.io" + base;
+const ogImage = image ? image : `${siteUrl}favicon.svg`;
 ---
 
 <!doctype html>
@@ -20,6 +23,16 @@ const base = import.meta.env.BASE_URL;
     <title>{title} · Market Architects</title>
     <meta name="description" content={description} />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Market Architects" />
+    <meta property="og:title" content={`${title} · Market Architects`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={siteUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} · Market Architects`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,9 +40,10 @@ const base = import.meta.env.BASE_URL;
       rel="stylesheet"
     />
   </head>
-  <body class="flex min-h-screen flex-col">
+  <body class="flex min-h-screen flex-col" data-base={base}>
+    <a href="#main" class="skip-link">Skip to content</a>
     <Header />
-    <main class="flex-1">
+    <main id="main" class="flex-1">
       <slot />
     </main>
     <Footer />

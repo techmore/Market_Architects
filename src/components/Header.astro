@@ -1,5 +1,6 @@
 ---
 const base = import.meta.env.BASE_URL;
+const pathname = Astro.url.pathname.replace(/\/$/, "");
 const nav = [
   { href: `${base}pathways/`, label: "Pathways" },
   { href: `${base}models/`, label: "Models" },
@@ -8,6 +9,10 @@ const nav = [
   { href: `${base}books/`, label: "Books" },
   { href: `${base}lectures/`, label: "Lectures" },
 ];
+function isActive(href: string): boolean {
+  const clean = href.replace(/\/$/, "");
+  return pathname === clean || pathname.startsWith(clean + "/") || (clean === base.replace(/\/$/, "") && pathname === "");
+}
 ---
 
 <header class="sticky top-0 z-40 border-b border-ink-800/80 bg-ink-950/90 backdrop-blur">
@@ -24,14 +29,24 @@ const nav = [
     </a>
 
     <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
-      {nav.map((n) => (
-        <a href={n.href} class="rounded-md px-3 py-2 text-sm font-medium text-paper-200 transition-colors hover:bg-ink-800 hover:text-gold-300">
-          {n.label}
-        </a>
-      ))}
+      {nav.map((n) => {
+        const active = isActive(n.href);
+        return (
+          <a
+            href={n.href}
+            aria-current={active ? "page" : undefined}
+            class:list={[
+              "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+              active ? "bg-ink-800 text-gold-300" : "text-paper-200 hover:bg-ink-800 hover:text-gold-300",
+            ]}
+          >
+            {n.label}
+          </a>
+        );
+      })}
     </nav>
 
-    <a href={`${base}playbooks/`} class="btn-primary hidden sm:inline-flex">Apply a Model</a>
+    <a href={`${base}pathways/`} class="btn-primary hidden sm:inline-flex">Start here</a>
 
     <button id="menu-toggle" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700 text-paper-200 md:hidden" aria-label="Toggle menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -47,7 +62,7 @@ const nav = [
           {n.label}
         </a>
       ))}
-      <a href={`${base}playbooks/`} class="btn-primary mx-3 mt-2 w-fit">Apply a Model</a>
+      <a href={`${base}pathways/`} class="btn-primary mx-3 mt-2 w-fit">Start here</a>
     </nav>
   </div>
 </header>

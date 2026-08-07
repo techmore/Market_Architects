@@ -1,0 +1,47 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<form id="newsletter-form" class:list={["rounded-2xl border border-ink-700 bg-ink-900 p-6", compact ? "" : "md:p-8"]}>
+  <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+    <div>
+      <p class="eyebrow">The Monday Model</p>
+      <h3 class="mt-2 font-display text-2xl font-semibold">One mental model, every week</h3>
+      <p class="mt-2 max-w-md text-sm leading-relaxed text-paper-300">
+        A new annotated lecture or book takeaway, translated for your business. No spam — unsubscribe
+        anytime.
+      </p>
+    </div>
+    <div class="flex w-full max-w-sm flex-col gap-2">
+      <label class="sr-only" for="newsletter-email">Email address</label>
+      <input
+        id="newsletter-email"
+        name="email"
+        type="email"
+        required
+        placeholder="you@yourbusiness.com"
+        class="w-full rounded-lg border border-ink-600 bg-ink-950 px-4 py-2.5 text-sm text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none"
+      />
+      <button type="submit" class="btn-primary w-full justify-center">Subscribe</button>
+    </div>
+  </div>
+  <p id="newsletter-msg" class="mt-3 hidden text-sm font-medium text-[#8fc79b]">
+    Thanks — you're on the list. We'll see you Monday.
+  </p>
+</form>
+
+<script>
+  const form = document.getElementById("newsletter-form");
+  const msg = document.getElementById("newsletter-msg");
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // Static site: no backend yet. Swap the comment below for a real endpoint
+    // (e.g. Formspree, Beehiiv, Buttondown) when one exists.
+    msg?.classList.remove("hidden");
+    form?.reset();
+  });
+</script>

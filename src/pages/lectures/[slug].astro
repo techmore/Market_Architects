@@ -22,9 +22,12 @@ const related = lectures
   .concat(lectures.filter((l) => l.founder === lecture.founder && l.slug !== lecture.slug))
   .filter((l, i, arr) => arr.findIndex((x) => x.slug === l.slug) === i)
   .slice(0, 3);
+const ogImage = lecture.youtubeId
+  ? `https://img.youtube.com/vi/${lecture.youtubeId}/maxresdefault.jpg`
+  : undefined;
 ---
 
-<Layout title={lecture.title} description={lecture.summary}>
+<Layout title={lecture.title} description={lecture.summary} image={ogImage}>
   <div class="border-b border-ink-800 bg-ink-900">
     <div class="container-site py-12 md:py-14">
       <a href={`${base}lectures/`} class="text-xs font-medium uppercase tracking-wider text-paper-500 hover:text-gold-300">

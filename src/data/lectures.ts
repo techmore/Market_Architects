@@ -2735,6 +2735,958 @@ export const lectures: Lecture[] = [
     ],
     keywords: ["jim rohn", "discipline", "personal development", "habits", "goals", "daily", "exceptional living"],
   },
+  {
+    slug: "buffett-investing",
+    title: "Warren Buffett in Full (CNBC Interview)",
+    founder: "warren-buffett",
+    model: "operational-moats",
+    youtubeId: "JvEas_zZ4fM",
+    channel: "CNBC Television",
+    year: 2021,
+    length: "1h 15m",
+    source: "CNBC full interview",
+    featured: false,
+    summary:
+      "Buffett on the machinery of Berkshire: moats, the circle of competence, and the discipline of holding good businesses for decades while doing almost nothing.",
+    coreArgument:
+      "The best businesses are those with durable economic moats — pricing power, low capital needs, trusted brands — that you understand deeply (your circle of competence) and can hold through market noise. Compounding rewards patience and punishes cleverness; the ideal investor is 'business-like' and the ideal business owner thinks like an investor.",
+    timestamps: [
+      {
+        time: "06:30",
+        seconds: 390,
+        title: "What makes a great business",
+        annotation:
+          "Buffett on the difference between a wonderful business and a mediocre one: the moat — pricing power and the ability to earn on capital over decades.",
+      },
+      {
+        time: "28:00",
+        seconds: 1680,
+        title: "The circle of competence",
+        annotation:
+          "You don't need to know everything — you need to know your circle and stay inside it. 'You only have to do a very few things right in your life.'",
+      },
+      {
+        time: "51:20",
+        seconds: 3080,
+        title: "Compounding and doing nothing",
+        annotation:
+          "The best move is often no move. Great businesses compound while you resist the urge to 'do something' with your capital or your attention.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Audit your moat in one sentence",
+        body: "Ask: could a customer leave you this quarter without real pain or cost? If the answer is 'easily', the moat is thin — build pricing power or switching cost before adding anything else.",
+      },
+      {
+        title: "Write your circle of competence",
+        body: "List the 2-3 domains you actually understand deeply. Do business only there. Every expansion outside the circle is a bet you're structurally worse at than someone else.",
+      },
+      {
+        title: "Resist the 'do something' reflex",
+        body: "Before any reactive change (new product, price cut, pivot), ask: is this inside my circle and improving the moat? If not, inaction is the superior decision.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "charlie-munger",
+        take: "complementary",
+        tone: "complementary",
+        note: "Munger is Buffett's partner and the intellectual engine of the same philosophy — mental models and misjudgment checklists applied to the same moats.",
+      },
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Bezos built the moat Buffett loves to buy: pricing power, scale economics, and a decade-long flywheel. Investor and operator, same framework.",
+      },
+    ],
+    keywords: ["buffett", "moat", "circle of competence", "compounding", "value investing", "berkshire", "patience"],
+  },
+  {
+    slug: "oprah-harvard",
+    title: "Harvard Commencement Address (2013)",
+    founder: "oprah-winfrey",
+    model: "bootstrapping",
+    youtubeId: "GMWFieBGR7c",
+    channel: "Harvard University",
+    year: 2013,
+    length: "30 min",
+    source: "Harvard University Commencement",
+    featured: false,
+    summary:
+      "Oprah's Harvard address on the real currency of success: resilience, failure, and the connection she built one person at a time — the organic brand in its purest form.",
+    coreArgument:
+      "Success is not the number of zeros in the bank — it's the strength of the connections you build. Oprah's brand was built the same way a small business should be: one genuine relationship at a time, through failure and reinvention, until the audience trusts you enough to follow you anywhere.",
+    timestamps: [
+      {
+        time: "03:00",
+        seconds: 180,
+        title: "Failure is a way of re-calibrating",
+        annotation:
+          "Oprah reframes her early setbacks — including being fired — as necessary calibrations, not verdicts. 'I now look at my failures as blessings.'",
+      },
+      {
+        time: "12:30",
+        seconds: 750,
+        title: "The connection is the asset",
+        annotation:
+          "Her brand was built through television that made people feel seen. The lesson for any owner: the trust you build with each person IS the business.",
+      },
+      {
+        time: "22:40",
+        seconds: 1360,
+        title: "Service as the multiplier",
+        annotation:
+          "The most durable brands serve a real need people feel. When the audience knows you're for them, growth follows the trust, not the other way around.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Build one genuine connection at a time",
+        body: "Graham's manual phase, from the founder who built the largest personal brand in history. Choose the next 10 customers and serve them as if they were your only ones.",
+      },
+      {
+        title: "Treat failure as recalibration, not verdict",
+        body: "When a launch or client fails, write the one lesson and the one adjustment. Oprah's method: failure is data on where the calibration was off, not evidence you're wrong.",
+      },
+      {
+        title: "Make them feel seen",
+        body: "Ask how your offer makes the customer feel understood, not just served. The businesses people recommend are the ones that made them feel seen.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "sara-blakely",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both built authentic personal brands without institutional backing — Oprah through connection, Blakely through story. Same organic-brand machinery.",
+      },
+      {
+        founder: "simon-sinek",
+        take: "complementary",
+        tone: "complementary",
+        note: "Oprah is the largest living proof of Sinek's why: people followed her belief, not her format. The connection came from the why.",
+      },
+    ],
+    keywords: ["oprah", "resilience", "brand", "connection", "trust", "failure", "service", "bootstrapping"],
+  },
+  {
+    slug: "knight-shoe-dog",
+    title: "Phil Knight on Shoe Dog and the Survival Years",
+    founder: "phil-knight",
+    model: "bootstrapping",
+    youtubeId: "cSe-qR4f1Ng",
+    channel: "Good Morning America",
+    year: 2016,
+    length: "10 min",
+    source: "Good Morning America interview",
+    featured: false,
+    summary:
+      "Knight on the decade Nike spent one bad loan away from death — and why the persistence through the ugly middle is the part of the story most people skip.",
+    coreArgument:
+      "The founder's job in the early years is survival, not glory. Knight's Blue Ribbon nearly failed repeatedly — banks, suppliers, cash — and what carried it was belief in the product plus the willingness to keep grinding. 'The cowards never started and the weak died along the way.'",
+    timestamps: [
+      {
+        time: "01:20",
+        seconds: 80,
+        title: "The shoebox company",
+        annotation:
+          "Knight describes selling shoes from the trunk of a car and the decade where the 'company' was one person, one loan, one dream.",
+      },
+      {
+        time: "04:40",
+        seconds: 280,
+        title: "Near-bankruptcy as the norm",
+        annotation:
+          "The cash crunches, the banks that walked, the factory disasters — the survival years were the real story behind the swoosh.",
+      },
+      {
+        time: "08:10",
+        seconds: 490,
+        title: "Belief before business",
+        annotation:
+          "Knight's answer to 'why didn't you quit': the belief that running was the future and the shoes were the best — persistence was the moat.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Expect the ugly middle",
+        body: "Knight's lesson: the survival years ARE the business for most founders. Fund and plan for a 3-5 year ugly middle, not a 12-month sprint to glory.",
+      },
+      {
+        title: "Grind the collections and the deliveries",
+        body: "Blue Ribbon survived on manual obsession — chasing invoices, hand-delivering product. In the crunch, the founder doing the grunt work is the growth engine.",
+      },
+      {
+        title: "Keep the belief written down",
+        body: "Write the one sentence you believe about your product and read it on the bad days. Knight's belief, held for a decade, became the world's most valuable sports brand.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "sara-blakely",
+        take: "complementary",
+        tone: "complementary",
+        note: "Blakely's $5,000 start and Knight's shoebox decade are the same story: conviction plus grinding survival, before any of the success.",
+      },
+      {
+        founder: "paul-graham",
+        take: "complementary",
+        tone: "complementary",
+        note: "Graham codified what Knight lived: do things that don't scale — sell from the trunk, hand-serve the early believers.",
+      },
+    ],
+    keywords: ["phil knight", "nike", "shoe dog", "survival", "bootstrapping", "persistence", "cash flow"],
+  },
+  {
+    slug: "schultz-in-depth",
+    title: "Howard Schultz In Depth (Graham Bensinger)",
+    founder: "howard-schultz",
+    model: "distribution",
+    youtubeId: "b_Jjl2YNtwA",
+    channel: "Graham Bensinger",
+    year: 2018,
+    length: "1h 30m",
+    source: "In Depth with Graham Bensinger",
+    featured: false,
+    summary:
+      "Schultz on building the third place: how Starbucks scaled from 11 stores to a global brand while keeping the experience — and the employee — at the center.",
+    coreArgument:
+      "Scale doesn't have to mean soulless. Starbucks grew by treating the store experience as the product and the employee as the first customer — benefits, equity, and dignity first. The moat was the culture of the experience, replicated thousands of times without being commoditized.",
+    timestamps: [
+      {
+        time: "08:20",
+        seconds: 500,
+        title: "From 11 stores to a third place",
+        annotation:
+          "Schultz describes buying Starbucks and reimagining it as the 'third place' between home and work — the positioning that made coffee a destination.",
+      },
+      {
+        time: "31:00",
+        seconds: 1860,
+        title: "The employee is the first customer",
+        annotation:
+          "Health insurance and equity for part-timers — Schultz argues the culture of treating people well is what customers feel when they walk in.",
+      },
+      {
+        time: "1:02:40",
+        seconds: 3760,
+        title: "Keeping soul at scale",
+        annotation:
+          "The tension of growth: how to replicate the local feel across thousands of stores without losing it. The answer was systems with a human standard.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Define your 'third place'",
+        body: "What do customers come to you FOR beyond the transaction — the feeling, the ritual, the outcome? Name it. That named experience is your positioning.",
+      },
+      {
+        title: "Treat your team as the first customer",
+        body: "The experience your employees have IS the experience your customers feel. Improve one benefit, process, or dignity marker for staff and watch service follow.",
+      },
+      {
+        title: "Systematize the human standard",
+        body: "Write down the 'experience standard' (the greeting, the follow-up, the quality bar) so it survives scale. Systems are how soul survives growth.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "brian-chesky",
+        take: "complementary",
+        tone: "complementary",
+        note: "Schultz's third place and Chesky's 10-star experience are the same doctrine: the experience IS the product, at any scale.",
+      },
+      {
+        founder: "tony-hsieh",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both put culture and service ahead of the transaction — Starbucks's baristas and Zappos's call center as marketing.",
+      },
+    ],
+    keywords: ["howard schultz", "starbucks", "third place", "scale", "culture", "experience", "distribution"],
+  },
+  {
+    slug: "branson-dyslexia",
+    title: "Richard Branson: Dyslexia Actually Helped Me",
+    founder: "richard-branson",
+    model: "distribution",
+    youtubeId: "bgHH7ZxWO5k",
+    channel: "Graham Bensinger",
+    year: 2019,
+    length: "8 min",
+    source: "In Depth with Graham Bensinger",
+    featured: false,
+    summary:
+      "Branson on turning a disadvantage into a brand: how dyslexia forced him to simplify, delegate, and think visually — the skills that built a 400-company brand.",
+    coreArgument:
+      "Constraints are brand inputs. Branson's dyslexia forced delegation (he couldn't do everything himself, so he built teams) and simplicity (clear, human communication). The lesson: the thing you think is your weakness is often the shape of your advantage — if you work with it instead of against it.",
+    timestamps: [
+      {
+        time: "00:40",
+        seconds: 40,
+        title: "Delegation by necessity",
+        annotation:
+          "Branson couldn't read the way others did, so he learned to hire people who could — building teams earlier than most founders ever do.",
+      },
+      {
+        time: "03:20",
+        seconds: 200,
+        title: "Simplicity as a weapon",
+        annotation:
+          "The Virgin brand communicates simply because Branson had to. Clarity forced by constraint became the brand's signature.",
+      },
+      {
+        time: "06:10",
+        seconds: 370,
+        title: "The constraint is the advantage",
+        annotation:
+          "Reframing dyslexia as the reason Virgin is what it is — the lesson for any founder with an 'unfair' constraint.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find the constraint that made you",
+        body: "What can't you (or your business) do easily? That constraint shaped how you work — name it and lean into the advantage it created.",
+      },
+      {
+        title: "Delegate by necessity",
+        body: "If you can't do something well, hire for it early instead of grinding through it. Branson's delegation was forced and it built his team.",
+      },
+      {
+        title: "Simplify the message",
+        body: "Your brand communication should be simple enough that even the busiest owner could say it to a customer in one breath. Clarity is a brand asset.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Branson's brand simplicity is Godin's 'people buy stories' in practice — the story is simple, human, and worth telling.",
+      },
+      {
+        founder: "jony-ive",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both build brands on a deliberate simplicity — Branson through necessity, Ive through craft. Same principle, different sources.",
+      },
+    ],
+    keywords: ["branson", "virgin", "dyslexia", "constraint", "brand", "simplicity", "delegation", "distribution"],
+  },
+  {
+    slug: "walton-walmart",
+    title: "The Founder of Walmart: Operational Fanaticism",
+    founder: "sam-walton",
+    model: "operational-moats",
+    youtubeId: "Y0tyE739pK4",
+    channel: "Big Company",
+    year: 2023,
+    length: "20 min",
+    source: "Documentary profile",
+    featured: false,
+    summary:
+      "The story of how Sam Walton turned a single Arkansas five-and-dime into the world's largest retailer — town by town, on logistics and relentless cost discipline.",
+    coreArgument:
+      "Walmart's moat was not a product but a system: build in small towns competitors ignored, dominate the niche completely, then expand. Walton's obsessions — logistics, everyday low prices, and customer-first culture — compounded town by town into an operational moat nobody could match.",
+    timestamps: [
+      {
+        time: "02:10",
+        seconds: 130,
+        title: "One store, one town",
+        annotation:
+          "Walton's first move: win the small town completely before anyone else arrived. The niche-first strategy, decades before it had a name.",
+      },
+      {
+        time: "08:40",
+        seconds: 520,
+        title: "Logistics as the weapon",
+        annotation:
+          "Walton treated distribution as the competitive advantage, not the store — the machinery that made everyday low prices possible.",
+      },
+      {
+        time: "15:20",
+        seconds: 920,
+        title: "The customer is the boss",
+        annotation:
+          "'There is only one boss — the customer.' The operational culture that compounded across thousands of stores.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Win the town before the market",
+        body: "Choose the smallest geography or niche you can dominate completely — one town, one trade, one segment — and make yourself the only obvious option there.",
+      },
+      {
+        title: "Treat your logistics as the moat",
+        body: "For a service business, your 'logistics' is your scheduling, supply, and delivery system. Optimize the back end; that's where margin and moat live.",
+      },
+      {
+        title: "Institutionalize the customer-first rule",
+        body: "Write the one-line rule ('the customer is the boss') and use it to resolve every internal argument. Culture is how the rule survives scale.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Bezos is Walton's successor: same niche-first expansion, same logistics obsession, same customer-first culture — Amazon's Day 1 is Walmart's greeter.",
+      },
+      {
+        founder: "peter-thiel",
+        take: "complementary",
+        tone: "complementary",
+        note: "Walton's 'win the small town' is Thiel's 'own the niche' executed two generations before Zero to One gave it a name.",
+      },
+    ],
+    keywords: ["sam walton", "walmart", "operational moat", "logistics", "scale economics", "niche", "customer first"],
+  },
+  {
+    slug: "herd-bumble",
+    title: "Bumble's Founder on Building a Women-First Brand",
+    founder: "whitney-wolfe-herd",
+    model: "distribution",
+    youtubeId: "Jp_OfQT03cg",
+    channel: "CNBC Television",
+    year: 2025,
+    length: "10 min",
+    source: "CNBC interview",
+    featured: false,
+    summary:
+      "Wolfe Herd on how a values-led positioning — women make the first move — became a distribution engine that beat the giants at their own network game.",
+    coreArgument:
+      "A product differentiator that becomes a brand value can be a distribution moat. Bumble's 'women first' was not a feature but a story people wanted to join — it turned users into advocates and gave the brand a reason to exist that incumbents couldn't copy without betraying their own.",
+    timestamps: [
+      {
+        time: "01:10",
+        seconds: 70,
+        title: "The differentiator becomes the brand",
+        annotation:
+          "Wolfe Herd describes how 'women make the first move' moved from product feature to cultural position — the thing people repeated to their friends.",
+      },
+      {
+        time: "04:30",
+        seconds: 270,
+        title: "Values-led growth",
+        annotation:
+          "Brands that stand for something recruit their users as evangelists. Distribution becomes a story people want to be part of.",
+      },
+      {
+        time: "07:50",
+        seconds: 470,
+        title: "Going public as proof",
+        annotation:
+          "The IPO at 31 wasn't just a milestone — it was the validation that the brand-led model could be a real business, compounding.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Turn your difference into a story",
+        body: "Write the one sentence that captures how you're different — as a story someone would tell a friend, not a feature list. That story is your distribution.",
+      },
+      {
+        title: "Let the value recruit your users",
+        body: "If your customers would be embarrassed to NOT recommend you, you have an evangelist engine. Make the difference visible and repeatable.",
+      },
+      {
+        title: "Make the difference un-copyable",
+        body: "If your competitor can copy your difference without betraying their own position, it's not a moat yet. Choose a position they can't adopt.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Wolfe Herd executed Godin's smallest viable audience to the letter: a distinct tribe, a story they join, and word-of-mouth as the channel.",
+      },
+      {
+        founder: "tony-hsieh",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both built brands where a value (women-first, service-first) is the product people actually buy into.",
+      },
+    ],
+    keywords: ["whitney wolfe herd", "bumble", "brand", "distribution", "values", "women first", "network effects"],
+  },
+  {
+    slug: "perkins-vivatech",
+    title: "Melanie Perkins: Building Canva",
+    founder: "melanie-perkins",
+    model: "product-intuition",
+    youtubeId: "FkS8eaLTeZU",
+    channel: "VivaTech",
+    year: 2022,
+    length: "20 min",
+    source: "VivaTech interview",
+    featured: false,
+    summary:
+      "Perkins on the decade-long product plan behind Canva: selling design simplicity to billions, persisting through years of investor rejection, and keeping the hard thing invisible to the user.",
+    coreArgument:
+      "The hardest product work is making the hard thing effortless — Canva's moat is the 10-year plan to make design easy enough for everyone. Perkins's persistence (years of 'no') and her product intuition (design for the user who isn't a designer) are the same discipline: the product IS the distribution when it removes the fear.",
+    timestamps: [
+      {
+        time: "02:30",
+        seconds: 150,
+        title: "The high school origin",
+        annotation:
+          "Perkins started selling yearbook design in high school and saw the pain firsthand — the problem that became Canva.",
+      },
+      {
+        time: "08:40",
+        seconds: 520,
+        title: "Years of 'no'",
+        annotation:
+          "She was rejected by investors for years before the pitch landed. Persistence on the same vision was the strategy.",
+      },
+      {
+        time: "15:10",
+        seconds: 910,
+        title: "Make the hard thing invisible",
+        annotation:
+          "Canva's core insight: users shouldn't need design skills to design. Remove the friction and the product sells itself.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Pick the user who isn't the expert",
+        body: "Who is the customer who needs your product but feels intimidated by it? Design for them — removing their fear is a distribution advantage.",
+      },
+      {
+        title: "Hold the 10-year plan",
+        body: "Perkins pitched the same vision for years. Write your long view and let short-term rejection be data, not a verdict.",
+      },
+      {
+        title: "Hide the complexity",
+        body: "Every step a customer has to think about is a step they might not take. Audit your process and remove one piece of friction this month.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "steve-jobs",
+        take: "complementary",
+        tone: "complementary",
+        note: "Perkins is the Jobs playbook for a generation: simplify until the hard thing is invisible, and let the product be the pitch.",
+      },
+      {
+        founder: "brian-chesky",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both obsess over the user's felt experience — Chesky's 10-star journey, Perkins's frictionless design. Experience as the moat.",
+      },
+    ],
+    keywords: ["melanie perkins", "canva", "product", "simplicity", "persistence", "design", "frictionless"],
+  },
+  {
+    slug: "hsieh-culture",
+    title: "Culture Is Priority One (Tony Hsieh, Zappos)",
+    founder: "tony-hsieh",
+    model: "purpose-leadership",
+    youtubeId: "-4D3RplqmyU",
+    channel: "Entrepreneurship.org",
+    year: 2014,
+    length: "30 min",
+    source: "Entrepreneurship.org talk",
+    featured: false,
+    summary:
+      "Hsieh on running Zappos as a culture experiment: hire for values, pay people to quit, and make the call center the marketing department.",
+    coreArgument:
+      "Culture is the business, not a poster on the wall. Zappos's customer service worked because the company culture made employees feel like the product mattered — and Hsieh engineered that culture deliberately: values-based hiring, an offer to quit (the $3,000 'take the money' test), and treating service as the brand.",
+    timestamps: [
+      {
+        time: "03:00",
+        seconds: 180,
+        title: "Culture is priority one",
+        annotation:
+          "Hsieh's hierarchy: culture before strategy. Get the culture right and the customer service — and the business — follows.",
+      },
+      {
+        time: "12:20",
+        seconds: 740,
+        title: "Hire for values, pay to quit",
+        annotation:
+          "The famous experiment: offer new hires money to leave, so only the people who actually believe stay. Values as a hiring filter.",
+      },
+      {
+        time: "22:10",
+        seconds: 1330,
+        title: "Service as the marketing department",
+        annotation:
+          "Zappos's customer calls were the marketing. Word-of-mouth from remarkable service out-performed any ad spend.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Write your values behaviorally",
+        body: "List your 2-3 core values as behaviors ('we answer in one ring', 'we tell the customer the truth even when it costs us'). Vague values are decor.",
+      },
+      {
+        title: "Run the 'would they leave?' test",
+        body: "For each employee, ask: would they stay if money weren't the main reason? The people who'd leave for the same money elsewhere are your culture risk.",
+      },
+      {
+        title: "Make service your marketing",
+        body: "Pick one service behavior so remarkable customers will tell someone. That word-of-mouth is cheaper and more durable than any ad.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "howard-schultz",
+        take: "complementary",
+        tone: "complementary",
+        note: "Schultz and Hsieh built the two great service-culture companies — both put the employee and the experience before the transaction.",
+      },
+      {
+        founder: "patrick-lencioni",
+        take: "complementary",
+        tone: "complementary",
+        note: "Hsieh is Lencioni's healthy-team model run to an extreme — culture deliberately engineered so trust and results compound.",
+      },
+    ],
+    keywords: ["tony hsieh", "zappos", "culture", "values", "customer service", "purpose", "marketing"],
+  },
+  {
+    slug: "gerber-emyth",
+    title: "The E-Myth Revisited (Michael Gerber)",
+    founder: "michael-gerber",
+    model: "execution-habits",
+    youtubeId: "unHyB-ffaQI",
+    channel: "Buffini & Company",
+    year: 2019,
+    length: "30 min",
+    source: "The Brian Buffini Show",
+    featured: true,
+    summary:
+      "Gerber's diagnosis of the small-business killer: the entrepreneur who is really a technician having a seizure — and the cure, building the franchise prototype.",
+    coreArgument:
+      "Most small businesses don't work because the owner is a technician working IN the business, not an entrepreneur working ON it. The fix is to build the business as if you were franchising it: document every system, hire the org chart, and design the job so the business can run without you. The system, not the hero, is the moat.",
+    timestamps: [
+      {
+        time: "03:10",
+        seconds: 190,
+        title: "The entrepreneurial seizure",
+        annotation:
+          "Gerber's famous diagnosis: the technician gets bitten by the entrepreneurial bug, but keeps doing the work instead of building the business.",
+      },
+      {
+        time: "14:40",
+        seconds: 880,
+        title: "Work on the business, not in it",
+        annotation:
+          "The distinction that defines the model: your job is to design the business, not to be its best employee.",
+      },
+      {
+        time: "24:00",
+        seconds: 1440,
+        title: "The franchise prototype",
+        annotation:
+          "Build every system as if a franchisee will run it. When the business works without you, you have a business — not a job.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run the 'if I left' audit",
+        body: "What would break if you took a month off? Every answer is an undocumented system. Document those first — that's the real business you're building.",
+      },
+      {
+        title: "Hire the org chart",
+        body: "Draw the org chart for the business you want, then hire the roles one at a time — even before revenue 'justifies' them. The chart is the plan.",
+      },
+      {
+        title: "Write the playbook as you go",
+        body: "For each repeated task, write the one-page process a stranger could follow. Over a year, that stack of pages is your franchise prototype.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Gerber operationalizes Drucker's 'decide what to do and who does it' — the systems view of management applied to the smallest businesses.",
+      },
+      {
+        founder: "james-clear",
+        take: "complementary",
+        tone: "complementary",
+        note: "Clear gives the individual habit loop; Gerber gives the business system loop. Both replace willpower and heroics with design.",
+      },
+    ],
+    keywords: ["gerber", "e-myth", "systems", "franchise prototype", "work on the business", "technician", "execution"],
+  },
+  {
+    slug: "michalowicz-profit-first",
+    title: "Profit First: The Full Keynote",
+    founder: "mike-michalowicz",
+    model: "bootstrapping",
+    youtubeId: "n-dnn5JzPZ4",
+    channel: "Mike Michalowicz",
+    year: 2019,
+    length: "30 min",
+    source: "Profit First keynote",
+    featured: true,
+    summary:
+      "Michalowicz's inversion of the accounting formula — sales minus profit equals expenses — and why cash-flow survival is a behavioral problem, not a math problem.",
+    coreArgument:
+      "The traditional formula (sales − expenses = profit) is why businesses never make profit: owners spend whatever comes in. Flip it to sales − profit = expenses, take profit out first into separate accounts, and force the business to live on what remains. Cash-flow discipline is behavior, engineered with systems.",
+    timestamps: [
+      {
+        time: "02:40",
+        seconds: 160,
+        title: "The formula is backwards",
+        annotation:
+          "Michalowicz's core move: sales minus profit equals expenses. Take the profit out first and the business adapts.",
+      },
+      {
+        time: "12:30",
+        seconds: 750,
+        title: "Separate bank accounts",
+        annotation:
+          "The behavioral fix: profit, tax, and owner-pay accounts that are physically separate so the money can't be spent accidentally.",
+      },
+      {
+        time: "21:10",
+        seconds: 1270,
+        title: "Small percentages, big compounding",
+        annotation:
+          "Start with tiny allocation percentages (1-2%) and let them grow. Discipline at small scale compounds into real profitability.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Open the separate accounts this week",
+        body: "Create a profit account and move 1-2% of every deposit into it before paying anything. That tiny allocation is the discipline engine.",
+      },
+      {
+        title: "Stop treating revenue as spendable",
+        body: "The moment revenue lands, allocate it: profit, tax, owner pay, then expenses. The business lives on what remains — like a paycheck, not a firehose.",
+      },
+      {
+        title: "Cut expenses against the real number",
+        body: "When cash is tight, don't ask 'what can I sell more' — ask 'what can I cut'. Michalowicz's rule: the frugality is the strategy.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "charlie-munger",
+        take: "complementary",
+        tone: "complementary",
+        note: "Munger said fix incentives to fix behavior; Profit First is exactly that — the incentive structure of your bank accounts programs your spending.",
+      },
+      {
+        founder: "yvon-chouinard",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both make constraint a virtue — Chouinard's no-debt growth and Michalowicz's profit-first discipline are the same philosophy in different clothes.",
+      },
+    ],
+    keywords: ["michalowicz", "profit first", "cash flow", "bootstrapping", "allocation", "behavioral finance", "expenses"],
+  },
+  {
+    slug: "voss-negotiation",
+    title: "Never Split the Difference (Talks at Google)",
+    founder: "chris-voss",
+    model: "distribution",
+    youtubeId: "guZa7mQV1l0",
+    channel: "Talks at Google",
+    year: 2016,
+    length: "55 min",
+    source: "Talks at Google",
+    featured: true,
+    summary:
+      "The FBI negotiator on tactical empathy: how to make the other side feel heard, reframe 'no' as the start, and win deals, prices, and disputes without splitting.",
+    coreArgument:
+      "Negotiation is not a battle of wills — it's a rapport engine. Voss's tools — mirroring, labeling emotions, calibrated questions, and treating 'no' as the opening — work by making the other side feel understood, which is what actually moves them. In business, every pricing, collection, and hiring conversation is a negotiation, and the tools are learnable.",
+    timestamps: [
+      {
+        time: "05:20",
+        seconds: 320,
+        title: "Tactical empathy",
+        annotation:
+          "The core skill: understanding the other side's world enough to make them feel seen. Empathy as a tactical, not soft, tool.",
+      },
+      {
+        time: "18:40",
+        seconds: 1120,
+        title: "No is the start",
+        annotation:
+          "Reframe: people are safe to say no; 'no' opens the conversation. Getting to 'yes' fast is often a lie.",
+      },
+      {
+        time: "34:00",
+        seconds: 2040,
+        title: "Calibrated questions",
+        annotation:
+          "'How am I supposed to do that?' — questions that start with how/what make the other side solve the problem. They give them the feeling of control.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Mirror the objection",
+        body: "In your next pricing dispute, repeat the customer's last 2-3 words back as a question. Mirroring buys space and signals listening — it disarms defensiveness.",
+      },
+      {
+        title: "Label the emotion",
+        body: "Name what they're feeling ('sounds like this price feels unfair'). A labeled emotion defuses it, and the other side often moderates their own position.",
+      },
+      {
+        title: "Trade 'no' for a real conversation",
+        body: "Stop pushing for quick 'yes's. Ask 'is this a price you can work with?' — 'no' reveals the real constraint, which is where the deal actually lives.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Voss and Godin both understand that people decide emotionally then justify rationally — empathy and story are the on-ramps.",
+      },
+      {
+        founder: "mike-michalowicz",
+        take: "complementary",
+        tone: "complementary",
+        note: "Michalowicz fixes the internal cash-flow side; Voss fixes the external conversation side. Together they're the collections toolkit.",
+      },
+    ],
+    keywords: ["chris voss", "negotiation", "tactical empathy", "mirroring", "calibrated questions", "sales", "pricing"],
+  },
+  {
+    slug: "allen-gtd",
+    title: "The Art of Stress-Free Productivity (David Allen)",
+    founder: "david-allen",
+    model: "execution-habits",
+    youtubeId: "CHxhjDPKfbY",
+    channel: "TEDx Talks",
+    year: 2011,
+    length: "20 min",
+    source: "TEDxClaremontColleges",
+    featured: false,
+    summary:
+      "Allen on the two-step engine of stress-free productivity: get everything out of your head, and clarify the next action for every open loop.",
+    coreArgument:
+      "Stress comes not from too much work but from open loops — every undecided thing your mind is holding. The fix is a trusted system: capture everything, clarify each item into a next physical action, and review it weekly. A mind free of held loops is the highest-performance state a busy owner can install.",
+    timestamps: [
+      {
+        time: "02:20",
+        seconds: 140,
+        title: "Your mind is for having ideas",
+        annotation:
+          "The founding insight: your brain is a terrible storage medium for commitments — it keeps re-presenting everything it's holding.",
+      },
+      {
+        time: "09:10",
+        seconds: 550,
+        title: "Capture + clarify",
+        annotation:
+          "Write everything down, then for each item ask: what's the next physical action? Loose ends dissolve into a list of actions.",
+      },
+      {
+        time: "15:40",
+        seconds: 940,
+        title: "The weekly review",
+        annotation:
+          "The engine that keeps the system honest: 90 minutes a week to empty the capture and re-decide priorities. Without it, the system decays.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Do a capture dump",
+        body: "This week, write down every open loop — tasks, worries, half-ideas. Your mind isn't the system; a list is. Emptying it frees the executive attention for the actual work.",
+      },
+      {
+        title: "Define the next action for the top 5",
+        body: "For the five most important open loops, write the single next physical step ('email X', 'call supplier'). A next action turns anxiety into motion.",
+      },
+      {
+        title: "Block the weekly review",
+        body: "Reserve 90 minutes weekly (Friday afternoon works) to process capture and reset priorities. This is the executive function your business was missing.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "cal-newport",
+        take: "complementary",
+        tone: "complementary",
+        note: "Allen clears the shallow so Newport's deep work has room — capture the noise, then go deep on what matters.",
+      },
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Drucker told executives to record their time; Allen gives the system to do it — the weekly review is Drucker's discipline modernized.",
+      },
+    ],
+    keywords: ["david allen", "gtd", "productivity", "capture", "next action", "weekly review", "execution", "focus"],
+  },
+  {
+    slug: "cialdini-persuasion",
+    title: "The Science of Persuasion (Robert Cialdini)",
+    founder: "robert-cialdini",
+    model: "distribution",
+    youtubeId: "kv0sOX6Alrk",
+    channel: "BigSpeak Speakers Bureau",
+    year: 2012,
+    length: "6 min",
+    source: "Influence at Work / BigSpeak",
+    featured: false,
+    summary:
+      "Cialdini's six principles of influence in one compact video — the psychology under every sale, sign-up, and recommendation.",
+    coreArgument:
+      "People say yes for six systematic reasons: reciprocity, commitment/consistency, social proof, authority, liking, and scarcity. They work because they're shortcuts the brain uses under uncertainty — which means they can be used to build a business or to exploit customers. The ethical use is to make your offer genuinely easier to say yes to.",
+    timestamps: [
+      {
+        time: "00:40",
+        seconds: 40,
+        title: "The six weapons",
+        annotation:
+          "Reciprocity, commitment, social proof, authority, liking, scarcity — the six automatic principles behind most decisions.",
+      },
+      {
+        time: "02:50",
+        seconds: 170,
+        title: "Social proof in action",
+        annotation:
+          "People look to others to decide. 'Most popular' and 'join your neighbors' beat 'best value' — because what others do is the strongest signal.",
+      },
+      {
+        time: "04:40",
+        seconds: 280,
+        title: "Scarcity and commitment",
+        annotation:
+          "What's rare feels more valuable, and people stay consistent with what they've already committed to. Use them to make the yes easier, not to manipulate.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Lead with social proof",
+        body: "Replace 'we're great' with 'here's what your neighbors chose' — reviews, counts, testimonials. Proof outranks claims in the customer's brain.",
+      },
+      {
+        title: "Offer something before asking",
+        body: "Reciprocity: give real value first — a free audit, a genuinely useful guide — before the ask. The giving creates the obligation to return.",
+      },
+      {
+        title: "Make the small commitment first",
+        body: "Ask for the small yes (a call, a sample, a sign-up) before the big one. Commitment/consistency means the small yes opens the door to the large one.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "malcolm-gladwell",
+        take: "complementary",
+        tone: "complementary",
+        note: "Cialdini supplies the science behind Gladwell's mavens and stickiness — the mechanisms by which ideas spread.",
+      },
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Godin's tribes and stories are Cialdini's principles applied to brand; Cialdini is the why, Godin the how.",
+      },
+    ],
+    keywords: ["cialdini", "persuasion", "influence", "reciprocity", "social proof", "scarcity", "marketing", "psychology"],
+  },
 ];
 
 export const getLecture = (slug: string): Lecture => {

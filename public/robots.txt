@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techmore.github.io/Market_Architects/sitemap-index.xml

@@ -533,6 +533,367 @@ export const books: Book[] = [
     whyItMatters:
       "The operating manual for the owner drowning in busywork — block the deep, and watch the business move.",
   },
+  {
+    slug: "steve-jobs",
+    title: "Steve Jobs",
+    author: "Walter Isaacson",
+    year: 2011,
+    model: "product-intuition",
+    rating: 5,
+    cover: "ink",
+    blurb: "The authorized biography of the man who made design a strategic weapon.",
+    review:
+      "The definitive portrait of a product-obsessed founder. Isaacson was given unprecedented access — interviews with Jobs, his family, his enemies — and the result reads like a case study in the product-intuition model: the reality-distortion field, the cruelty of 'saying no', the return to Apple, and the iPhone. It's long, and Jobs is frequently unlikable, which is exactly why it's so useful: you see the full cost of that intensity, not just the rewards.",
+    takeaways: [
+      "Focus is the ability to say no — Jobs killed 70% of Apple's products on his return.",
+      "Design is not decoration; it's how the thing works end to end.",
+      "The reality distortion field works only if you also deliver — belief must be backed by shipping.",
+    ],
+    whyItMatters:
+      "The best single study of product intuition ever published — read it to understand what 'design-led' actually costs and earns.",
+  },
+  {
+    slug: "invented-and-wander",
+    title: "Invent and Wander",
+    author: "Jeff Bezos",
+    year: 2020,
+    model: "operational-moats",
+    rating: 4,
+    cover: "clay",
+    blurb: "The collected writings of Jeff Bezos — the shareholder letters that became the Amazon operating manual.",
+    review:
+      "A collection of Bezos's annual shareholder letters plus recent essays, which together are the closest thing to a first-person account of the flywheel philosophy. The letters show the same frameworks he repeats on stage — Day 1, customer obsession, long-term thinking, high-velocity decisions — applied year after year. The letters are short and readable; the value is watching the same principles recur across two decades, which is itself the lesson about compounding.",
+    takeaways: [
+      "The 1997 letter is the flywheel in prose: customer obsession, long-term, bold bets.",
+      "Day 1 thinking is a discipline to be practiced, not a slogan to be printed.",
+      "The most important decisions are 'one-way doors' — slow them down; make the rest fast.",
+    ],
+    whyItMatters:
+      "The primary source for the Day 1 / flywheel doctrine — read it straight from the founder instead of through summaries.",
+  },
+  {
+    slug: "nvidia-way",
+    title: "The Nvidia Way",
+    author: "Tae Kim",
+    year: 2024,
+    model: "operational-moats",
+    rating: 4,
+    cover: "green",
+    blurb: "Jensen Huang and the making of a culture that bet the company on CUDA, then on AI.",
+    review:
+      "A reporter's account of how NVIDIA survived its near-death pivots and built a moat that now underpins the AI economy. The book's core is culture: the 'tough love', the expectation that 'we're always one step from going out of business', and the full-stack bet that made CUDA a platform. It's the clearest non-NVIDIA-approved look at Huang's operational philosophy — the paranoia and the 10-year bets working together.",
+    takeaways: [
+      "A platform moat is built by betting the company before the market agrees.",
+      "Culture of 'we're about to die' keeps a giant company acting like a startup.",
+      "Full-stack control — hardware, software, ecosystem — compounds into pricing power.",
+    ],
+    whyItMatters:
+      "The modern case study of paradigm-pivot survival and platform moats — the closest thing to a written Huang playbook.",
+  },
+  {
+    slug: "hackers-and-painters",
+    title: "Hackers and Painters",
+    author: "Paul Graham",
+    year: 2004,
+    model: "distribution",
+    rating: 4,
+    cover: "blue",
+    blurb: "Big ideas from the computer age — the essays that became YC's philosophy.",
+    review:
+      "Graham's early essays, including the argument that hackers are like painters (both make things from nothing, and both learn by making). This is where 'do things that don't scale' and 'make something people want' gestate — the mindset behind Y Combinator. It's less operational than his later essays but more foundational: it's about the disposition of the maker, which is exactly what a founder needs to survive the distribution problem.",
+    takeaways: [
+      "The maker's disposition: build ugly versions early and iterate from what exists.",
+      "Wealth is what people want made — the maker creates value, not just money.",
+      "Good ideas start out looking like bad ideas; taste is built by making.",
+    ],
+    whyItMatters:
+      "The origin text of YC's philosophy — read it to absorb the maker mindset before the growth tactics.",
+  },
+  {
+    slug: "behind-the-cloud",
+    title: "Behind the Cloud",
+    author: "Marc Benioff",
+    year: 2009,
+    model: "paradigm-pivots",
+    rating: 3.5,
+    cover: "blue",
+    blurb: "The untold story of how Salesforce went from idea to a revolution — and the 111 lessons inside.",
+    review:
+      "Part memoir, part playbook, written at the peak of Salesforce's first decade. Benioff lays out the 111 numbered lessons that built the company — from 'the no software message' to the creation of a partner ecosystem. It's corporate in tone and dated in parts, but the paradigm-pivot strategy is fully visible: name the old model dead, preach the new one, and build the category around yourself.",
+    takeaways: [
+      "Kill the category, don't just join it: 'no software' was the position.",
+      "The message matters as much as the product — repeat it everywhere.",
+      "Build an ecosystem; the moat is the network of people selling for you.",
+    ],
+    whyItMatters:
+      "A first-person account of how to bet on a paradigm shift — useful for anyone facing a category change.",
+  },
+  {
+    slug: "five-levels-of-leadership",
+    title: "The 5 Levels of Leadership",
+    author: "John C. Maxwell",
+    year: 2011,
+    model: "purpose-leadership",
+    rating: 4,
+    cover: "gold",
+    blurb: "The proven steps to maximize your influence — from position to pinnacle.",
+    review:
+      "Maxwell's complete ladder book, expanding the talk into a full leadership system. Each level gets its own rules, its own failure modes, and its own 'law of the lid' — the idea that your leadership level caps what the business can achieve. It's the most practical single volume on leadership-as-a-skill, and its insistence that you can't skip the trust level is the lesson most owner-operators need.",
+    takeaways: [
+      "Position gets you compliance; permission gets you commitment — never skip level 2.",
+      "The law of the lid: your team's ceiling is your leadership level.",
+      "Developing leaders (level 4) is how you multiply instead of just produce.",
+    ],
+    whyItMatters:
+      "The complete version of the 5-levels talk — the framework for owners whose business has outgrown their leadership.",
+  },
+  {
+    slug: "art-of-exceptional-living",
+    title: "The Art of Exceptional Living",
+    author: "Jim Rohn",
+    year: 2003,
+    model: "execution-habits",
+    rating: 4,
+    cover: "green",
+    blurb: "The seminar that trained a generation — philosophy, discipline, and the compounding of daily habits.",
+    review:
+      "The book form of Rohn's legendary seminar. The message is the same as the talk: income rarely exceeds personal development, discipline is the bridge between goals and accomplishment, and your life is the sum of your daily habits. It's earnest and occasionally dated, but the core is unimpeachable — and for the execution model it's the philosophical foundation beneath Atomic Habits.",
+    takeaways: [
+      "Become more to earn more — personal development is the highest-return investment.",
+      "Discipline is doing what needs doing when it needs doing, whether you feel like it or not.",
+      "The quality of your life equals the quality of your daily routine.",
+    ],
+    whyItMatters:
+      "The philosophy layer of the execution model — pair it with Atomic Habits for the 'why' and the 'how'.",
+  },
+  {
+    slug: "never-split-the-difference",
+    title: "Never Split the Difference",
+    author: "Chris Voss",
+    year: 2016,
+    model: "distribution",
+    rating: 4.5,
+    cover: "clay",
+    blurb: "Negotiating as if your life depended on it — by the FBI's lead international kidnapping negotiator.",
+    review:
+      "Voss turns hostage negotiation into a business skill set, and it's the most immediately useful sales/negotiation book in this library. The tools — tactical empathy, mirroring, labeling, calibrated questions, the 'no' question — are taught through real kidnapping cases and instantly transferable to pricing, collecting, and hiring. It's the negotiation book for owners who hate negotiating.",
+    takeaways: [
+      "Mirror and label to build rapport: repeat the last few words, name the emotion.",
+      "Make it safe to say no — 'no' is the start of negotiation, not the end.",
+      "Use calibrated questions ('how am I supposed to do that?') to get the other side to solve your problem.",
+    ],
+    whyItMatters:
+      "The practical edge for every conversation that matters — pricing, collections, and disputes — with tactics you can use today.",
+  },
+  {
+    slug: "e-myth-revisited",
+    title: "The E-Myth Revisited",
+    author: "Michael E. Gerber",
+    year: 1995,
+    model: "execution-habits",
+    rating: 4.5,
+    cover: "gold",
+    blurb: "Why most small businesses don't work and what to do about it — build the business, not just the work.",
+    review:
+      "The foundational small-business book. Gerber's diagnosis: most owners are technicians suffering from an entrepreneurial seizure — they work IN the business instead of ON it. The cure is building the franchise prototype: documented systems, an org chart that exists even at one person, and an 'employee who isn't there yet' way of working. It's the single most relevant book in this library for a service-business owner.",
+    takeaways: [
+      "Work on the business, not in it — you're the builder, not just the best technician.",
+      "Build the franchise prototype: write down every process as if a franchisee will run it.",
+      "The purpose of the business is to create a customer — systems are how you do it repeatedly.",
+    ],
+    whyItMatters:
+      "The book that converts a 'job with a better title' into a business — required reading for solo operators and technicians.",
+  },
+  {
+    slug: "profit-first",
+    title: "Profit First",
+    author: "Mike Michalowicz",
+    year: 2014,
+    model: "bootstrapping",
+    rating: 4,
+    cover: "green",
+    blurb: "Transform your business from a cash-eating monster to a money-making machine — profit first, expenses last.",
+    review:
+      "Michalowicz inverts the accounting formula: instead of sales minus expenses equals profit, it's sales minus profit equals expenses. By taking profit out first into a separate account, owners are forced to spend what remains — a behavioral fix for the cash-flow problem the cash-flow playbook addresses. It's simple, contrarian, and exactly the kind of constraint-based thinking the bootstrapping model celebrates.",
+    takeaways: [
+      "Pay yourself first: sales minus profit equals expenses — flip the formula.",
+      "Use separate bank accounts so the money you never see can't be spent.",
+      "Small percentages (1–2%) taken regularly compound into real profitability.",
+    ],
+    whyItMatters:
+      "The most practical cash-flow book for SMBs — pair it with the 'survive early cash-flow crunches' playbook.",
+  },
+  {
+    slug: "getting-things-done",
+    title: "Getting Things Done",
+    author: "David Allen",
+    year: 2001,
+    model: "execution-habits",
+    rating: 4,
+    cover: "ink",
+    blurb: "The art of stress-free productivity — capture, clarify, organize, reflect, engage.",
+    review:
+      "The productivity system that still defines the genre. Allen's insight: your brain is for having ideas, not holding them — so capture everything, clarify what it means, organize it, review it, and act. For an owner drowning in loose ends, the 'capture habit' alone is transformative, and the weekly review is a built-in executive function the business was missing.",
+    takeaways: [
+      "Your mind is for having ideas, not holding them — capture everything out of your head.",
+      "Clarify each item: is it actionable? If yes, what's the next physical action?",
+      "The weekly review is the engine — 90 minutes that keeps the whole system honest.",
+    ],
+    whyItMatters:
+      "The operating system for the 'execution' model — the capture-and-clarify loop is how a busy owner gets out of their own head.",
+  },
+  {
+    slug: "influence",
+    title: "Influence: The Psychology of Persuasion",
+    author: "Robert B. Cialdini",
+    year: 1984,
+    model: "distribution",
+    rating: 4.5,
+    cover: "blue",
+    blurb: "The classic on the six principles that drive human decisions — and how they show up in every sale.",
+    review:
+      "The most cited book on persuasion ever written, and the scientific foundation for 'people buy stories, not features.' Cialdini's six weapons — reciprocity, commitment/consistency, social proof, authority, liking, and scarcity — explain both why customers buy and why competitors keep winning them. It's a must-read for the distribution model: it's the psychology under every marketing tactic the site's thinkers recommend.",
+    takeaways: [
+      "Reciprocity: give first — a sample, a favor, genuine value — and people feel bound to return it.",
+      "Social proof beats features: what others do is the strongest signal most customers use.",
+      "Scarcity and commitment/consistency are levers you can use ethically — or be used by.",
+    ],
+    whyItMatters:
+      "The persuasion layer under all of marketing — understand the six principles so you can use them and see when they're being used on you.",
+  },
+  {
+    slug: "company-of-one",
+    title: "Company of One",
+    author: "Paul Jarvis",
+    year: 2019,
+    model: "bootstrapping",
+    rating: 4,
+    cover: "green",
+    blurb: "Why staying small is the next big thing for business — growth is a choice, not a mandate.",
+    review:
+      "The manifesto for the deliberate small business. Jarvis's argument — that growth is not the only definition of success and that staying small can be a strategic advantage — is the modern expression of the bootstrapping model. It's a relief to read for owners who feel the pressure to scale when they don't want to, and its practical chapters on simplicity, autonomy, and slow growth give that choice teeth.",
+    takeaways: [
+      "Growth is optional — define success on your own terms, not the venture playbook's.",
+      "Small is fast: fewer people, fewer systems, more autonomy and agility.",
+      "Optimize for resilience and simplicity, not maximum size.",
+    ],
+    whyItMatters:
+      "The permission slip for owners who don't want to blitzscale — and the strategic case for why small can win.",
+  },
+  {
+    slug: "the-snowball",
+    title: "The Snowball",
+    author: "Alice Schroeder",
+    year: 2008,
+    model: "operational-moats",
+    rating: 4.5,
+    cover: "ink",
+    blurb: "Warren Buffett and the business of life — the definitive biography of the world's greatest investor.",
+    review:
+      "Schroeder was given unprecedented access to Buffett — including his letters and long interviews — and produced the definitive biography. The value for a business owner is the raw material: how a compounding machine like Berkshire was assembled one durable business at a time, and the temperament (circle of competence, patience, 'the snowball' of reputation) that made it possible. Long, but every chapter contains an operating lesson.",
+    takeaways: [
+      "Reputation and trust are the ultimate compounding asset — 'it takes 20 years to build a reputation and 5 minutes to ruin it.'",
+      "The circle of competence: know what you know and stay inside it.",
+      "Hold good businesses; resist the urge to act just to act.",
+    ],
+    whyItMatters:
+      "The primary source on the operational-moats mindset — read it to see moats, compounding, and temperament assembled over a lifetime.",
+  },
+  {
+    slug: "what-i-know-for-sure",
+    title: "What I Know For Sure",
+    author: "Oprah Winfrey",
+    year: 2014,
+    model: "bootstrapping",
+    rating: 3.5,
+    cover: "clay",
+    blurb: "Oprah's lessons on gratitude, intention, and the inner work behind an authentic brand.",
+    review:
+      "A collection of Oprah's monthly column essays, framed as the personal philosophy behind the empire. It's less a business book and more the operating manual for the person behind the brand — gratitude, intention, resilience, and the discipline of the inner life. For owners whose brand is themselves (which is most service businesses), it's a reminder that the person is the product and needs maintenance.",
+    takeaways: [
+      "Gratitude practiced daily is a leadership tool — it keeps the founder's morale, and morale is contagious.",
+      "Intention beats reaction: decide what your day is for before the day decides for you.",
+      "The inner work is the brand work when you are the brand.",
+    ],
+    whyItMatters:
+      "The maintenance manual for the founder-as-brand — read it when the person behind the business needs restoring.",
+  },
+  {
+    slug: "pour-your-heart-into-it",
+    title: "Pour Your Heart Into It",
+    author: "Howard Schultz",
+    year: 1997,
+    model: "bootstrapping",
+    rating: 4,
+    cover: "gold",
+    blurb: "How Starbucks built a company one cup at a time — the story of scaling with a soul.",
+    review:
+      "Schultz's origin story: the Italian coffee bar that changed his life, the 11-store company he bought, and the decade-long fight to scale it without selling out the experience. The book's value is the tension it holds — growth and soul, profit and people — and how Schultz resolved it by putting the employee (health insurance, equity) before the transaction. It's the founding text of the 'scale with feeling' school.",
+    takeaways: [
+      "Sell an experience, not a product — the 'third place' was the positioning.",
+      "Treat employees as partners before customers; the culture shows in the cup.",
+      "Persistence through rejection: Schultz was told 'no' hundreds of times.",
+    ],
+    whyItMatters:
+      "The manual for scaling a local, experience-led business without losing what made it local.",
+  },
+  {
+    slug: "screw-it-lets-do-it",
+    title: "Screw It, Let's Do It",
+    author: "Richard Branson",
+    year: 2006,
+    model: "distribution",
+    rating: 3.5,
+    cover: "clay",
+    blurb: "Lessons in life and business from the man who built the Virgin brand.",
+    review:
+      "Branson's manifesto of action: don't wait for permission, embrace risk as a learning tool, and build a brand people trust enough to follow into any new category. It's breezy and occasionally self-congratulatory, but the core lesson is real — Virgin's distribution moat is the brand itself, extended again and again. The chapter on the 'brand as promise' is worth the price.",
+    takeaways: [
+      "The brand is the promise — protect it and it can travel to new categories.",
+      "Fail fast and own the failure; risk is how you learn at speed.",
+      "Delegate by design: build teams around what you can't (or won't) do.",
+    ],
+    whyItMatters:
+      "The case for brand-led expansion and the courage to act — read it before the decision you keep postponing.",
+  },
+  {
+    slug: "made-in-america",
+    title: "Sam Walton: Made in America",
+    author: "Sam Walton",
+    year: 1992,
+    model: "operational-moats",
+    rating: 4.5,
+    cover: "gold",
+    blurb: "My story — the founder of Walmart on the operational discipline that built the world's largest retailer.",
+    review:
+      "Walton's own account of the Walmart build — town by town, on obsessively controlled costs and a logistics machine nobody else had. The book is plain-spoken and the lessons are operational: the 10 rules of building a business (commit to the business, share profits, communicate, appreciate, celebrate) are timeless, and his fanaticism about the back end (distribution, cost control) is the real story. The most honest 'how it actually got built' book in this library.",
+    takeaways: [
+      "Operational fanaticism beats cleverness — control the back end and the front end wins.",
+      "Win the small town first; expand only from a position you fully own.",
+      "The 10 rules: commitment, profit-sharing, communication, appreciation — the culture of the machine.",
+    ],
+    whyItMatters:
+      "The primary source on scale economics and logistics as a moat — the back-end playbook for any owner who wants margin, not just revenue.",
+  },
+  {
+    slug: "delivering-happiness",
+    title: "Delivering Happiness",
+    author: "Tony Hsieh",
+    year: 2010,
+    model: "purpose-leadership",
+    rating: 4,
+    cover: "green",
+    blurb: "A path to profits, passion, and purpose — the Zappos story of culture as the business.",
+    review:
+      "Hsieh's memoir-cum-manifesto of the culture experiment at Zappos: how he sold his first company, bought a shoe retailer, and turned it into a customer-service benchmark by making culture priority one. The famous mechanics are here — the $3,000 'quit now' offer, values-based hiring, the open culture book. It's earnest and occasionally scattered, but as a first-person account of leading with purpose it has no equal.",
+    takeaways: [
+      "Culture is the business: get it right and the service, and the profits, follow.",
+      "The 'take the money and leave' offer is a genuine values filter.",
+      "Deliver more than promised — happiness (for employees and customers) is the product.",
+    ],
+    whyItMatters:
+      "The definitive case study of purpose-led leadership — read it to see culture engineered as deliberately as any product.",
+  },
 ];
 
 export const getBook = (slug: string): Book => {

@@ -1,4 +1,5 @@
 ---
+import Newsletter from "./Newsletter.astro";
 const base = import.meta.env.BASE_URL;
 const cols = [
   { href: `${base}pathways/`, label: "Pathways", items: ["The Founder's Journey", "The Idea Explorer", "The Leadership Lab", "The Survival Path"] },
@@ -9,7 +10,11 @@ const cols = [
 ---
 
 <footer class="border-t border-ink-800 bg-ink-900">
-  <div class="container-site grid gap-10 py-14 md:grid-cols-5">
+  <div class="container-site py-12">
+    <Newsletter compact />
+  </div>
+
+  <div class="container-site grid gap-10 py-12 md:grid-cols-5">
     <div class="md:col-span-2">
       <p class="font-display text-xl font-semibold tracking-tight">
         Market<span class="text-gold-400">Architects</span>

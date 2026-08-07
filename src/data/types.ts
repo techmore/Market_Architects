@@ -18,6 +18,7 @@ export interface Founder {
   years: string;
   kind: "builder" | "thinker";
   models: string[];
+  books?: string[];
   quote: string;
   bio: string;
   knownFor: string[];

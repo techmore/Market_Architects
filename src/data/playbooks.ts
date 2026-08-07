@@ -121,6 +121,129 @@ export const playbooks: Playbook[] = [
       },
     ],
   },
+  {
+    slug: "hire-your-first-employee",
+    title: "Hire your first employee",
+    problem:
+      "You're the bottleneck: every hour of your day is tied to doing the work, so you can't grow. But hiring wrong — or too early — can sink a business faster than staying small.",
+    models: ["purpose-leadership", "operational-moats"],
+    summary:
+      "Hire only when the work is proven and repeatable, hire for the compounding skill not the role, and build the system around them so the business works without you in it.",
+    steps: [
+      {
+        title: "Prove the work is repeatable first",
+        body: "Before hiring, write the role's core process as if a stranger will do it. If you can't document it in a page, you're hiring to paper over a system gap — fix the system first.",
+        lecture: "gerber-emyth",
+      },
+      {
+        title: "Hire for the compounding skill",
+        body: "Define the one ability that compounds over five years — craft, reliability, or taste — and filter strictly on it. A slow, excellent hire beats a fast, mediocre one every time.",
+        lecture: "collison-blitzscaling",
+      },
+      {
+        title: "Spend your first 90 days delegating, not supervising",
+        body: "Drucker's discipline: give them a complete outcome and let them own it. The goal is to move yourself out of the role — not to supervise the role you kept.",
+        lecture: "drucker-interview",
+      },
+      {
+        title: "Build trust before you build headcount",
+        body: "Lencioni's pyramid starts with trust. Run the vulnerability exercise and 'disagree and commit' from day one — a two-person team that can't argue honestly will fail at five.",
+        lecture: "lencioni-dysfunctions",
+      },
+    ],
+  },
+  {
+    slug: "retain-your-clients",
+    title: "Retain clients so they don't churn",
+    problem:
+      "Every client you lose costs more than the one you gain — but most businesses spend their marketing budget on acquisition while churn silently eats the foundation.",
+    models: ["operational-moats", "product-intuition"],
+    summary:
+      "Retention is a flywheel: make the experience remarkable, align incentives so the relationship compounds, and measure the scoreboard that catches churn before it happens.",
+    steps: [
+      {
+        title: "Audit the experience to 10 stars",
+        body: "Map the full journey — first call to renewal — and score each step 1-10. Fix every step below 6 before adding anything new. Chesky's ladder applies to service as much as software.",
+        lecture: "chesky-design",
+      },
+      {
+        title: "Align your incentives with their outcome",
+        body: "Munger's prime mover: check that how you get paid rewards long-term client health, not short-term billing. If your pricing punishes retention, the churn is designed in.",
+        lecture: "munger-misjudgment",
+      },
+      {
+        title: "Put the scoreboard on the wall",
+        body: "Pick the two retention metrics that matter (repeat rate, net revenue retention) and review them monthly, team-wide. Inattention to results dies when the results are visible.",
+        lecture: "lencioni-dysfunctions",
+      },
+      {
+        title: "Design the relationship to compound",
+        body: "Bezos's flywheel for retention: better service → deeper trust → referrals → more capacity to serve. Find the loop that makes every year with a client cheaper and better.",
+        lecture: "bezos-lex",
+      },
+    ],
+  },
+  {
+    slug: "build-a-sales-process",
+    title: "Turn sales into a process, not a personality",
+    problem:
+      "You close deals when you're on form and lose them when you're not. Gut-driven selling caps your growth at your own mood and makes the business impossible to scale.",
+    models: ["distribution", "product-intuition"],
+    summary:
+      "A sales process is positioning plus a repeatable conversation: know exactly who you serve and what you refuse, then show — don't tell — so customers recognize themselves in your offer.",
+    steps: [
+      {
+        title: "Define the trade-off you refuse",
+        body: "Porter's test: write what you deliberately won't do or chase. A sales process needs a positioning spine — and 'we serve everyone' is the fastest way to close no one.",
+        lecture: "porter-strategy",
+      },
+      {
+        title: "Show, don't ask",
+        body: "Gladwell's spaghetti-sauce lesson: customers can't tell you what they want, but they react honestly to options. Present 2-3 concrete offers and let them choose — the choice is the sales pitch.",
+        lecture: "gladwell-spaghetti",
+      },
+      {
+        title: "Mirror and label through the objection",
+        body: "Voss's negotiation tools: repeat their last words, name the emotion, and use calibrated questions. Objections are information, not rejection — process them like data.",
+      },
+      {
+        title: "Serve the smallest viable audience first",
+        body: "Your best prospect is the narrow group that would miss you if you vanished. Go deep there before broad: deep wins in a niche beat shallow wins everywhere.",
+        lecture: "godin-ideas-spread",
+      },
+    ],
+  },
+  {
+    slug: "get-discovered-locally",
+    title: "Get discovered in your local market",
+    problem:
+      "You do great work, but the phone doesn't ring — big competitors own the search results, the reviews, and the mindshare, and you're invisible by comparison.",
+    models: ["distribution", "bootstrapping"],
+    summary:
+      "Local discovery is a manual, remarkable-first game: win the niche audience through word-of-mouth, gather proof aggressively, and let the slow organic curve compound into a reputation the big guys can't buy.",
+    steps: [
+      {
+        title: "Do the manual recruiting yourself",
+        body: "Graham's law applied locally: personally reach your first 20 customers, over-serve them, and ask each one 'what almost made you not hire us?' That feedback is your local product strategy.",
+        lecture: "graham-dont-scale",
+      },
+      {
+        title: "Make one thing worth remarking about",
+        body: "Godin's purple cow: pick one detail — a guarantee, a response time, a process — that a customer would literally tell a neighbor about. Remarkable spreads; average doesn't.",
+        lecture: "godin-ideas-spread",
+      },
+      {
+        title: "Engineer the proof engine",
+        body: "Reviews are social proof — Cialdini's most powerful lever. Ask every happy customer for a review at the peak of their satisfaction, and put the best three on everything you publish.",
+        lecture: "silbermann-pinterest",
+      },
+      {
+        title: "Out-patience the paid competition",
+        body: "You can't outspend them, so out-last them: a steady drip of genuine local content and referrals compounds while their ad budget runs out. Blakely won attention with persistence and story, not budget.",
+        lecture: "blakely-origin",
+      },
+    ],
+  },
 ];
 
 export const getPlaybook = (slug: string): Playbook => {

@@ -5,7 +5,7 @@ import CrossReferences from "../../components/CrossReferences.astro";
 import { founders, initialsOf } from "../../data/founders";
 import { getModel, models } from "../../data/models";
 import { lecturesByFounder } from "../../data/lectures";
-import { books } from "../../data/books";
+import { books, getBook } from "../../data/books";
 
 export async function getStaticPaths() {
   return founders.map((f) => ({ params: { slug: f.slug }, props: { founder: f } }));
@@ -16,9 +16,9 @@ const base = import.meta.env.BASE_URL;
 const modelObjs = founder.models.map((slug) => getModel(slug));
 const founderLectures = lecturesByFounder(founder.slug);
 const founderLastName = founder.name.split(" ").pop()?.toLowerCase() ?? "";
-const founderBooks = books.filter((b) =>
-  b.author.toLowerCase().includes(founderLastName)
-);
+const founderBooks = founder.books
+  ? founder.books.map((slug) => getBook(slug))
+  : books.filter((b) => b.author.toLowerCase().includes(founderLastName));
 ---
 
 <Layout title={founder.name} description={`${founder.name} — ${founder.company}. Bio, curated lectures, annotated transcripts, and cross-references.`}>

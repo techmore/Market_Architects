@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import ModelCard from "../components/ModelCard.astro";
 import LectureCard from "../components/LectureCard.astro";
 import BookCard from "../components/BookCard.astro";
+import Newsletter from "../components/Newsletter.astro";
 import { models } from "../data/models";
 import { lectures, featuredLectures } from "../data/lectures";
 import { books } from "../data/books";
@@ -77,7 +78,7 @@ const base = import.meta.env.BASE_URL;
 
         <a
           href={`${base}pathways/founder-journey/`}
-          class="group relative overflow-hidden rounded-2xl border border-ink-700 bg-gradient-to-br from-[#2f4a38] to-green-500 p-8 transition hover:border-green-500"
+          class="group relative overflow-hidden rounded-2xl border border-ink-700 bg-gradient-to-br from-[#2f4a38] to-[#4c7358] p-8 transition hover:border-green-500"
         >
           <p class="text-xs font-bold uppercase tracking-widest text-paper-50/70">Door 02</p>
           <h3 class="mt-2 font-display text-3xl font-bold leading-tight text-paper-50">I want to hear from great founders</h3>
@@ -105,6 +106,18 @@ const base = import.meta.env.BASE_URL;
           </a>
         ))}
       </div>
+
+      <!-- Continue your path (revealed by JS when progress exists) -->
+      <div id="continue-path" class="mt-6 hidden">
+        <div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-gold-500/50 bg-ink-850 p-6 md:flex-row md:items-center">
+          <div>
+            <p class="eyebrow text-gold-400">Continue your path</p>
+            <p class="mt-1 font-display text-lg font-semibold">Pick up where you left off.</p>
+            <p id="continue-meta" class="text-xs text-paper-400"></p>
+          </div>
+          <a id="continue-link" href={base} class="btn-primary shrink-0">Resume →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -131,14 +144,24 @@ const base = import.meta.env.BASE_URL;
 
     <div id="lecture-grid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {lectures.map((lecture) => (
-        <div class="lecture-item" data-model={lecture.model} data-title={lecture.title.toLowerCase()}>
+        <div
+          class:list={["lecture-item", lecture.featured ? "" : "lecture-more hidden"]}
+          data-model={lecture.model}
+          data-title={lecture.title.toLowerCase()}
+        >
           <LectureCard lecture={lecture} />
         </div>
       ))}
     </div>
     <p id="no-results" class="mt-10 hidden text-center text-sm text-paper-500">
-      No lectures match that search. Try “competition”, “design”, or “cash”.
+      No lectures match that search. Try "competition", "design", or "cash".
     </p>
+    <div class="mt-8 flex justify-center">
+      <button id="show-all" class="btn-ghost">
+        Show all {lectures.length} lectures
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </div>
   </section>
 
   <!-- Models -->
@@ -170,15 +193,23 @@ const base = import.meta.env.BASE_URL;
       {books.slice(0, 4).map((b) => <BookCard book={b} />)}
     </div>
   </section>
+
+  <!-- Newsletter -->
+  <section class="container-site pb-16 md:pb-20">
+    <Newsletter />
+  </section>
 </Layout>
 
 <script>
+  const BASE = document.body?.dataset.base ?? "/Market_Architects/";
   const grid = document.getElementById("lecture-grid");
   const search = document.getElementById("search");
   const noResults = document.getElementById("no-results");
+  const showAll = document.getElementById("show-all");
   const chips = Array.from(document.querySelectorAll(".filter-chip"));
 
   let activeModel = "all";
+  let expanded = false;
 
   function applyFilter() {
     const q = (search?.value ?? "").trim().toLowerCase();
@@ -186,11 +217,17 @@ const base = import.meta.env.BASE_URL;
     document.querySelectorAll(".lecture-item").forEach((el) => {
       const matchesModel = activeModel === "all" || el.dataset.model === activeModel;
       const matchesQuery = !q || (el.dataset.title ?? "").includes(q);
-      const show = matchesModel && matchesQuery;
+      const isHidden = !expanded && el.classList.contains("lecture-more");
+      const show = matchesModel && matchesQuery && !isHidden;
       el.style.display = show ? "" : "none";
       if (show) visible++;
     });
     if (noResults) noResults.classList.toggle("hidden", visible > 0);
+    if (showAll) {
+      const anyMore = !!document.querySelector(".lecture-item.lecture-more");
+      showAll.classList.toggle("hidden", !anyMore);
+      if (expanded) showAll.textContent = "Show fewer";
+    }
   }
 
   chips.forEach((chip) => {
@@ -209,5 +246,34 @@ const base = import.meta.env.BASE_URL;
     });
   });
 
+  showAll?.addEventListener("click", () => {
+    expanded = !expanded;
+    applyFilter();
+  });
+
   search?.addEventListener("input", applyFilter);
+  applyFilter();
+
+  // Continue-your-path: reveal if the visitor has saved progress on any pathway
+  const continueBox = document.getElementById("continue-path");
+  const continueLink = document.getElementById("continue-link");
+  const continueMeta = document.getElementById("continue-meta");
+  const PATH_PREFIX = "ma-progress-";
+  try {
+    const entries = Object.keys(localStorage)
+      .filter((k) => k.startsWith(PATH_PREFIX))
+      .map((k) => ({ key: k, val: JSON.parse(localStorage.getItem(k) || "[]") }))
+      .filter((e) => Array.isArray(e.val) && e.val.length > 0);
+    if (entries.length > 0 && continueBox && continueLink && continueMeta) {
+      const mostRecent = entries.sort((a, b) => (b.val.at(-1) || 0) - (a.val.at(-1) || 0))[0];
+      const slug = mostRecent.key.slice(PATH_PREFIX.length);
+      const label = slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
+      const done = mostRecent.val.filter((n: number) => n !== null && n !== undefined).length;
+      continueBox.classList.remove("hidden");
+      continueLink.href = `${BASE}pathways/${slug}/`;
+      continueMeta.textContent = `${label} — ${done} stop${done === 1 ? "" : "s"} complete`;
+    }
+  } catch (e) {
+    // localStorage unavailable (private mode etc.) — silently skip
+  }
 </script>
