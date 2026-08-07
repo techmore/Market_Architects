@@ -132,7 +132,7 @@ export const pathways: Pathway[] = [
           "Bezos's loop runs on decisions — and decisions run on your brain. Munger's misjudgment checklist is the cognitive half of the moat: invert, fix incentives, and design against your own biases.",
         lecture: "munger-misjudgment",
         book: "thinking-fast-slow",
-        model: "operational-moats",
+        model: "strategy-decision",
       },
       {
         station: "Stop 07",
@@ -140,7 +140,7 @@ export const pathways: Pathway[] = [
         narrative:
           "The science behind Munger's checklists: Kahneman's two systems and the biases that own you. This stop is where the moat stops being strategy and becomes the ability to see reality straight.",
         lecture: "kahneman-fast-slow",
-        model: "operational-moats",
+        model: "strategy-decision",
       },
       {
         station: "Stop 08",

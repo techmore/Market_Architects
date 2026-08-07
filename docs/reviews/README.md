@@ -66,14 +66,21 @@ Three independent expert passes over the site (129 pages, 37 leaders, 8 models, 
 | Content | More canonical books | ✅ Books 52 → 56 (Lean In, My Life and Work, Jack, iWoz) |
 | Content | Idea browsing discoverability | ✅ "Browse by Idea" footer column added |
 
-## Current scale (2026-08-07c)
+## Resolution log (iteration 2026-08-07d)
 
-- **573 pages** · 63 leaders · 66 lectures (all embeds verified) · 56 books · 8 playbooks · 4 pathways · 300+ idea tags · 28 transcripts
-- **8,855 internal links verified, zero broken**
+| # | Finding | Status |
+|---|---|---|
+| Business S2 | Taxonomy imbalance (model 03 = 14 leaders) | ✅ **Split** — model 03 narrowed to "Operational Moats & Flywheels" (9 leaders); new **model 09 "Strategy & Decision Science"** (Porter, Drucker, Munger, Kahneman, Dalio). Taxonomy now 9 models, 5–10 leaders each |
+| Business S5 | Newsletter had no backend | ✅ Newsletter now posts to `PUBLIC_NEWSLETTER_ENDPOINT` (Formspree/Beehiiv/etc.) with a mailto fallback; `.env.example` documents it |
+| — | Stale hero copy | ✅ Hero now reads "63 thinkers / 9 mental models" |
+
+## Current scale (2026-08-07d)
+
+- **574 pages** · 63 leaders · 66 lectures (all embeds verified) · 56 books · 9 models · 8 playbooks · 4 pathways · 300+ idea tags · 28 transcripts
+- **8,872 internal links verified, zero broken**
 
 ## Remaining backlog
 
 - Transcript backfill (28 → 66) when the YouTube rate limit resets (`npm run transcripts`)
 - Audio snippets (need an audio/podcast host per lecture)
-- More leaders (Katrina Lake ✓, Tory Burch ✓, Sheryl Sandberg ✓)
-- Taxonomy rebalance (model 03 = 14 leaders; consider splitting "Operational Moats" vs "Decision Science")
+- More leaders (directory now 63 — strong coverage across founders + thinkers)

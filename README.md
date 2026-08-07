@@ -18,8 +18,9 @@ translated into actions a small business owner can use this week.
 - **/pathways** — the guided "unofficial pathway" layer: two entry doors ("looking for new
   ideas" / "hear from great founders") routing into 4 curated sequences of lectures, books,
   and playbooks
-- **/models** — the 8 core mental models (zero-to-one, product-intuition, operational-moats,
-  distribution, bootstrapping, paradigm-pivots, purpose-leadership, execution-habits)
+- **/models** — the 9 core mental models (zero-to-one, product-intuition, operational-moats,
+  distribution, bootstrapping, paradigm-pivots, purpose-leadership, execution-habits,
+  strategy-decision)
 - **/founders** — directory of 63 leaders (builders + thinkers) with a Builders/Thinkers filter
 - **/lectures** — 66 embedded YouTube lectures with annotated timestamps, transcripts,
   "Apply This Model" translations, and opposing/complementary takes
