@@ -114,8 +114,12 @@ const base = import.meta.env.BASE_URL;
             <p class="eyebrow text-gold-400">Continue your path</p>
             <p class="mt-1 font-display text-lg font-semibold">Pick up where you left off.</p>
             <p id="continue-meta" class="text-xs text-paper-400"></p>
+            <p id="continue-tree-meta" class="mt-1 text-xs text-paper-400"></p>
           </div>
-          <a id="continue-link" href={base} class="btn-primary shrink-0">Resume →</a>
+          <div class="flex flex-wrap gap-3">
+            <a id="continue-link" href={base} class="btn-primary shrink-0">Resume →</a>
+            <a id="continue-tree-link" href={`${base}skill-tree/`} class="btn-ghost hidden shrink-0">Continue the course →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -279,10 +283,13 @@ const base = import.meta.env.BASE_URL;
   const continueBox = document.getElementById("continue-path");
   const continueLink = document.getElementById("continue-link");
   const continueMeta = document.getElementById("continue-meta");
+  const continueTreeLink = document.getElementById("continue-tree-link");
+  const continueTreeMeta = document.getElementById("continue-tree-meta");
   const PATH_PREFIX = "ma-progress-";
   try {
+    let sawProgress = false;
     const entries = Object.keys(localStorage)
-      .filter((k) => k.startsWith(PATH_PREFIX))
+      .filter((k) => k.startsWith(PATH_PREFIX) && k !== "ma-progress-tree")
       .map((k) => ({ key: k, val: JSON.parse(localStorage.getItem(k) || "[]") }))
       .filter((e) => Array.isArray(e.val) && e.val.length > 0);
     if (entries.length > 0 && continueBox && continueLink && continueMeta) {
@@ -293,7 +300,17 @@ const base = import.meta.env.BASE_URL;
       continueBox.classList.remove("hidden");
       continueLink.href = `${BASE}pathways/${slug}/`;
       continueMeta.textContent = `${label} — ${done} stop${done === 1 ? "" : "s"} complete`;
+      sawProgress = true;
     }
+    // course progress
+    const treeVal = JSON.parse(localStorage.getItem("ma-progress-tree") || "[]");
+    if (Array.isArray(treeVal) && treeVal.length > 0 && continueBox && continueTreeLink && continueTreeMeta) {
+      continueBox.classList.remove("hidden");
+      continueTreeLink.classList.remove("hidden");
+      continueTreeMeta.textContent = `Course — ${treeVal.length} of 54 lessons complete`;
+      sawProgress = true;
+    }
+    if (!sawProgress && continueBox) continueBox.classList.add("hidden");
   } catch (e) {
     // localStorage unavailable (private mode etc.) — silently skip
   }

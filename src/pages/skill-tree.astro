@@ -47,6 +47,20 @@ const tiers = skillTree.map((tier) => {
         </div>
         <span id="tree-label" class="text-xs text-paper-400">0 of {totalNodes} lessons complete</span>
       </div>
+
+      <div id="course-done" class="mt-6 hidden rounded-xl border border-green-500/60 bg-green-500/10 p-5">
+        <p class="font-display text-lg font-semibold text-[#8fc79b]">Course complete.</p>
+        <p class="mt-1 text-sm leading-relaxed text-paper-200">
+          All {totalNodes} lessons done — that's the poor man's MBA, in full. Now take what you built in
+          the worksheets and go operate. The market is the final exam.
+        </p>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 rounded-xl border border-ink-700 bg-ink-850 px-5 py-4 text-xs text-paper-400">
+        <span class="flex items-center gap-2"><span class="text-gold-400">▶</span> One tier a week — don't rush it</span>
+        <span class="flex items-center gap-2"><span class="text-gold-400">✎</span> Finish the tier worksheet — that's where it sticks</span>
+        <span class="flex items-center gap-2"><span class="text-gold-400">⤴</span> Lessons build on each other — follow the order</span>
+      </div>
     </div>
   </div>
 
@@ -108,6 +122,33 @@ const tiers = skillTree.map((tier) => {
               </div>
             ))}
           </div>
+
+          <div class="mt-6">
+            <button
+              class="worksheet-toggle flex w-full items-center justify-between rounded-xl border border-dashed border-ink-600 bg-ink-850 px-5 py-4 text-left transition hover:border-gold-500/50"
+              aria-expanded="false"
+              aria-controls={`worksheet-${tier.level}`}
+            >
+              <span class="flex items-center gap-3">
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-ink-700 text-sm">✎</span>
+                <span>
+                  <span class="block font-display text-base font-semibold">{tier.worksheet.title}</span>
+                  <span class="block text-xs text-paper-400">{tier.worksheet.intro}</span>
+                </span>
+              </span>
+              <svg class="worksheet-chevron h-4 w-4 text-paper-400 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+            <ol id={`worksheet-${tier.level}`} class="worksheet-body hidden border border-t-0 border-ink-700 rounded-b-xl bg-ink-900 p-5">
+              {tier.worksheet.exercises.map((exercise, ei) => (
+                <li class="flex items-start gap-3 py-2.5 text-sm leading-relaxed text-paper-200">
+                  <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500/15 font-display text-xs font-bold text-gold-400">{ei + 1}</span>
+                  {exercise}
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
       ))}
     </div>
@@ -130,6 +171,7 @@ const tiers = skillTree.map((tier) => {
   const TOTAL = Number(wrap?.dataset.total ?? 0);
   const bar = document.getElementById("tree-progress");
   const label = document.getElementById("tree-label");
+  const doneBanner = document.getElementById("course-done");
 
   function read() {
     try {
@@ -146,6 +188,7 @@ const tiers = skillTree.map((tier) => {
     const pct = TOTAL ? Math.round((done.length / TOTAL) * 100) : 0;
     if (bar) bar.style.width = pct + "%";
     if (label) label.textContent = done.length + " of " + TOTAL + " lessons complete";
+    if (doneBanner) doneBanner.classList.toggle("hidden", done.length < TOTAL);
     document.querySelectorAll(".node-done").forEach((btn) => {
       const idx = Number(btn.dataset.index);
       const isDone = done.includes(idx);
@@ -167,6 +210,17 @@ const tiers = skillTree.map((tier) => {
         /* private mode */
       }
       render();
+    });
+  });
+
+  document.querySelectorAll(".worksheet-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.getAttribute("aria-controls");
+      const body = document.getElementById(id);
+      const open = body?.classList.toggle("hidden") === false;
+      btn.setAttribute("aria-expanded", String(open));
+      const chevron = btn.querySelector(".worksheet-chevron");
+      if (chevron) chevron.style.transform = open ? "rotate(180deg)" : "";
     });
   });
 

@@ -7,11 +7,18 @@ export interface SkillNode {
   unlock: string;
 }
 
+export interface SkillWorksheet {
+  title: string;
+  intro: string;
+  exercises: string[];
+}
+
 export interface SkillTier {
   level: number;
   title: string;
   subtitle: string;
   nodes: SkillNode[];
+  worksheet: SkillWorksheet;
 }
 
 export const skillTree: SkillTier[] = [
@@ -26,6 +33,17 @@ export const skillTree: SkillTier[] = [
       { title: "The effective executive", lecture: "drucker-interview", unlock: "Learn the concentration and time discipline every later tier depends on." },
       { title: "Protect your attention", lecture: "newport-deep-work", unlock: "Deep focus is the raw input for everything that follows." },
     ],
+    worksheet: {
+      title: "Worksheet: Think First",
+      intro: 'Wire your brain before you build anything.',
+      exercises: [
+        'Invert your biggest risk: write the reasons your business could fail in 24 months, then one fix for each.',
+        'Audit your incentives: list every commission or bonus and the behavior it literally pays for. Fix the misaligned ones.',
+        "Time-audit a week: log every 30-minute block, then reclaim the half that's shallow.",
+        'Block the deep: reserve the same 3-4 morning hours for the one hard thing, every day.',
+        "Principle one-liner: after your last mistake, write the one-line rule you'll follow next time.",
+      ],
+    }
   },
   {
     level: 1,
@@ -41,6 +59,17 @@ export const skillTree: SkillTier[] = [
       { title: "Refuse the category's compromise", lecture: "jobs-iphone", unlock: "Don't enter a category to be better at it — make its assumptions obsolete." },
       { title: "Design the 10-star experience", lecture: "chesky-design", unlock: "The journey, not the page, is the product." },
     ],
+    worksheet: {
+      title: "Worksheet: Create",
+      intro: 'Make something new — a monopoly position, not a copy.',
+      exercises: [
+        'The niche test: name the smallest market you could own completely.',
+        "The secret: one belief about your customers that's true but your industry treats as settled.",
+        'The compromise you refuse: which category assumption will your product make obsolete?',
+        'The 10-star audit: score your full customer journey 1-10; fix every step below 6.',
+        "The delete list: write the one feature or offer you'll cut this quarter.",
+      ],
+    }
   },
   {
     level: 2,
@@ -58,6 +87,17 @@ export const skillTree: SkillTier[] = [
       { title: "The third place", lecture: "schultz-in-depth", unlock: "Define the feeling you sell and systematize it as you scale." },
       { title: "The slow organic curve", lecture: "silbermann-pinterest", unlock: "Out-last the hype; the mainstream arrives if the core is loved." },
     ],
+    worksheet: {
+      title: "Worksheet: Enter & Spread",
+      intro: 'Distribution before perfection — recruit believers by hand.',
+      exercises: [
+        "The manual 20: name the 20 customers you'll personally recruit this month.",
+        'The smallest viable audience: the narrowest group that would miss you if you vanished.',
+        'The purple cow: one detail so remarkable a customer would tell a neighbor by name.',
+        'The proof engine: ask 5 happy customers for a review at the peak of their satisfaction.',
+        "The mirror: at the next objection, repeat the customer's last 3 words and label the emotion.",
+      ],
+    }
   },
   {
     level: 3,
@@ -77,6 +117,17 @@ export const skillTree: SkillTier[] = [
       { title: "Zero defects / poka-yoke", lecture: "shingo-zero-quality", unlock: "Make the mistake impossible, not just caught." },
       { title: "The bottleneck", lecture: "goldratt-toc", unlock: "Improve the one constraint, and the whole system improves." },
     ],
+    worksheet: {
+      title: "Worksheet: Operate",
+      intro: 'Perfect the machine — moats, systems, cash flow, and quality.',
+      exercises: [
+        'Document one process: write the one-page version a stranger could run perfectly.',
+        "Find the bottleneck: where does work pile up? Protect that step's time this week.",
+        "Cut a waste: pick one of Ohno's seven wastes and eliminate it this week.",
+        'Poka-yoke one error: the mistake you keep catching — make it physically impossible.',
+        'Cash flow: open a profit account and move 2% of every deposit in before spending.',
+      ],
+    }
   },
   {
     level: 4,
@@ -95,6 +146,17 @@ export const skillTree: SkillTier[] = [
       { title: "Renewal is structural", lecture: "huffington-thrive", unlock: "The leader's recovery is the team's capacity." },
       { title: "Sit at the table", lecture: "sandberg-lean-in", unlock: "Claim ambition and build a workplace where everyone does." },
     ],
+    worksheet: {
+      title: "Worksheet: Lead & Reward",
+      intro: 'Lead the people — purpose, trust, and real motivation.',
+      exercises: [
+        'The assumption audit: which control system are you running on? Test one Theory Y experiment for 30 days.',
+        "The hygiene floor: fix one pay, policy, or condition that's creating quiet dissatisfaction.",
+        'The motivator: give someone a whole outcome to own — their method, their result.',
+        'The trust exercise: one strength and one weakness, around the room, at your next meeting.',
+        'The why: write the one-sentence belief people would follow beyond the paycheck.',
+      ],
+    }
   },
   {
     level: 5,
@@ -110,6 +172,17 @@ export const skillTree: SkillTier[] = [
       { title: "The paradigm shift", lecture: "benioff-cloud", unlock: "When the model moves, name the old one dead and shift early." },
       { title: "Connect the dots backward", lecture: "jobs-stanford", unlock: "Trust the work you chose — it compounds even through the setbacks." },
     ],
+    worksheet: {
+      title: "Worksheet: Endure & Renew",
+      intro: 'Survive the shift — the paranoid plan for the future.',
+      exercises: [
+        'The paranoid list: three 10x forces that could make your model obsolete.',
+        'The kill threshold: pre-commit — if metric X drops Y% for two quarters, the model changes.',
+        'The obstacle: strip the drama from your current crisis into three objective sentences.',
+        'The transition bet: shift one slice of the business to the new paradigm now.',
+        "The reframe: log the setback you'd be glad you faced, in hindsight.",
+      ],
+    }
   },
 ];
 
