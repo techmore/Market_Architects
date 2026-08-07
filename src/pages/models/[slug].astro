@@ -14,7 +14,6 @@ export async function getStaticPaths() {
 
 const { model } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const founderSlugs = ["peter-thiel", "palmer-luckey", "patrick-collison", "steve-jobs", "brian-chesky", "jony-ive", "jeff-bezos", "charlie-munger", "jensen-huang", "paul-graham", "marc-andreessen", "reid-hoffman", "sara-blakely", "yvon-chouinard", "ben-silbermann", "andy-grove", "marc-benioff"];
 const modelFounders = founders.filter((f) => f.models.includes(model.slug));
 const modelLectures = lecturesByModel(model.slug);
 const modelBooks = booksByModel(model.slug);

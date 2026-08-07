@@ -17,12 +17,16 @@ export const models: Model[] = [
     keyFrameworks: [
       "Competition is for Losers",
       "Hard Tech First Principles",
-      "Infrastructure Monopolies",
+      "Disruptive Innovation",
+      "Secrets, Leverage & Wealth",
     ],
     epitomeFounders: [
       "peter-thiel",
+      "clayton-christensen",
+      "naval-ravikant",
+      "adam-grant",
       "palmer-luckey",
-      "patrick-collison"
+      "patrick-collison",
     ],
     color: "gold",
   },
@@ -44,11 +48,7 @@ export const models: Model[] = [
       "Designing End-to-End Control",
       "The Power of Saying No",
     ],
-    epitomeFounders: [
-      "steve-jobs",
-      "brian-chesky",
-      "jony-ive"
-    ],
+    epitomeFounders: ["steve-jobs", "brian-chesky", "jony-ive"],
     color: "gold",
   },
   {
@@ -57,22 +57,28 @@ export const models: Model[] = [
     title: "Operational Moats & Flywheels",
     tagline: "Compounding efficiency and long-term posture",
     philosophy:
-      "Scale economics, relentless long-term thinking, and compound efficiency over short-term profits. The moat is not a single advantage — it is a flywheel of reinforcing loops that gets stronger every year you refuse to take the shortcut.",
+      "Scale economics, relentless long-term thinking, and compound efficiency over short-term profits. The moat is not a single advantage — it is a flywheel of reinforcing loops, an effective strategy, and a brain wired against its own biases.",
     core: [
       "Flywheels and reinforcing loops",
-      "Inversion and multi-disciplinary thinking",
-      "Scale economics",
+      "Strategy: choosing what not to do",
+      "Inversion, decision science & mental models",
       "Long-term over short-term profit",
     ],
     keyFrameworks: [
       "The Day 1 Operating Posture",
-      "Inversion & Multi-disciplinary Thinking",
-      "Platform Moats & Acceleration",
+      "The Flywheel & Good-to-Great",
+      "Five Forces & What Is Strategy",
+      "Thinking, Fast and Slow",
     ],
     epitomeFounders: [
       "jeff-bezos",
+      "jim-collins",
       "charlie-munger",
-      "jensen-huang"
+      "michael-porter",
+      "daniel-kahneman",
+      "peter-drucker",
+      "ray-dalio",
+      "jensen-huang",
     ],
     color: "gold",
   },
@@ -82,22 +88,25 @@ export const models: Model[] = [
     title: "Frictionless Distribution & Scale",
     tagline: "Survival mechanics and network effects",
     philosophy:
-      "Early businesses die from distribution, not vision. Recruit your first customers by hand, compress the distance between product and user, then let network effects and blitzscaling do the heavy lifting.",
+      "Early businesses die from distribution, not vision. Recruit your first customers by hand, find the small audience that becomes a tribe, then let network effects and blitzscaling do the heavy lifting.",
     core: [
       "Do things that don't scale",
-      "Product-market fit primacy",
+      "The tipping point & tribes",
       "Network effects",
       "Blitzscaling discipline",
     ],
     keyFrameworks: [
       "Do Things That Don't Scale",
-      "Product-Market Fit Primacy",
+      "The Tipping Point",
+      "This Is Marketing: The Smallest Viable Audience",
       "Blitzscaling & Network Effects",
     ],
     epitomeFounders: [
       "paul-graham",
+      "seth-godin",
+      "malcolm-gladwell",
       "marc-andreessen",
-      "reid-hoffman"
+      "reid-hoffman",
     ],
     color: "gold",
   },
@@ -119,11 +128,7 @@ export const models: Model[] = [
       "Unconventional Guerilla Marketing",
       "Radical Brand Authenticity",
     ],
-    epitomeFounders: [
-      "sara-blakely",
-      "yvon-chouinard",
-      "ben-silbermann"
-    ],
+    epitomeFounders: ["sara-blakely", "yvon-chouinard", "ben-silbermann"],
     color: "gold",
   },
   {
@@ -136,19 +141,72 @@ export const models: Model[] = [
     core: [
       "Only the paranoid survive",
       "Bet-the-company hardware pivots",
-      "Platform and paradigm transitions",
+      "Grit and stoic resilience",
       "Turning failure into foundation",
     ],
     keyFrameworks: [
       "Only the Paranoid Survive",
-      "Bet-the-Company Hardware Pivots",
+      "Grit: Passion & Perseverance",
+      "The Obstacle Is the Way",
       "SaaS / Cloud Paradigm Shifts",
     ],
     epitomeFounders: [
       "andy-grove",
+      "angela-duckworth",
+      "ryan-holiday",
       "jensen-huang",
-      "marc-benioff"
+      "marc-benioff",
     ],
+    color: "gold",
+  },
+  {
+    slug: "purpose-leadership",
+    index: "07",
+    title: "Purpose & Inspired Leadership",
+    tagline: "Why-first leadership and trust",
+    philosophy:
+      "People don't buy what you do, they buy why you do it. The most durable organizations run on a clear why, real trust, and leaders who lead people before they manage numbers.",
+    core: [
+      "Start with why",
+      "Trust and psychological safety",
+      "Servant and level-5 leadership",
+      "Courage over comfort",
+    ],
+    keyFrameworks: [
+      "The Golden Circle",
+      "Dare to Lead: Brave Work",
+      "The 7 Habits & The 5 Levels",
+      "The Infinite Game",
+    ],
+    epitomeFounders: [
+      "simon-sinek",
+      "brene-brown",
+      "stephen-covey",
+      "john-maxwell",
+      "patrick-lencioni",
+    ],
+    color: "gold",
+  },
+  {
+    slug: "execution-habits",
+    index: "08",
+    title: "Execution, Habits & Deep Focus",
+    tagline: "Discipline, habits, and compounding attention",
+    philosophy:
+      "Strategy is cheap; execution is the moat. Clarity of focus, daily compounding habits, and disciplined attention are what separate the businesses that ship from the ones that stall.",
+    core: [
+      "Compounding 1% daily gains",
+      "Deep work and attention",
+      "Systems over goals",
+      "Discipline as the bridge",
+    ],
+    keyFrameworks: [
+      "The Habit Loop",
+      "Deep Work Protocol",
+      "The 2-Minute Rule",
+      "The Art of Exceptional Living",
+    ],
+    epitomeFounders: ["james-clear", "cal-newport", "jim-rohn"],
     color: "gold",
   },
 ];

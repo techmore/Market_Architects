@@ -7,20 +7,25 @@ translated into actions a small business owner can use this week.
 
 ```
 /src
-  /data          → typed content: models, founders, lectures, books, playbooks
+  /data          → typed content: models, leaders, lectures, books, playbooks, pathways
   /layouts       → Layout.astro (shell, header, footer)
   /components    → cards, VideoEmbed, AnnotatedTimestamps, ApplyThisModel, CrossReferences
-  /pages         → /, /models/*, /founders/*, /playbooks/*, /books/*, /lectures/*
+  /pages         → /, /pathways/*, /models/*, /founders/*, /playbooks/*, /books/*, /lectures/*
 ```
 
-- **/models** — the 6 primary mental models (zero-to-one, product-intuition, operational-moats,
-  distribution, bootstrapping, paradigm-pivots)
-- **/founders** — directory of 17 leaders, each with bio, lectures, and cross-references
+- **/pathways** — the guided "unofficial pathway" layer: two entry doors ("looking for new
+  ideas" / "hear from great founders") routing into 4 curated sequences of lectures, books,
+  and playbooks (The Founder's Journey, The Idea Explorer, The Leadership Lab, The Survival Path)
+- **/models** — the 8 core mental models (zero-to-one, product-intuition, operational-moats,
+  distribution, bootstrapping, paradigm-pivots, purpose-leadership, execution-habits)
+- **/founders** — directory of 37 leaders (17 builders + 20 thinkers such as Sinek, Brown,
+  Covey, Christensen, Kahneman, Dalio, Collins, Porter, Godin, Grant, Clear, Newport) with a
+  Builders/Thinkers filter
 - **/lectures** — embedded YouTube videos with annotated 3–5 min timestamps, an “Apply This
-  Model” small-business translation, and opposing/complementary founder takes
+  Model” small-business translation, and opposing/complementary takes
 - **/playbooks** — problem-based routing (pricing vs incumbents, focus vs diversify, cash-flow
   survival, market shifts)
-- **/books** — book reviews that matter, mapped to mental models
+- **/books** — 28 book reviews that matter, mapped to mental models
 
 ## Local dev
 

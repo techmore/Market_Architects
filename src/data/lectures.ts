@@ -1375,6 +1375,1366 @@ export const lectures: Lecture[] = [
     ],
     keywords: ["salesforce", "cloud", "paradigm shift", "subscription", "marc benioff", "software", "business model"],
   },
+  {
+    slug: "sinek-start-with-why",
+    title: "Start with Why: How Great Leaders Inspire Action",
+    founder: "simon-sinek",
+    model: "purpose-leadership",
+    youtubeId: "u4ZoJKF_VuA",
+    channel: "TEDx Talks",
+    year: 2009,
+    length: "18 min",
+    source: "TEDxPugetSound",
+    featured: true,
+    summary:
+      "The talk that launched a thousand mission statements. Sinek explains the Golden Circle — why, how, what — and shows that people don't buy what you do, they buy why you do it.",
+    coreArgument:
+      "Every organization knows what it does; few can articulate why it exists. The ones that lead — Apple, MLK's movement, the Wright brothers — communicate from the inside out, and their belief becomes a magnet that attracts believers instead of customers. Starting with why is not marketing; it is the operating system.",
+    timestamps: [
+      {
+        time: "02:10",
+        seconds: 130,
+        title: "The Golden Circle",
+        annotation:
+          "Why (purpose), how (process), what (product). Most companies work from the outside in; great leaders work from the inside out.",
+      },
+      {
+        time: "08:40",
+        seconds: 520,
+        title: "People buy what you believe",
+        annotation:
+          "Apple didn't need to compete on specs — the why attracted people who believed the same things, and the what sold itself to them.",
+      },
+      {
+        time: "13:50",
+        seconds: 830,
+        title: "The law of diffusion of innovation",
+        annotation:
+          "The 2.5% innovators and early adopters buy the why. The majority waits until the risk is proven out — which is why clarity of belief, not market size, is what gets you past 15%.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Write your why in one sentence",
+        body: "Not what you sell — why your business exists beyond profit. If a customer repeated that sentence, would they be describing a belief or a brochure? Rewrite until it's the former.",
+      },
+      {
+        title: "Lead your marketing with belief, not features",
+        body: "Reorder your website, pitch, and social presence: lead with why you exist, then how you work, then what you sell. Test whether inquiries change.",
+      },
+      {
+        title: "Hire and keep believers, not just workers",
+        body: "In your next hire and your next customer, ask whether they share the why. Believers self-own their quality; employees without the why need constant management.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "yvon-chouinard",
+        take: "complementary",
+        tone: "complementary",
+        note: "Patagonia is the corporate proof of Sinek's why — the mission (save the planet) came first and the profits followed the believers.",
+      },
+      {
+        founder: "steve-jobs",
+        take: "complementary",
+        tone: "complementary",
+        note: "Jobs IS Sinek's case study: Apple's why-first product strategy beat competitors who had better specs and bigger budgets.",
+      },
+    ],
+    keywords: ["golden circle", "why", "purpose", "leadership", "sinek", "belief", "inspiration"],
+  },
+  {
+    slug: "brown-vulnerability",
+    title: "The Power of Vulnerability",
+    founder: "brene-brown",
+    model: "purpose-leadership",
+    youtubeId: "iCvmsMzlF7o",
+    channel: "TED",
+    year: 2010,
+    length: "20 min",
+    source: "TED Main",
+    featured: true,
+    summary:
+      "The most-watched TED talk of all time. Brené Brown makes the counterintuitive case that vulnerability — showing up without knowing the outcome — is the birthplace of courage, connection, and trust, not weakness.",
+    coreArgument:
+      "We numb vulnerability with certainty, blame, and perfectionism — but you cannot selectively numb emotion: numbing the hard feelings numbs the good ones too. The people who connect deeply (and the teams that perform) are the ones willing to be seen, to risk failure, and to believe they are worthy of love and belonging. That willingness is the foundation of daring leadership.",
+    timestamps: [
+      {
+        time: "03:20",
+        seconds: 200,
+        title: "The six-year detour",
+        annotation:
+          "Brown began studying connection and kept hitting the same word: vulnerability. She calls it 'the last time I checked, the most accurate way to measure courage.'",
+      },
+      {
+        time: "10:30",
+        seconds: 630,
+        title: "The two kinds of people",
+        annotation:
+          "The 'wholehearted' — worthy of love and belonging — versus the numbed. The difference: courage to be imperfect, compassion first toward self, and authenticity.",
+      },
+      {
+        time: "17:10",
+        seconds: 1030,
+        title: "Vulnerability is the birthplace of innovation",
+        annotation:
+          "There is no creativity and no trust without risk — which means there is no innovation without the willingness to look foolish in front of people.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Ask the question you're afraid to ask",
+        body: "Each month, surface one honest question to your team or customers you'd normally avoid ('are we actually good at this?'). The answer, even if painful, is the cheapest consultant you'll ever hire.",
+      },
+      {
+        title: "Model imperfection publicly",
+        body: "Share one real mistake you made this quarter with your team and what it cost. Teams mirror their leader's willingness to be seen — and that honesty is what earns loyalty.",
+      },
+      {
+        title: "Separate vulnerability from oversharing",
+        body: "Vulnerability in business means sharing the risk of a decision, not your diary. Practice 'I don't know the answer to this — help me think it through' instead of a performance of certainty.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "patrick-lencioni",
+        take: "complementary",
+        tone: "complementary",
+        note: "Brown provides the psychology behind Lencioni's first dysfunction — absence of trust. Vulnerability is the literal mechanism by which teams build trust.",
+      },
+      {
+        founder: "andy-grove",
+        take: "opposing",
+        tone: "opposing",
+        note: "Grove's paranoia is a strategy of defensive toughness; Brown would say sustainable resilience comes from connection and courage, not vigilance alone. Both are needed.",
+      },
+    ],
+    keywords: ["vulnerability", "courage", "trust", "shame", "connection", "daring leadership", "brene brown"],
+  },
+  {
+    slug: "covey-be-proactive",
+    title: "The First Habit: Be Proactive",
+    founder: "stephen-covey",
+    model: "purpose-leadership",
+    youtubeId: "qSuq8glge40",
+    channel: "YAPSS Archive",
+    year: 1997,
+    length: "9 min",
+    source: "Stephen Covey lecture (archived)",
+    featured: false,
+    summary:
+      "Covey on the habit that unlocks all the others: the gap between stimulus and response, where you choose your response — and in that choice, your character and your business are built.",
+    coreArgument:
+      "Between what happens to you and how you respond lies a space of choice. Proactive people expand that space and take responsibility for their own behavior; reactive people let feelings, weather, and circumstances run the show. Since every decision your company makes is a chain of these choices, proactivity is not a personality trait — it is the foundation of effective management.",
+    timestamps: [
+      {
+        time: "00:40",
+        seconds: 40,
+        title: "Stimulus and response",
+        annotation:
+          "Covey quotes Viktor Frankl: between stimulus and response there is a space, and in that space is your power to choose your response. Proactivity lives in that space.",
+      },
+      {
+        time: "04:10",
+        seconds: 250,
+        title: "Proactive vs. reactive language",
+        annotation:
+          "'There's nothing I can do' vs. 'Let's look at our alternatives.' Language is the tell of which circle you're living in — the circle of concern or the circle of influence.",
+      },
+      {
+        time: "07:30",
+        seconds: 450,
+        title: "Work on the circle of influence",
+        annotation:
+          "You cannot control the market, the economy, or the customer who won't pay. You can control your response, your process, and your effort. Focus there and the circle grows.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run a language audit for a week",
+        body: "Log every 'I have to', 'there's nothing I can do', or 'they made me' from yourself and your team. Each one is a surrender of the space of choice. Recast them as 'I choose to' and 'here's our option.'",
+      },
+      {
+        title: "List your circle of influence",
+        body: "Write the top ten problems your business faces. Sort them into concern (can't control) vs. influence (can act on). Schedule one action this week from the influence column.",
+      },
+      {
+        title: "Bring one reactive process into your control",
+        body: "Pick the thing you most complain about — pricing pressure, slow suppliers, bad leads. Design one proactive response (a price-value script, a second supplier, a better offer) and ship it.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "james-clear",
+        take: "complementary",
+        tone: "complementary",
+        note: "Covey's space-of-choice is the psychological door that Clear's habit system walks through — proactivity chooses the cue, Clear makes the response automatic.",
+      },
+      {
+        founder: "ray-dalio",
+        take: "complementary",
+        tone: "complementary",
+        note: "Dalio's principle-driven decision making is proactivity at organizational scale: encode the response in advance so the company doesn't react to stimulus on the fly.",
+      },
+    ],
+    keywords: ["covey", "proactivity", "circle of influence", "7 habits", "choice", "responsibility", "effectiveness"],
+  },
+  {
+    slug: "maxwell-5-levels",
+    title: "The 5 Levels of Leadership",
+    founder: "john-maxwell",
+    model: "purpose-leadership",
+    youtubeId: "LjbSFBC6FCg",
+    channel: "C+A Global Leadership Development",
+    year: 2015,
+    length: "44 min",
+    source: "John Maxwell teaching (archived)",
+    featured: false,
+    summary:
+      "Maxwell's ladder of leadership: Position, Permission, Production, People Development, and Pinnacle — and why almost everyone stops at level one, leading by title instead of by trust.",
+    coreArgument:
+      "Leadership is a climb, not a title. Level 1 you lead because people have to; Level 2 because they want to; Level 3 because of what you deliver; Level 4 because you develop them; Level 5 because of who you are and what you represent. Each level takes time, and skipping levels — especially trust — is the most common small-business leadership failure.",
+    timestamps: [
+      {
+        time: "02:30",
+        seconds: 150,
+        title: "Level 1: Position",
+        annotation:
+          "The lowest level — people follow because they have to. Maxwell: 'Position is the lowest level of leadership. The only good thing about it is it's a starting place.'",
+      },
+      {
+        time: "11:40",
+        seconds: 700,
+        title: "Level 2: Permission",
+        annotation:
+          "People follow because they want to. This is where relationships, listening, and trust get built — and where most owners who 'are the boss' never go.",
+      },
+      {
+        time: "24:00",
+        seconds: 1440,
+        title: "Levels 3–5: Production, People, Pinnacle",
+        annotation:
+          "Winning as a team, developing other leaders, and eventually leading on reputation. The ceiling of any business is the level of its leadership.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Diagnose your level honestly",
+        body: "Ask your three best employees: do they follow you because they have to, want to, or because you deliver? Their honest answer tells you which level to build next.",
+      },
+      {
+        title: "Earn permission before pushing production",
+        body: "Before demanding more output this quarter, invest a month in level 2: regular one-on-ones, listening, and removing obstacles. Output follows trust, rarely precedes it.",
+      },
+      {
+        title: "Develop one person to replace a role you hold",
+        body: "Level 4 is when you multiply. Pick the one task you're indispensable for, and spend this quarter transferring it to someone else — that's growth, not loss.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "simon-sinek",
+        take: "complementary",
+        tone: "complementary",
+        note: "Sinek's why-first leadership is the belief system behind Maxwell's Level 2 — you can't earn permission with a title, only with purpose and trust.",
+      },
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Drucker distinguished managing from leading; Maxwell's ladder shows the actual climb from one to the other.",
+      },
+    ],
+    keywords: ["maxwell", "leadership levels", "trust", "influence", "people development", "title", "permission"],
+  },
+  {
+    slug: "lencioni-dysfunctions",
+    title: "The Five Dysfunctions of a Team",
+    founder: "patrick-lencioni",
+    model: "purpose-leadership",
+    youtubeId: "O5EQW026alY",
+    channel: "Leo Gomez",
+    year: 2013,
+    length: "47 min",
+    source: "Patrick Lencioni talk (2013)",
+    featured: false,
+    summary:
+      "Lencioni's diagnostic pyramid: absent trust, fear of conflict, lack of commitment, avoidance of accountability, and inattention to results — the five stacked reasons teams underperform despite individual talent.",
+    coreArgument:
+      "Team health is the ultimate competitive advantage because almost no one has it. The five dysfunctions build on each other: without vulnerability-based trust there is no productive conflict; without conflict there is no real commitment; without commitment there is no accountability; and without accountability the results are ignored. Fix the base — trust — and the rest follows.",
+    timestamps: [
+      {
+        time: "03:00",
+        seconds: 180,
+        title: "Smart teams fail",
+        annotation:
+          "Lencioni's founding observation: teams of intelligent, driven people fail for behavioral reasons, not intellectual ones. The dysfunction is in how they interact, not who they are.",
+      },
+      {
+        time: "15:30",
+        seconds: 930,
+        title: "Trust first, then productive conflict",
+        annotation:
+          "Teams that trust each other can argue passionately about ideas without it being personal. Teams without trust avoid the fight — and every avoided fight is a bad decision shipped.",
+      },
+      {
+        time: "31:00",
+        seconds: 1860,
+        title: "Commitment and accountability",
+        annotation:
+          "Real commitment requires disagreeing in the room, then agreeing to support the decision outside it. Accountability is the courage to call a peer out — which only works if commitment was real.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run the vulnerability exercise",
+        body: "In your next team meeting, go around and have each person share one strength and one weakness relevant to the work. Repeated regularly, this is the fastest trust builder there is.",
+      },
+      {
+        title: "Institutionalize 'disagree and commit'",
+        body: "At the end of any contentious decision, explicitly ask: 'Does everyone commit to this, even those who voted no?' Public commitment converts silent resentment into aligned execution.",
+      },
+      {
+        title: "Make results visible to everyone",
+        body: "Publish your one or two scoreboard metrics weekly, team-wide. Inattention to results dies when the results are literally on the wall.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "brene-brown",
+        take: "complementary",
+        tone: "complementary",
+        note: "Brown supplies the evidence for Lencioni's first dysfunction: teams only take interpersonal risks when their leader models vulnerability.",
+      },
+      {
+        founder: "ray-dalio",
+        take: "complementary",
+        tone: "complementary",
+        note: "Dalio's radical transparency is Lencioni's fix for conflict avoidance taken to an extreme — both insist the argument must happen in the room.",
+      },
+    ],
+    keywords: ["lencioni", "trust", "team", "conflict", "accountability", "commitment", "organizational health"],
+  },
+  {
+    slug: "collins-good-to-great",
+    title: "Good to Great: Choice and Discipline",
+    founder: "jim-collins",
+    model: "operational-moats",
+    youtubeId: "nVfqKEM0cmA",
+    channel: "Nordic Business Forum",
+    year: 2014,
+    length: "47 min",
+    source: "Nordic Business Forum keynote",
+    featured: true,
+    summary:
+      "Jim Collins, live, on why greatness is a choice made with discipline: Level 5 leadership, the hedgehog concept, and the flywheel — and the brutal truth that 'good' is the biggest enemy of 'great'.",
+    coreArgument:
+      "Greatness is not a matter of luck, charisma, or timing — it is a decades-long series of disciplined choices. The companies that leap to greatness have Level 5 leaders (humility + will), a hedgehog concept (what you can be best in the world at), and a flywheel that compounds — and they refuse to chase the breakthrough that shortcuts the process.",
+    timestamps: [
+      {
+        time: "05:10",
+        seconds: 310,
+        title: "Good is the enemy of great",
+        annotation:
+          "The core finding: many companies never become great because they are comfortable being good. Comfort is the quiet killer of ambition.",
+      },
+      {
+        time: "19:40",
+        seconds: 1180,
+        title: "Level 5 leadership",
+        annotation:
+          "The great companies were led by people with 'a paradoxical blend of personal humility and professional will' — ambition for the company, not themselves.",
+      },
+      {
+        time: "33:20",
+        seconds: 2000,
+        title: "The flywheel, not the breakthrough",
+        annotation:
+          "Greatness looks like a sudden breakthrough from outside, but it's actually a flywheel: consistent pushes that finally cross a threshold. No single push — no single hero — does it.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Define your hedgehog in one sentence",
+        body: "The intersection of three circles: what you're passionate about, what you can be best in your market at, and what drives your economic engine. Write the overlap — that's your hedgehog.",
+      },
+      {
+        title: "Look for the flywheel in your own history",
+        body: "List the biggest wins your business has had and find the common loop (referral → great work → more referral). Invest in that loop, and stop spraying effort on one-off pushes.",
+      },
+      {
+        title: "Check your ego at the boardroom door",
+        body: "At your next planning session, ask 'what is best for the company' instead of 'what looks best for me.' Level 5 is a daily posture, and it starts with whom you credit for wins.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Bezos's flywheel and Day 1 posture are the Amazon instance of Collins's research: a Level 5-ish leader, a hedgehog (everything to everyone's convenience), and a compounding loop.",
+      },
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Drucker's question — 'what should we be excellent at?' — is the ancestor of Collins's hedgehog concept. Discipline is where they meet.",
+      },
+    ],
+    keywords: ["jim collins", "good to great", "hedgehog", "level 5", "flywheel", "discipline", "choice"],
+  },
+  {
+    slug: "drucker-interview",
+    title: "Peter Drucker: The Iconic Interview",
+    founder: "peter-drucker",
+    model: "operational-moats",
+    youtubeId: "Fygzm1VYlhQ",
+    channel: "Michele Hunt — DreamMakers",
+    year: 1999,
+    length: "30 min",
+    source: "Michele Hunt interviews Peter Drucker",
+    featured: false,
+    summary:
+      "One of the last extended conversations with the father of modern management, on what a business is for, the discipline of the effective executive, and why 'management is doing things right; leadership is doing the right things.'",
+    coreArgument:
+      "A business has only two essential functions: marketing and innovation; everything else is cost. The effective executive doesn't work harder but concentrates — on the few things that matter, managed by priorities and time. Drucker's entire discipline is a warning against busyness masquerading as achievement.",
+    timestamps: [
+      {
+        time: "02:00",
+        seconds: 120,
+        title: "The purpose of a business",
+        annotation:
+          "Drucker: the purpose of a business is to create a customer. There is only one valid definition of business purpose: to create a customer — everything else is support.",
+      },
+      {
+        time: "11:20",
+        seconds: 680,
+        title: "The effective executive concentrates",
+        annotation:
+          "'If you want to get something done, there are only three things: you have to decide what to do, you have to decide what you are not going to do, and you have to decide who's going to do it.'",
+      },
+      {
+        time: "22:40",
+        seconds: 1360,
+        title: "Managing time before managing anything else",
+        annotation:
+          "Effectiveness begins with recording where time actually goes — most executives discover their calendar is owned by everyone but themselves.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Do the 'create a customer' audit",
+        body: "List everything your business does. Sort each activity into 'creates a customer' (marketing, innovation) vs. 'cost'. Cut or delegate ruthlessly in the cost column — this is Drucker's whole strategy in one exercise.",
+      },
+      {
+        title: "Time-audit for one week",
+        body: "Track every half-hour for seven days. The single most common Drucker discovery: the owner's time is consumed by everything except the two things that matter. Reclaim it.",
+      },
+      {
+        title: "Write your three priorities — and your three refusals",
+        body: "Drucker's 'do, don't do, who does it.' For each of the next three months, name the priority, the explicit refusal, and the owner. Commitment without a refusal is a wish.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "cal-newport",
+        take: "complementary",
+        tone: "complementary",
+        note: "Newport's deep work is the 21st-century implementation of Drucker's concentration: both insist attention is the scarce executive resource.",
+      },
+      {
+        founder: "jim-collins",
+        take: "complementary",
+        tone: "complementary",
+        note: "Collins's hedgehog 'what can we be best at' is the strategic version of Drucker's 'decide what not to do.'",
+      },
+    ],
+    keywords: ["drucker", "management", "effectiveness", "create a customer", "priorities", "time", "executive"],
+  },
+  {
+    slug: "porter-strategy",
+    title: "Keynote on Strategy",
+    founder: "michael-porter",
+    model: "operational-moats",
+    youtubeId: "EvvnoNAUPS0",
+    channel: "arthsastra",
+    year: 2015,
+    length: "40 min",
+    source: "Michael Porter, Harvard Business School keynote",
+    featured: false,
+    summary:
+      "Porter's doctrine in one session: strategy is not being better at the same game — it is choosing to play a different game, defined by trade-offs, a unique value proposition, and the deliberate refusal of competing in the same way.",
+    coreArgument:
+      "Operational effectiveness — doing what everyone does, only better — is necessary but not sufficient; it gets competed away. Strategy is about positioning: choosing a distinct set of activities, making trade-offs, and fitting them together so that the whole is more than the sum. 'The essence of strategy is choosing what not to do.'",
+    timestamps: [
+      {
+        time: "04:10",
+        seconds: 250,
+        title: "Operational effectiveness is not strategy",
+        annotation:
+          "Doing the same things better raises everyone's floor and nobody's ceiling. Strategy only exists where you do something deliberately different.",
+      },
+      {
+        time: "18:40",
+        seconds: 1120,
+        title: "Trade-offs create strategy",
+        annotation:
+          "A strategy is a choice to be great at some things and deliberately bad at others. No trade-offs, no strategy — just a better-but-copyable menu.",
+      },
+      {
+        time: "29:00",
+        seconds: 1740,
+        title: "Fit: the moat is the system",
+        annotation:
+          "The value of a strategy is in the fit between activities — competitors can copy one activity but not the interlocking system. That systemic fit is the real advantage.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Name the game you refuse to play",
+        body: "Porter's test: write what you deliberately will not do (no rush jobs, no discount bidding, no commodity offerings). If the list is empty, you don't have a strategy yet.",
+      },
+      {
+        title: "Design one signature trade-off",
+        body: "Pick the two things your competitors optimize that you will not — and the one thing you'll be the best at in your market because of it. Make that trade-off your positioning.",
+      },
+      {
+        title: "Look for fit, not features",
+        body: "When competitors copy one of your advantages, check whether the copied piece works without the rest of your system. If it doesn't, your moat is the system — protect the system.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-thiel",
+        take: "complementary",
+        tone: "complementary",
+        note: "Porter's 'choose what not to do' and Thiel's 'competition is for losers' are the same insight: advantage comes from differentiation, not imitation.",
+      },
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Amazon's flywheel is Porter's 'fit' made visible — the activities interlock so tightly that copying the price or the shipping alone fails.",
+      },
+    ],
+    keywords: ["porter", "strategy", "five forces", "positioning", "trade-offs", "fit", "operational effectiveness"],
+  },
+  {
+    slug: "kahneman-fast-slow",
+    title: "Thinking, Fast and Slow",
+    founder: "daniel-kahneman",
+    model: "operational-moats",
+    youtubeId: "CjVQJdIrDJ0",
+    channel: "Talks at Google",
+    year: 2011,
+    length: "1h 12m",
+    source: "Talks at Google",
+    featured: false,
+    summary:
+      "The Nobel laureate walks through the two systems of thought — the fast, intuitive System 1 and the slow, deliberate System 2 — and the systematic biases that run your decisions behind your back.",
+    coreArgument:
+      "Your brain is two machines: System 1 makes fast, effortless, mostly-right judgements; System 2 is slow, effortful, and lazy. Because System 2 rarely checks System 1, we are systematically overconfident, loss-averse, and fooled by anchoring, availability, and confirmation. The cure is not willpower — it is designing decision processes that force System 2 to show up.",
+    timestamps: [
+      {
+        time: "06:20",
+        seconds: 380,
+        title: "Two systems, one brain",
+        annotation:
+          "System 1 answers instantly; System 2 checks slowly — if it bothers. Most of life is System 1, which is why most decisions are biases wearing the costume of judgement.",
+      },
+      {
+        time: "24:10",
+        seconds: 1450,
+        title: "Loss aversion",
+        annotation:
+          "Losses hurt roughly twice as much as gains please. This asymmetry quietly distorts pricing, hiring, and every keep-vs-cut decision a business makes.",
+      },
+      {
+        time: "47:30",
+        seconds: 2850,
+        title: "Overconfidence and planning fallacy",
+        annotation:
+          "We systematically underestimate costs and timelines because our mind constructs the best-case story. The fix is reference-class forecasting: ask how long similar projects actually took.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Force System 2 into pricing decisions",
+        body: "Before setting a price, write the anchor, the loss, and the comparison separately on paper — out loud, on a page, not in your head. Naming the bias reduces its power.",
+      },
+      {
+        title: "Use reference-class forecasting",
+        body: "For your next big project, ignore your own estimate and ask: how long did the last three similar projects actually take? Multiply the average by 1.3. That's your plan.",
+      },
+      {
+        title: "Red-team one decision a month",
+        body: "Assign one person to argue the opposite of the plan you're about to approve. A single structured devil's advocate is the cheapest check on overconfidence you can buy.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "charlie-munger",
+        take: "complementary",
+        tone: "complementary",
+        note: "Munger's 'Psychology of Human Misjudgment' is the investor's translation of Kahneman's research. Kahneman is the science; Munger is the checklist.",
+      },
+      {
+        founder: "ray-dalio",
+        take: "complementary",
+        tone: "complementary",
+        note: "Dalio's radical transparency is a corporate System 2 — a culture engineered so biases get surfaced by others instead of trusted as instinct.",
+      },
+    ],
+    keywords: ["kahneman", "system 1", "system 2", "bias", "loss aversion", "overconfidence", "decision making"],
+  },
+  {
+    slug: "dalio-principles",
+    title: "How to Build a Company Where the Best Ideas Win",
+    founder: "ray-dalio",
+    model: "operational-moats",
+    youtubeId: "HXbsVbFAczg",
+    channel: "TED",
+    year: 2017,
+    length: "16 min",
+    source: "TED Main",
+    featured: true,
+    summary:
+      "Dalio on radical transparency and the idea meritocracy: how Bridgewater encoded principles, surfaced disagreement, and let the best argument — not the highest title — decide.",
+    coreArgument:
+      "Great decisions come from radical truth (looking at reality unflinchingly) plus radical transparency (sharing what you really think) — then letting the best idea win regardless of who said it. Pain, reframed as a signal rather than a punishment, becomes the raw material of improvement. The company that institutionalizes this runs like a machine and keeps getting smarter.",
+    timestamps: [
+      {
+        time: "02:40",
+        seconds: 160,
+        title: "Pain + reflection = progress",
+        annotation:
+          "Dalio's core formula: painful mistakes are the best teacher, but only if you reflect on them immediately and encode the lesson as a principle.",
+      },
+      {
+        time: "07:20",
+        seconds: 440,
+        title: "Radical transparency",
+        annotation:
+          "At Bridgewater, meetings are recorded and opinions are rated by credibility, not rank. The idea: hide nothing, because hidden problems fester.",
+      },
+      {
+        time: "12:10",
+        seconds: 730,
+        title: "The idea meritocracy",
+        annotation:
+          "Weight votes by evidence and track record, not title. When the best ideas win, the organization's IQ exceeds any individual in it.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Write the lesson, then move on",
+        body: "After every major mistake or loss, write a one-line principle: 'When X happens, we will do Y.' Next time, follow the principle, not the panic. That document IS your strategy.",
+      },
+      {
+        title: "Weight opinions by credibility, not rank",
+        body: "In your next decision, don't just ask for opinions — ask who has a track record in this specific domain, and weight their input accordingly. Let data beat hierarchy.",
+      },
+      {
+        title: "Institute a monthly pain review",
+        body: "Once a month, bring the team the three worst things that happened and discuss them without blame. What looks like blame is exactly what hides the problems you need to see.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "daniel-kahneman",
+        take: "complementary",
+        tone: "complementary",
+        note: "Dalio's idea meritocracy is the organizational answer to Kahneman's biases: you can't trust one brain, so you build a process that surfaces the second opinion.",
+      },
+      {
+        founder: "patrick-lencioni",
+        take: "complementary",
+        tone: "complementary",
+        note: "Dalio runs Lencioni's healthy team model to an extreme: radical conflict is required, and commitment is earned through debate.",
+      },
+    ],
+    keywords: ["dalio", "principles", "radical transparency", "idea meritocracy", "decision making", "pain + reflection"],
+  },
+  {
+    slug: "christensen-measure-life",
+    title: "How Will You Measure Your Life?",
+    founder: "clayton-christensen",
+    model: "zero-to-one",
+    youtubeId: "tvos4nORf_Y",
+    channel: "TEDx Talks",
+    year: 2012,
+    length: "19 min",
+    source: "TEDxBoston",
+    featured: false,
+    summary:
+      "The Innovator's Dilemma author turns disruption theory on himself: the same principles that explain why great companies fail explain why successful people end up unhappy.",
+    coreArgument:
+      "The tools of business apply to life: a strategy emerges from where you actually invest your resources, not from your stated goals; marginal cost thinking (just this once) is how companies — and marriages — drift into failure; and the 'capabilities' of an organization (and a person) are shaped by what you deliberately choose not to do.",
+    timestamps: [
+      {
+        time: "03:20",
+        seconds: 200,
+        title: "Strategy is where resources go",
+        annotation:
+          "Companies say 'this is our strategy' but their resources tell a different story. Your life works the same way: your calendar and wallet are your real strategy.",
+      },
+      {
+        time: "09:40",
+        seconds: 580,
+        title: "The danger of 'just this once'",
+        annotation:
+          "Marginal-cost thinking — 'it's just one more time' — is how every deviation begins. The full cost of the pattern, not the cost of the single act, is what you never see.",
+      },
+      {
+        time: "14:50",
+        seconds: 890,
+        title: "Culture is what you do when no one's watching",
+        annotation:
+          "Companies develop culture; people develop character — both from repeated behavior under pressure. What you tolerate becomes what you are.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Audit where your time and money actually go",
+        body: "Christensen's method: compare your stated strategy with your actual resource allocation. The gap is your real strategy. Close it deliberately instead of by accident.",
+      },
+      {
+        title: "Kill the 'just this once' clause",
+        body: "Write your version of the rule: for pricing, scope, quality, or personal habits — no exceptions to the standard, ever. Patterns, not moments, build (or sink) businesses.",
+      },
+      {
+        title: "Decide what your company does when unsupervised",
+        body: "Write the three behaviors your team defaults to when you're not watching. Those are your culture — deliberately design them, because they'll exist regardless.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-thiel",
+        take: "complementary",
+        tone: "complementary",
+        note: "Christensen's disruptive process and Thiel's monopoly doctrine are the two halves of the same insight: the winning position is usually the one incumbents dismiss.",
+      },
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Bezos's regret minimization is Christensen's 'measure your life' applied in advance: decide the principle before the temptation appears.",
+      },
+    ],
+    keywords: ["christensen", "disruption", "measure your life", "strategy", "resource allocation", "marginal cost", "purpose"],
+  },
+  {
+    slug: "naval-get-rich",
+    title: "How to Get Rich",
+    founder: "naval-ravikant",
+    model: "zero-to-one",
+    youtubeId: "1-TZqOsVCNM",
+    channel: "Naval",
+    year: 2018,
+    length: "1h 4m",
+    source: "Naval Ravikant's official talk",
+    featured: true,
+    summary:
+      "Naval's deterministic theory of wealth: specific knowledge, leverage, accountability, and compounding — why luck is a skill you can systematize, and why 'seek wealth, not money.'",
+    coreArgument:
+      "Getting rich is not a lottery — it's a predictable equation. Wealth is assets that earn while you sleep, built from specific knowledge you can't be trained for, applied with leverage (code, media, capital, or labor), and held long enough to compound. Play iterated games, add accountability, and productize yourself.",
+    timestamps: [
+      {
+        time: "05:30",
+        seconds: 330,
+        title: "Seek wealth, not money",
+        annotation:
+          "Wealth is assets that earn while you sleep. Money is a transferable claim on wealth. If you optimize for money you'll trade time for it — the opposite of leverage.",
+      },
+      {
+        time: "24:10",
+        seconds: 1450,
+        title: "Specific knowledge is found, not taught",
+        annotation:
+          "It's your genuine curiosity, almost 'in your DNA' — cannot be trained for, cannot be outsourced. For you and only you, and it emerges from obsession.",
+      },
+      {
+        time: "41:00",
+        seconds: 2460,
+        title: "Leverage: code, media, capital, and labor",
+        annotation:
+          "Modern wealth is levered. Code and media are permissionless leverage that scale with zero marginal cost — the great equalizer for the individual founder.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find your specific knowledge",
+        body: "List the things you were obsessed with as a kid and the skills that come easily to you that others struggle with. The intersection — and its rare market use — is your unfair advantage.",
+      },
+      {
+        title: "Productize one asset you own",
+        body: "Pick the one thing you know deeply that others would pay to know (your trade, your niche, your system). Turn it into content, a product, or a service with leverage — once, then reuse.",
+      },
+      {
+        title: "Play the long, compounding game",
+        body: "Choose one relationship or one asset where compounding matters — a returning customer base, a body of work, a reputation — and protect it for a decade instead of a quarter.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-thiel",
+        take: "complementary",
+        tone: "complementary",
+        note: "Naval is Thiel's theory of monopoly applied to the individual: specific knowledge is the personal zero-to-one. Both reject the competition-is-good consensus.",
+      },
+      {
+        founder: "adam-grant",
+        take: "opposing",
+        tone: "opposing",
+        note: "Grant studies how originals generate and sell new ideas; Naval is more willing to say 'don't be original, be specific and leveraged.' A genuine tension.",
+      },
+    ],
+    keywords: ["naval", "wealth", "leverage", "specific knowledge", "compounding", "accountability", "productize yourself"],
+  },
+  {
+    slug: "grant-original-thinkers",
+    title: "The Surprising Habits of Original Thinkers",
+    founder: "adam-grant",
+    model: "zero-to-one",
+    youtubeId: "fxbCHn6gE3U",
+    channel: "TED",
+    year: 2016,
+    length: "15 min",
+    source: "TED Main",
+    featured: false,
+    summary:
+      "Grant on what actually makes originals different: they doubt their own ideas, procrastinate strategically, and generate a mountain of bad work so that a little of it can be great.",
+    coreArgument:
+      "The romantic view — originals are confident, decisive, and get it right immediately — is backwards. Originals feel the same fear as everyone else but act anyway; they procrastinate because incubation breeds originality; and they produce more ideas, most of them bad, precisely because volume is the raw material of the rare great one.",
+    timestamps: [
+      {
+        time: "03:10",
+        seconds: 190,
+        title: "The fear is the same; the action differs",
+        annotation:
+          "Entrepreneurs feel fear like everyone else — they just fear failure to act, not failure itself. Grant reframes the founder's anxiety as a feature.",
+      },
+      {
+        time: "07:40",
+        seconds: 460,
+        title: "Strategic procrastination",
+        annotation:
+          "Grant's famous finding: procrastinators generate more original ideas, because starting early and finishing late leaves room for incubation — 'originals start early but finish late.'",
+      },
+      {
+        time: "12:20",
+        seconds: 740,
+        title: "Volume, not genius",
+        annotation:
+          "The greatest creators produce the most bad work, not the least. You can't judge an idea you haven't generated — and you can't generate one great idea without dozens of duds.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run the 'three bad ideas' exercise",
+        body: "Before every brainstorm, force yourself to write three deliberately bad ideas first. It lowers the fear of being wrong and raises the quality of the good ones that follow.",
+      },
+      {
+        title: "Start early, finish late",
+        body: "For your next project, begin drafting immediately — then put it away for a week and return. The incubation gap is where the originality happens; it's not wasted time.",
+      },
+      {
+        title: "Build a volume habit",
+        body: "Ship a small piece of work weekly — a post, a process, an offer — regardless of quality. Originals win on throughput; the great ones rise out of the noise you already made.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-thiel",
+        take: "complementary",
+        tone: "complementary",
+        note: "Grant's 'originals act despite doubt' is the psychology under Thiel's non-consensus bet — both say the crowd's agreement is a warning, not a green light.",
+      },
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Godin's 'ship the work' and Grant's volume theory agree: the practice is the product, and volume is how taste and originality emerge.",
+      },
+    ],
+    keywords: ["adam grant", "originality", "procrastination", "doubt", "volume", "creativity", "innovation"],
+  },
+  {
+    slug: "godin-ideas-spread",
+    title: "How to Get Your Ideas to Spread",
+    founder: "seth-godin",
+    model: "distribution",
+    youtubeId: "04pdq5IppL8",
+    channel: "Nordic Business Forum",
+    year: 2014,
+    length: "44 min",
+    source: "Nordic Business Forum keynote",
+    featured: true,
+    summary:
+      "Godin's central argument: the industrial age rewarded the average and safe; the connection age rewards the remarkable. Ideas spread when they're worth remarking about — and 'safe' is the most dangerous choice you can make.",
+    coreArgument:
+      "People don't buy averages — they buy the remarkable. The internet removed the cost of distribution, so the only remaining cost is attention, and attention goes to the 'purple cow' — the thing so different it's worth noticing. Find the smallest viable audience and serve it so well it becomes a tribe.",
+    timestamps: [
+      {
+        time: "04:00",
+        seconds: 240,
+        title: "The average is the enemy",
+        annotation:
+          "Godin: the goal is not to be liked by everyone — that's the shortest path to being ignored by everyone. Remarkable means 'worth making a remark about.'",
+      },
+      {
+        time: "18:30",
+        seconds: 1110,
+        title: "The smallest viable audience",
+        annotation:
+          "Instead of mass marketing, find the smallest group that genuinely cares and serve them impossibly well. Niche is not a limitation — it's a position of strength.",
+      },
+      {
+        time: "32:10",
+        seconds: 1930,
+        title: "Ship or die",
+        annotation:
+          "The practice: create, ship, learn, repeat. Taste without shipping is a hobby; shipping is the entire game of ideas.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Make one thing remarkable this quarter",
+        body: "Choose one element of your offer — a guarantee, a process, a delivery detail — and make it the one thing a customer would literally remark about to a friend. Safe is the default; remarkable is a choice.",
+      },
+      {
+        title: "Define your smallest viable audience",
+        body: "Not 'everyone who needs this' but the narrowest group that would miss you if you vanished. Serve that group as if they were your only customers.",
+      },
+      {
+        title: "Ship weekly, learn monthly",
+        body: "Adopt a shipping cadence — a post, a promotion, a prototype — and review what spread every month. Volume of shipped work is the engine; the data is the fuel.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "sara-blakely",
+        take: "complementary",
+        tone: "complementary",
+        note: "Blakely is Godin's purple cow in action — a genuinely remarkable product spread by story and word-of-mouth, with zero conventional marketing.",
+      },
+      {
+        founder: "paul-graham",
+        take: "complementary",
+        tone: "complementary",
+        note: "Graham's 'do things that don't scale' is the manual phase of Godin's tribe-building: hand-serve the smallest viable audience until it tips.",
+      },
+    ],
+    keywords: ["seth godin", "remarkable", "purple cow", "tribe", "smallest viable audience", "shipping", "marketing"],
+  },
+  {
+    slug: "gladwell-spaghetti",
+    title: "Choice, Happiness and Spaghetti Sauce",
+    founder: "malcolm-gladwell",
+    model: "distribution",
+    youtubeId: "iIiAAhUeR6Y",
+    channel: "TED",
+    year: 2004,
+    length: "17 min",
+    source: "TED Main",
+    featured: false,
+    summary:
+      "Gladwell's classic: how Howard Moskowitz discovered that there is no perfect spaghetti sauce — and that the companies which win are the ones that understand customers don't know what they want until they're shown the option.",
+    coreArgument:
+      "The 'one perfect product' assumption is wrong: markets are made of multiple, legitimate customer tastes. The winning move is not to find the average — it's to offer the plurality and segment honestly. Customers don't know what they want; they know whether they like it once they see it. Segmentation isn't a compromise — it's the path to happiness and sales.",
+    timestamps: [
+      {
+        time: "03:30",
+        seconds: 210,
+        title: "The flat-taste tomato sauce",
+        annotation:
+          "Pepsi hired Moskowitz to find 'the perfect' Prego. He found no single perfect sauce — but several distinct clusters of people who loved very different sauces.",
+      },
+      {
+        time: "09:20",
+        seconds: 560,
+        title: "There is no perfect product",
+        annotation:
+          "Plurality is the truth: 'horizontal segmentation' — offering a few different solutions to different customers — consistently beats one best guess.",
+      },
+      {
+        time: "13:40",
+        seconds: 820,
+        title: "Customers don't know what they want",
+        annotation:
+          "The revolutionary idea: people can't articulate the thing they'll love, but they can react honestly to options. That's why testing with real options beats asking.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Segment instead of averaging",
+        body: "List the 2–4 distinct customer types you serve and what each genuinely values differently. If you're building one average offer for all of them, you're serving none of them well.",
+      },
+      {
+        title: "Show, don't ask",
+        body: "Instead of surveying what customers want, show them 2–3 concrete versions of your offer and watch which they actually choose (and pay for). Behavior beats opinion.",
+      },
+      {
+        title: "Kill the 'perfect product' ambition",
+        body: "Gladwell's lesson for pricing and packaging: offer a small ladder of options that map to distinct tastes, and let each segment self-select. It usually raises both sales and satisfaction.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Godin's smallest viable audience is Gladwell's plurality turned into strategy: serve the cluster that loves you, not the average that ignores you.",
+      },
+      {
+        founder: "brian-chesky",
+        take: "complementary",
+        tone: "complementary",
+        note: "Chesky's design-led segmentation and Gladwell's horizontal segmentation both reject one-size-fits-all in favor of delighting a distinct group.",
+      },
+    ],
+    keywords: ["gladwell", "segmentation", "spaghetti sauce", "plurality", "customer taste", "happiness", "choice"],
+  },
+  {
+    slug: "duckworth-grit",
+    title: "Grit: The Power of Passion and Perseverance",
+    founder: "angela-duckworth",
+    model: "paradigm-pivots",
+    youtubeId: "H14bBuluwB8",
+    channel: "TED",
+    year: 2013,
+    length: "6 min",
+    source: "TED Talks Education",
+    featured: false,
+    summary:
+      "The six-minute talk that made 'grit' a business word: talent is everywhere, but the students and founders who win are the ones with sustained passion and perseverance for very long-term goals.",
+    coreArgument:
+      "Grit is more predictive of success than IQ, talent, or luck — and it's a trait you can grow. Grit lives in the interaction between passion (deep, enduring interest) and perseverance (working through setbacks toward long-term goals). The growth-mindset crowd learns that 'effort counts twice': talent × effort = skill, and skill × effort = achievement.",
+    timestamps: [
+      {
+        time: "00:50",
+        seconds: 50,
+        title: "IQ wasn't the differentiator",
+        annotation:
+          "Duckworth's West Point research: the cadets who survived Beast Barracks weren't the brightest or fittest — they were the grittiest.",
+      },
+      {
+        time: "03:20",
+        seconds: 200,
+        title: "Grit = passion + perseverance",
+        annotation:
+          "Not intensity — stamina. Grit is about holding the same top-level goal for years and refusing to treat setbacks as verdicts.",
+      },
+      {
+        time: "05:10",
+        seconds: 310,
+        title: "Grit can be grown",
+        annotation:
+          "The growth mindset is the mechanism: when you believe failure is a state, not an identity, you get back up. That belief is teachable.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run your own grit test",
+        body: "Name the one goal you've held for years through setbacks — and the one you abandoned. The abandoned one tells you where your passion was real. Reallocate energy accordingly.",
+      },
+      {
+        title: "Set 'hard things' for your team",
+        body: "Give every employee one hard, long-term project they can't finish in a quarter. Grit is built by finishing hard things — not by easy wins.",
+      },
+      {
+        title: "Reframe setbacks as data in the review",
+        body: "In your monthly review, ask not just 'what failed' but 'what did we keep working on through the failure?' That persistence is the metric that matters.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "jensen-huang",
+        take: "complementary",
+        tone: "complementary",
+        note: "Huang's 'people with high expectations have low resilience' is the founder version of Duckworth's grit — sustained effort is the survival trait.",
+      },
+      {
+        founder: "james-clear",
+        take: "complementary",
+        tone: "complementary",
+        note: "Clear shows the mechanics of Duckworth's perseverance: systems and habits are how passion survives the days it isn't exciting.",
+      },
+    ],
+    keywords: ["duckworth", "grit", "passion", "perseverance", "growth mindset", "long-term goals", "effort"],
+  },
+  {
+    slug: "holiday-obstacle",
+    title: "The Obstacle Is the Way",
+    founder: "ryan-holiday",
+    model: "paradigm-pivots",
+    youtubeId: "Snmh_IJL8M0",
+    channel: "Daily Stoic",
+    year: 2021,
+    length: "18 min",
+    source: "Ryan Holiday, author summary",
+    featured: false,
+    summary:
+      "Holiday distills 2,000 years of Stoic practice into the founder's resilience toolkit: perception, action, and will — and the uncomfortable claim that the obstacle you're facing IS the way forward.",
+    coreArgument:
+      "You cannot control what happens to you, only your response — and the response is everything. The Stoic discipline runs on three powers: perception (see clearly what the obstacle actually is), action (the only fix is doing the next right thing), and will (endure what you cannot change, and reframe it as training). The obstacle is not in the way; it is the way.",
+    timestamps: [
+      {
+        time: "02:00",
+        seconds: 120,
+        title: "The obstacle is the way",
+        annotation:
+          "The title is the thesis: Marcus Aurelius and the founders who followed turned every crisis into a training exercise. 'What stands in the way becomes the way.'",
+      },
+      {
+        time: "07:40",
+        seconds: 460,
+        title: "Perception: see it straight",
+        annotation:
+          "Before you can act, you must see clearly — strip the drama from the problem. Most business panics are perception failures, not reality failures.",
+      },
+      {
+        time: "13:10",
+        seconds: 790,
+        title: "Action and will",
+        annotation:
+          "Courageous action on what you can change, serene endurance of what you can't, and the wisdom to know the difference — that's the entire curriculum.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Strip the drama from your current crisis",
+        body: "Write the problem you're facing in three objective sentences — what happened, what's at stake, what's next. Most crises shrink to a decision once the adjectives are removed.",
+      },
+      {
+        title: "Take the one ugly action available",
+        body: "When every option is bad, the Stoic move is action on the least-bad option, immediately. Holiday's rule: the fix is rarely thinking — it's the next phone call.",
+      },
+      {
+        title: "Keep a reverse journal",
+        body: "Each week, log the obstacle you'd be glad you faced in hindsight. That reframing is what turns problems from threats into training — the actual competitive edge.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "andy-grove",
+        take: "complementary",
+        tone: "complementary",
+        note: "Grove's paranoia and Holiday's Stoicism are the same survival stance from two traditions: expect the crisis, and treat it as the plan.",
+      },
+      {
+        founder: "angela-duckworth",
+        take: "complementary",
+        tone: "complementary",
+        note: "Holiday supplies the mindset, Duckworth the evidence: the one who treats the obstacle as training is the one who persists long enough to win.",
+      },
+    ],
+    keywords: ["ryan holiday", "stoicism", "obstacle", "perception", "action", "will", "resilience"],
+  },
+  {
+    slug: "clear-atomic-habits",
+    title: "1% Better Every Day: Atomic Habits",
+    founder: "james-clear",
+    model: "execution-habits",
+    youtubeId: "mNeXuCYiE0U",
+    channel: "Kit (ConvertKit)",
+    year: 2017,
+    length: "41 min",
+    source: "ConvertKit Craft + Commerce",
+    featured: true,
+    summary:
+      "Clear's live case for the systems view of change: tiny 1% improvements compound, identity beats outcomes, and the four laws of behavior change make good habits inevitable.",
+    coreArgument:
+      "You don't rise to your goals; you fall to your systems. Habits are the compound interest of self-improvement — 1% better daily compounds to 37x in a year — and they stick when you focus on identity ('I'm the kind of owner who…') and engineer the four laws: make it obvious, attractive, easy, and satisfying.",
+    timestamps: [
+      {
+        time: "03:30",
+        seconds: 210,
+        title: "The math of 1%",
+        annotation:
+          "Improving 1% per day compounds to roughly 37x in a year — and 1% worse compounds down just as fast. Direction beats intensity.",
+      },
+      {
+        time: "14:20",
+        seconds: 860,
+        title: "Identity-based habits",
+        annotation:
+          "Every action is a vote for the person you want to be. Change your identity ('I'm a writer' vs 'I want to write') and the behaviors follow.",
+      },
+      {
+        time: "27:00",
+        seconds: 1620,
+        title: "The four laws of behavior change",
+        annotation:
+          "Make it obvious (cue), attractive (craving), easy (response), satisfying (reward). Engineer the environment so the good habit is the path of least resistance.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Engineer your environment",
+        body: "Pick one habit your business needs (daily prospecting, weekly invoice chase, monthly review). Remove every friction between you and it — and add friction to the habits that waste your time.",
+      },
+      {
+        title: "Habit-stack one revenue habit",
+        body: "Attach the new behavior to an existing one: 'After I drink my coffee, I make one sales call.' Clear's rule: the new habit needs a cue that already exists.",
+      },
+      {
+        title: "Adopt a 1% process mindset",
+        body: "Every month, pick one process and improve it by a tiny margin (a template, a checklist, a faster handoff). Over a year, that's a compounding efficiency no competitor can copy in a quarter.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "stephen-covey",
+        take: "complementary",
+        tone: "complementary",
+        note: "Covey's habits are the character foundation; Clear provides the modern engineering — cue, craving, response, reward — that makes the habits stick.",
+      },
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Bezos's flywheel is organizational compounding; Clear's 1% is individual compounding. Both run on the same law: small loops, run long.",
+      },
+    ],
+    keywords: ["james clear", "atomic habits", "habits", "1%", "compounding", "systems", "identity", "behavior change"],
+  },
+  {
+    slug: "newport-deep-work",
+    title: "How Much Deep Work is Possible Per Day?",
+    founder: "cal-newport",
+    model: "execution-habits",
+    youtubeId: "TVxfxUKQQs0",
+    channel: "Cal Newport",
+    year: 2022,
+    length: "13 min",
+    source: "Deep Questions with Cal Newport",
+    featured: false,
+    summary:
+      "Newport on the real capacity of the focused brain — why three to four hours of true deep work is the sustainable daily maximum, and how to protect that time from the shallow work that wants to eat it.",
+    coreArgument:
+      "Deep work — professional activity performed in a state of distraction-free concentration that pushes your cognitive capabilities — is the scarce resource of the knowledge economy, and it's biologically capped at roughly three to four hours a day. The winning strategy is not to squeeze more hours but to design a schedule where those three to four hours are protected, predictable, and aligned with the one or two things that actually move the business.",
+    timestamps: [
+      {
+        time: "01:20",
+        seconds: 80,
+        title: "The four-hour ceiling",
+        annotation:
+          "Research on deliberate practice and deep work consistently lands around three to four hours of true depth per day. Beyond that, the returns collapse.",
+      },
+      {
+        time: "06:10",
+        seconds: 370,
+        title: "Shallow work is the thief",
+        annotation:
+          "Email, meetings, and slack are not productivity — they're the ambient noise that competes with depth. Newport's rule: schedule the shallow, but never let it schedule the deep.",
+      },
+      {
+        time: "10:30",
+        seconds: 630,
+        title: "Time-block the deep",
+        annotation:
+          "The fix is monastic time-blocking: reserve a daily block (ideally morning) for your one hardest task, and defend it with the rigor of a client meeting.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Claim your four hours",
+        body: "Block the same 3–4 morning hours every workday for the single most important thing in the business. Treat it like a meeting with your highest-paying client — because it is.",
+      },
+      {
+        title: "Run a shallow-work audit",
+        body: "For one week, log every hour spent on email, admin, and meetings. You'll likely find 50%+ of your week is shallow. Cut it to the minimum and defend the rest.",
+      },
+      {
+        title: "Make your output the measure, not your busyness",
+        body: "Switch your weekly review from 'hours worked' to 'deep blocks completed and their outcomes.' What gets measured gets protected — and depth is what compounds.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Drucker told executives to record their time and concentrate; Newport is the modern implementation for a world drowning in notifications.",
+      },
+      {
+        founder: "steve-jobs",
+        take: "complementary",
+        tone: "complementary",
+        note: "Jobs's 'saying no' is focus at the product level; Newport's deep work is focus at the daily level. Same discipline, two scales.",
+      },
+    ],
+    keywords: ["cal newport", "deep work", "focus", "attention", "time blocking", "shallow work", "productivity"],
+  },
+  {
+    slug: "rohn-exceptional-living",
+    title: "The Art of Exceptional Living",
+    founder: "jim-rohn",
+    model: "execution-habits",
+    youtubeId: "L7BHMXcoibc",
+    channel: "David Blake",
+    year: 1993,
+    length: "2h 17m",
+    source: "Jim Rohn seminar (classic)",
+    featured: false,
+    summary:
+      "The classic seminar that trained a generation of entrepreneurs: income rarely exceeds personal development, discipline is the bridge between goals and accomplishment, and your life — and business — are built from your daily habits.",
+    coreArgument:
+      "Everything you are and have is the product of your philosophy and your habits. If you want to change your business, change yourself first: set worthy goals, pay the price daily, and master the fundamentals of discipline, attitude, and continuing education. The wealthy and the wise share one trait — they're committed to becoming more, not just having more.",
+    timestamps: [
+      {
+        time: "12:00",
+        seconds: 720,
+        title: "Income rarely exceeds personal development",
+        annotation:
+          "Rohn's most repeated law: to earn more, become more. The biggest investment you can make is in yourself — books, seminars, mentors.",
+      },
+      {
+        time: "38:20",
+        seconds: 2300,
+        title: "Discipline is the bridge",
+        annotation:
+          "Between your goals and your accomplishments stands discipline — the willingness to do what needs to be done, when it needs doing, whether you feel like it or not.",
+      },
+      {
+        time: "1:24:00",
+        seconds: 5040,
+        title: "Daily habits build your fortune",
+        annotation:
+          "The quality of your life is the quality of your daily habits. Small disciplines repeated daily — reading, planning, exercising — compound into extraordinary results.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Set the personal-development hour",
+        body: "Block 30–60 minutes daily for reading and reflection on your craft. Rohn's law says the business grows as the owner grows — this is the highest-return habit you can install.",
+      },
+      {
+        title: "Build your discipline bridge",
+        body: "Pick the one activity you avoid most that moves the business (prospecting, quoting, collecting). Do it first, daily, for 30 days — before motivation, discipline is the entire plan.",
+      },
+      {
+        title: "Track your daily habits on a scorecard",
+        body: "Write the 5 daily disciplines that matter (revenue calls, follow-ups, deep work, learning, health). Score them nightly. What gets scored gets done — and compounds.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "james-clear",
+        take: "complementary",
+        tone: "complementary",
+        note: "Rohn preached daily discipline decades before Clear systematized it; Clear's four laws are the engineering, Rohn's seminar is the philosophy.",
+      },
+      {
+        founder: "charlie-munger",
+        take: "complementary",
+        tone: "complementary",
+        note: "Munger's 'invest in yourself' and Rohn's 'become more to earn more' are the same compounding principle from two very different fonts of wisdom.",
+      },
+    ],
+    keywords: ["jim rohn", "discipline", "personal development", "habits", "goals", "daily", "exceptional living"],
+  },
 ];
 
 export const getLecture = (slug: string): Lecture => {

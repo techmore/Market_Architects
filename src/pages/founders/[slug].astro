@@ -33,7 +33,15 @@ const founderBooks = books.filter((b) =>
             {initialsOf(founder.name)}
           </span>
           <div>
-            <h1 class="font-display text-4xl font-semibold tracking-tight md:text-5xl">{founder.name}</h1>
+            <div class="flex flex-wrap items-center gap-3">
+              <h1 class="font-display text-4xl font-semibold tracking-tight md:text-5xl">{founder.name}</h1>
+              <span class:list={[
+                "rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider",
+                founder.kind === "thinker" ? "bg-gold-500/15 text-gold-300" : "bg-green-500/15 text-[#8fc79b]",
+              ]}>
+                {founder.kind === "thinker" ? "Thought Leader" : "Epitome Founder"}
+              </span>
+            </div>
             <p class="mt-1 text-base text-paper-300">{founder.company} · {founder.role}</p>
             <p class="text-sm text-paper-500">{founder.years}</p>
           </div>

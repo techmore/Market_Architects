@@ -16,6 +16,7 @@ export interface Founder {
   company: string;
   role: string;
   years: string;
+  kind: "builder" | "thinker";
   models: string[];
   quote: string;
   bio: string;
@@ -87,4 +88,25 @@ export interface PlaybookStep {
   title: string;
   body: string;
   lecture?: string;
+}
+
+export interface PathwayStep {
+  station: string;
+  title: string;
+  narrative: string;
+  lecture?: string;
+  book?: string;
+  playbook?: string;
+  model?: string;
+}
+
+export interface Pathway {
+  slug: string;
+  entry: "ideas" | "founders";
+  title: string;
+  audience: string;
+  intro: string;
+  outcome: string;
+  steps: PathwayStep[];
+  estimated: string;
 }

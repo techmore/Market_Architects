@@ -1,0 +1,98 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { pathways } from "../../data/pathways";
+import { getLecture } from "../../data/lectures";
+
+const base = import.meta.env.BASE_URL;
+
+const entries = [
+  {
+    key: "ideas",
+    kicker: "Route 01",
+    title: "I'm looking for new ideas",
+    body: "A guided tour through all 8 mental models — competition, distribution, moats, focus, purpose. Each stop adds a framework you can steal for your own business.",
+    accent: "from-gold-600 to-gold-400",
+    paths: pathways.filter((p) => p.entry === "ideas"),
+  },
+  {
+    key: "founders",
+    kicker: "Route 02",
+    title: "I want to hear from great founders",
+    body: "The arc every great company actually takes — told by the founders who lived it, from Sara Blakely's conviction to Bezos's flywheel.",
+    accent: "from-[#2f4a38] to-green-500",
+    paths: pathways.filter((p) => p.entry === "founders"),
+  },
+];
+
+function lectureCount(path: (typeof pathways)[number]) {
+  return path.steps.filter((s) => s.lecture).length;
+}
+---
+
+<Layout title="Pathways" description="Guided learning routes through the founder mental models — pick your entry point and walk the path.">
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">Pathways</p>
+      <h1 class="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        Don't graze the buffet. <span class="text-gold-400">Walk a path.</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        The library is a buffet — this is the route. Every pathway is a curated sequence of lectures
+        and books that build on each other, with a narrative tying each stop to the next. Pick the
+        door you're standing in front of and start walking.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    {entries.map((entry) => (
+      <section class="mb-16 last:mb-0">
+        <div class={`flex flex-col gap-6 rounded-2xl border border-ink-700 bg-gradient-to-br p-8 md:flex-row md:items-center ${entry.accent}`}>
+          <div class="flex-1">
+            <p class="text-xs font-bold uppercase tracking-widest text-ink-950/70">{entry.kicker}</p>
+            <h2 class="mt-2 font-display text-3xl font-bold leading-tight text-ink-950">{entry.title}</h2>
+            <p class="mt-3 max-w-xl text-sm leading-relaxed text-ink-950/80">{entry.body}</p>
+          </div>
+          <div class="flex shrink-0 gap-2 md:flex-col">
+            {entry.paths.map((p) => (
+              <a
+                href={`${base}pathways/${p.slug}/`}
+                class="rounded-lg bg-ink-950/85 px-4 py-2.5 text-sm font-semibold text-paper-50 transition hover:bg-ink-950"
+              >
+                {lectureCount(p)} talks · walk →
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          {entry.paths.map((p) => {
+            const firstLecture = p.steps.find((s) => s.lecture);
+            const first = firstLecture ? getLecture(firstLecture.lecture as string) : null;
+            return (
+              <a href={`${base}pathways/${p.slug}/`} class="card card-hover group flex flex-col p-6">
+                <div class="flex items-center justify-between">
+                  <p class="eyebrow">Pathway · {p.steps.length} stops</p>
+                  <span class="text-xs text-paper-500">{p.estimated}</span>
+                </div>
+                <h3 class="mt-3 font-display text-2xl font-semibold leading-tight">{p.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-paper-300 line-clamp-3">{p.intro}</p>
+                <div class="mt-auto flex items-center justify-between pt-5">
+                  <div class="flex items-center gap-2 text-xs text-paper-400">
+                    {first && (
+                      <>
+                        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-ink-700 text-[9px] font-bold text-gold-300">01</span>
+                        Starts with {first.title.split(":")[0]}
+                      </>
+                    )}
+                  </div>
+                  <span class="text-sm font-medium text-gold-400 transition group-hover:translate-x-0.5">Walk this path →</span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))}
+  </div>
+</Layout>
