@@ -44,3 +44,27 @@ Three independent expert passes over the site (129 pages, 37 leaders, 8 models, 
 | Content | Transcripts / audio snippets | ⏳ Next iteration — data slot designed but not populated |
 | Business S2 | Taxonomy imbalance | ⏳ Next iteration |
 | Content | Keyword tag pages | ⏳ Next iteration |
+
+## Resolution log (iteration 2026-08-07b)
+
+| # | Finding | Status |
+|---|---|---|
+| Content | No transcripts (spec item) | ✅ Built — collapsible Transcript component per lecture; 28/60 generated (`public/transcripts/*.json`, fetched on demand); `npm run transcripts` backfills the rest when the YouTube rate-limit lifts |
+| Content | Audio snippets (spec item) | ⏳ Data slot designed; no audio host yet |
+| Content | Keywords not clickable | ✅ Fixed — `/tags/` index (304 ideas) + 300+ tag pages, all keyword chips link |
+| Content | Playbook steps don't link books | ✅ Fixed — 10 book references added across playbooks |
+| Content | Lecture pages don't recommend books | ✅ Fixed — "Companion reads" block (same-model books) on every lecture |
+| Business S3 | Leader expansion continues | ✅ 51 → 57 (Nooyi, Huffington, Barra, Kroc, Walt Disney, Musk) — 32 Builders / 25 Thinkers |
+| Content | More canonical books | ✅ Books 47 → 52 (My Life in Full, Thrive, Grinding It Out, Walt Disney/Gabler, Elon Musk/Isaacson) |
+
+## Current scale (2026-08-07b)
+
+- **530 pages** · 57 leaders · 60 lectures (all embeds verified) · 52 books · 8 playbooks · 4 pathways · 300+ idea tags · 28 transcripts
+- **7,974 internal links verified, zero broken**
+
+## Remaining backlog
+
+- Transcript backfill (28 → 60) when the YouTube rate limit resets (`npm run transcripts`)
+- Audio snippets (need an audio/podcast host per lecture)
+- More leaders (Katrina Lake, Tory Burch, Mary Barra ✓ added; Whitney Wolfe Herd ✓)
+- Taxonomy rebalance (model 03 is largest)

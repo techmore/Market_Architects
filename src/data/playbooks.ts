@@ -13,10 +13,12 @@ export const playbooks: Playbook[] = [
       {
         title: "Stop benchmarking your price",
         body: "If your pricing starts with 'what do they charge', you're already competing. Start instead with what your best customer would pay to have their specific problem solved today.",
+        book: "zero-to-one",
       },
       {
         title: "Find the niche incumbents ignore",
         body: "Incumbents are optimized for the mainstream. Pick the segment they serve badly (a neighborhood, a trade, a use-case) and make it your whole market. Thiel: own the small market first.",
+        book: "competitive-strategy",
         lecture: "thiel-competition",
       },
       {
@@ -42,6 +44,7 @@ export const playbooks: Playbook[] = [
       {
         title: "Audit the core honestly",
         body: "Run the 1-to-10 star audit on your main offer's delivery. If any step scores below 6, you haven't earned diversification — fix the core first.",
+        book: "good-to-great",
         lecture: "chesky-design",
       },
       {
@@ -72,6 +75,7 @@ export const playbooks: Playbook[] = [
       {
         title: "Compress the collection cycle",
         body: "Move to upfront deposits or milestone billing today. Every day of float you remove is a day of runway you add. Incentivize prompt payment and be aggressive on late payers.",
+        book: "profit-first",
         lecture: "graham-dont-scale",
       },
       {
@@ -82,6 +86,7 @@ export const playbooks: Playbook[] = [
       {
         title: "Do the manual revenue work yourself",
         body: "This is the 'do things that don't scale' phase by definition: personally call every past customer, chase every invoice, and deliver work by hand. The founder doing the work is the cheapest growth engine.",
+        book: "shoe-dog",
         lecture: "graham-dont-scale",
       },
       {
@@ -103,6 +108,7 @@ export const playbooks: Playbook[] = [
       {
         title: "Name the inflection point in writing",
         body: "List the 10x forces that could change your market: automation, AI, regulation, a new competitor format, a customer generational shift. One sentence each. This list is your strategy.",
+        book: "only-the-paranoid-survive",
         lecture: "grove-interview",
       },
       {
@@ -133,6 +139,7 @@ export const playbooks: Playbook[] = [
       {
         title: "Prove the work is repeatable first",
         body: "Before hiring, write the role's core process as if a stranger will do it. If you can't document it in a page, you're hiring to paper over a system gap — fix the system first.",
+        book: "e-myth-revisited",
         lecture: "gerber-emyth",
       },
       {
@@ -205,6 +212,7 @@ export const playbooks: Playbook[] = [
       {
         title: "Mirror and label through the objection",
         body: "Voss's negotiation tools: repeat their last words, name the emotion, and use calibrated questions. Objections are information, not rejection — process them like data.",
+        book: "never-split-the-difference",
       },
       {
         title: "Serve the smallest viable audience first",
@@ -230,11 +238,13 @@ export const playbooks: Playbook[] = [
       {
         title: "Make one thing worth remarking about",
         body: "Godin's purple cow: pick one detail — a guarantee, a response time, a process — that a customer would literally tell a neighbor about. Remarkable spreads; average doesn't.",
+        book: "this-is-marketing",
         lecture: "godin-ideas-spread",
       },
       {
         title: "Engineer the proof engine",
         body: "Reviews are social proof — Cialdini's most powerful lever. Ask every happy customer for a review at the peak of their satisfaction, and put the best three on everything you publish.",
+        book: "influence",
         lecture: "silbermann-pinterest",
       },
       {

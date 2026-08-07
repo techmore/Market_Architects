@@ -7,25 +7,29 @@ translated into actions a small business owner can use this week.
 
 ```
 /src
-  /data          → typed content: models, leaders, lectures, books, playbooks, pathways
+  /data          → typed content: models, leaders, lectures, books, playbooks, pathways, tags
   /layouts       → Layout.astro (shell, header, footer)
-  /components    → cards, VideoEmbed, AnnotatedTimestamps, ApplyThisModel, CrossReferences
-  /pages         → /, /pathways/*, /models/*, /founders/*, /playbooks/*, /books/*, /lectures/*
+  /components    → cards, VideoEmbed, Transcript, AnnotatedTimestamps, ApplyThisModel, CrossReferences, Newsletter
+  /pages         → /, /pathways/*, /models/*, /founders/*, /playbooks/*, /books/*, /lectures/*, /tags/*
+/public/transcripts → per-lecture transcript JSON (fetched on demand)
+/scripts        → gen_transcripts.py (npm run transcripts)
 ```
 
 - **/pathways** — the guided "unofficial pathway" layer: two entry doors ("looking for new
   ideas" / "hear from great founders") routing into 4 curated sequences of lectures, books,
-  and playbooks (The Founder's Journey, The Idea Explorer, The Leadership Lab, The Survival Path)
+  and playbooks
 - **/models** — the 8 core mental models (zero-to-one, product-intuition, operational-moats,
   distribution, bootstrapping, paradigm-pivots, purpose-leadership, execution-habits)
-- **/founders** — directory of 37 leaders (17 builders + 20 thinkers such as Sinek, Brown,
-  Covey, Christensen, Kahneman, Dalio, Collins, Porter, Godin, Grant, Clear, Newport) with a
-  Builders/Thinkers filter
-- **/lectures** — embedded YouTube videos with annotated 3–5 min timestamps, an “Apply This
-  Model” small-business translation, and opposing/complementary takes
-- **/playbooks** — problem-based routing (pricing vs incumbents, focus vs diversify, cash-flow
-  survival, market shifts)
-- **/books** — 28 book reviews that matter, mapped to mental models
+- **/founders** — directory of 57 leaders (builders + thinkers) with a Builders/Thinkers filter
+- **/lectures** — 60 embedded YouTube lectures with annotated timestamps, transcripts,
+  "Apply This Model" translations, and opposing/complementary takes
+- **/tags** — 300+ idea tags; click every keyword to see the same idea from many thinkers
+- **/playbooks** — problem-based routing (pricing, focus, cash flow, market shifts, hiring,
+  retention, sales, local discovery)
+- **/books** — 52 book reviews that matter, mapped to mental models
+
+Transcripts are generated with `npm run transcripts` (uses the `youtube-transcript-api`
+package; YouTube rate-limits after ~30 rapid fetches — re-run to backfill).
 
 ## Local dev
 

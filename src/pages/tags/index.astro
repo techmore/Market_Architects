@@ -1,0 +1,39 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { lectures } from "../../data/lectures";
+import { allTags } from "../../data/tags";
+
+const entries = allTags();
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Browse by Idea" description="Explore the Market Architects library by idea — every lecture tagged by the concept it teaches.">
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">Browse by idea</p>
+      <h1 class="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        {entries.length} ideas, {lectures.length} lectures
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        Every lecture is tagged with the ideas it teaches. Click an idea to see the same concept from
+        different founders and thinkers — this is the site's cross-reference engine, exposed.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="flex flex-wrap gap-3">
+      {entries.map((e) => (
+        <a
+          href={`${base}tags/${e.slug}/`}
+          class="group inline-flex items-center gap-2 rounded-full border border-ink-600 px-4 py-2 text-sm font-medium text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300"
+        >
+          {e.keyword}
+          <span class="rounded-full bg-ink-700 px-2 py-0.5 text-[11px] text-paper-400 group-hover:bg-gold-500/15 group-hover:text-gold-300">
+            {e.items.length}
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

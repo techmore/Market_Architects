@@ -89,6 +89,7 @@ export interface PlaybookStep {
   title: string;
   body: string;
   lecture?: string;
+  book?: string;
 }
 
 export interface PathwayStep {

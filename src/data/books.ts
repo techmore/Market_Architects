@@ -894,6 +894,101 @@ export const books: Book[] = [
     whyItMatters:
       "The definitive case study of purpose-led leadership — read it to see culture engineered as deliberately as any product.",
   },
+  {
+    slug: "my-life-in-full",
+    title: "My Life in Full",
+    author: "Indra Nooyi",
+    year: 2021,
+    model: "operational-moats",
+    rating: 4.5,
+    cover: "blue",
+    blurb: "Work, family, and our future — the memoir of the CEO who ran PepsiCo with performance and purpose.",
+    review:
+      "Nooyi's memoir is both a career story and a leadership operating manual. The PepsiCo rebalancing — shifting a global portfolio toward healthier products over a decade, against short-term pressure — is the clearest published case of long-horizon strategy executed patiently. The chapters on decision-making, talent, and 'performance with purpose' are directly transferable to any owner thinking in years instead of quarters.",
+    takeaways: [
+      "A long-horizon portfolio is the moat: take the short-term hit to build the future business.",
+      "Purpose is an operating system, not a slogan — it filters every decision.",
+      "Talent development and honest feedback are the real multipliers.",
+    ],
+    whyItMatters:
+      "The modern executive's answer to 'how do you think long-term when the numbers are due now' — one of the best strategy memoirs available.",
+  },
+  {
+    slug: "thrive",
+    title: "Thrive",
+    author: "Arianna Huffington",
+    year: 2014,
+    model: "purpose-leadership",
+    rating: 3.5,
+    cover: "green",
+    blurb: "The third metric — redefining success and creating a life of well-being, wisdom, and wonder.",
+    review:
+      "Huffington's response to her own burnout, built on research about sleep, stress, and performance. The core argument — that wellbeing is an input to high performance, not a reward for it — is now mainstream, and this is the book that made it so. It's earnest and occasionally repetitive, but the reframe is genuinely important for any founder whose company culture runs on overwork.",
+    takeaways: [
+      "Burnout is not a badge; it's a failure mode of the operating system.",
+      "Sleep and renewal are performance inputs — schedule them like meetings.",
+      "The third metric: beyond money and power, measure wellbeing, wisdom, and wonder.",
+    ],
+    whyItMatters:
+      "The founder's case for why rest is structural, not soft — read it before your burnout becomes the company's culture.",
+  },
+  {
+    slug: "grinding-it-out",
+    title: "Grinding It Out",
+    author: "Ray Kroc",
+    year: 1977,
+    model: "operational-moats",
+    rating: 4,
+    cover: "clay",
+    blurb: "The making of McDonald's — the founder of the franchise machine tells how he built the system.",
+    review:
+      "Kroc's plain-spoken memoir of turning a single California burger stand into the world's largest restaurant chain. The value is operational: the discipline of standardization, the alignment of franchisee incentives, and the fanatical attention to the system over the single store. It's dated and unpolished, which is exactly why it reads as a real operator's account rather than a business-school case.",
+    takeaways: [
+      "The system is the product — standardize until any store runs to the same standard.",
+      "Align incentives so the franchisee wins only when the customer wins.",
+      "Put the customer first and love the work; the money follows the machine.",
+    ],
+    whyItMatters:
+      "The primary source on building an operational moat through systems and franchising — the 'document everything' playbook in its original form.",
+  },
+  {
+    slug: "walt-disney-gabler",
+    title: "Walt Disney: The Triumph of the American Imagination",
+    author: "Neal Gabler",
+    year: 2006,
+    model: "product-intuition",
+    rating: 4.5,
+    cover: "ink",
+    blurb: "The definitive biography of the man who turned imagination into an industry.",
+    review:
+      "The exhaustive, definitive biography of Walt Disney. Gabler shows how Disney built an empire on a single obsession — controlling the experience end to end — and the product intuition that made Snow White, Disneyland, and the theme-park category possible. It's long, and it's the best study of how a brand becomes a moat through craft and vision.",
+    takeaways: [
+      "Product intuition is control: Disney insisted on owning every stage of the experience.",
+      "Craft is the brand — the willingness to do the expensive, careful version is what made Disney feel inevitable.",
+      "Imagination plus organization: the visionary also built the machinery.",
+    ],
+    whyItMatters:
+      "The deepest available study of product intuition as a business model — read it to see how a feeling became a fortress.",
+  },
+  {
+    slug: "elon-musk-isaacson",
+    title: "Elon Musk",
+    author: "Walter Isaacson",
+    year: 2023,
+    model: "zero-to-one",
+    rating: 4,
+    cover: "ink",
+    blurb: "The authorized biography of the first-principles builder who re-founded five industries.",
+    review:
+      "Isaacson shadowed Musk for two years and produced the closest thing to a primary source on his method: the 'algorithm' of questioning and deleting requirements, the tolerance for risk and drama, and the repeated pattern of betting the company on a non-consensus truth. It's a portrait of extreme zero-to-one thinking — including its full human cost. For strategy reading, extract the method; for sanity, take the cautionary tales.",
+    takeaways: [
+      "The Algorithm: question every requirement, delete the part, simplify, optimize, automate — in that order.",
+      "First principles over benchmarking is how you find the non-consensus truth.",
+      "Importance beats probability — take the important bet even when the odds are bad.",
+    ],
+    whyItMatters:
+      "The most complete look at first-principles method in action — and the honest cost of running a company that way.",
+  },
 ];
 
 export const getBook = (slug: string): Book => {

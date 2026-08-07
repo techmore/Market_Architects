@@ -1,0 +1,99 @@
+---
+interface Props {
+  slug: string;
+  videoId: string | null;
+}
+
+const { slug, videoId } = Astro.props;
+---
+
+<div class="card">
+  <button
+    id="transcript-toggle"
+    data-slug={slug}
+    data-video={videoId ?? ""}
+    class="flex w-full items-center justify-between px-5 py-4 text-left transition hover:bg-ink-800"
+    aria-expanded="false"
+    aria-controls="transcript-body"
+  >
+    <span class="flex items-center gap-2">
+      <svg viewBox="0 0 24 24" class="h-5 w-5 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 10h16M4 14h10M4 18h7"/>
+      </svg>
+      <span class="font-display text-lg font-semibold">Read the transcript</span>
+    </span>
+    <svg id="transcript-chevron" viewBox="0 0 24 24" class="h-4 w-4 text-paper-400 transition-transform" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div id="transcript-body" class="hidden border-t border-ink-700">
+    <div id="transcript-status" class="px-5 py-6 text-sm text-paper-400">
+      Loading transcript…
+    </div>
+    <ol id="transcript-list" class="hidden space-y-4 px-5 py-5"></ol>
+  </div>
+</div>
+
+<script>
+  const BASE = document.body?.dataset.base ?? "/Market_Architects/";
+  const toggle = document.getElementById("transcript-toggle");
+  const body = document.getElementById("transcript-body");
+  const status = document.getElementById("transcript-status");
+  const list = document.getElementById("transcript-list");
+  const chevron = document.getElementById("transcript-chevron");
+
+  const slug = toggle?.dataset.slug ?? "";
+  const videoId = toggle?.dataset.video || null;
+
+  function fmt(sec: number): string {
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = Math.floor(sec % 60);
+    const mm = String(m).padStart(2, "0");
+    const ss = String(s).padStart(2, "0");
+    return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
+  }
+
+  async function load() {
+    try {
+      const res = await fetch(`${BASE}transcripts/${slug}.json`);
+      if (!res.ok) throw new Error("missing");
+      const data = await res.json();
+      if (!data.paragraphs || data.paragraphs.length === 0) throw new Error("empty");
+      status?.classList.add("hidden");
+      list?.classList.remove("hidden");
+      data.paragraphs.forEach((p: { t: number; s: string }) => {
+        const li = document.createElement("li");
+        li.className = "flex gap-4";
+        const href = videoId ? `https://www.youtube.com/watch?v=${videoId}&t=${p.t}` : "#";
+        const a = document.createElement("a");
+        a.href = href;
+        a.target = videoId ? "_blank" : "_self";
+        a.rel = videoId ? "noopener noreferrer" : "";
+        a.className = "mt-0.5 w-16 shrink-0 text-right text-xs tabular-nums text-gold-400 hover:text-gold-300";
+        a.textContent = fmt(p.t);
+        const text = document.createElement("p");
+        text.className = "text-sm leading-relaxed text-paper-200";
+        text.textContent = p.s;
+        li.appendChild(a);
+        li.appendChild(text);
+        list?.appendChild(li);
+      });
+    } catch (e) {
+      status.textContent =
+        "Transcript not available yet — it was rate-limited on generation. Try again soon, or watch the lecture directly.";
+    }
+  }
+
+  let loaded = false;
+  toggle?.addEventListener("click", () => {
+    const open = body?.classList.toggle("hidden") === false;
+    toggle?.setAttribute("aria-expanded", String(open));
+    if (chevron) chevron.style.transform = open ? "rotate(180deg)" : "";
+    if (open && !loaded) {
+      loaded = true;
+      load();
+    }
+  });
+</script>

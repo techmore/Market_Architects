@@ -4,10 +4,13 @@ import VideoEmbed from "../../components/VideoEmbed.astro";
 import AnnotatedTimestamps from "../../components/AnnotatedTimestamps.astro";
 import ApplyThisModel from "../../components/ApplyThisModel.astro";
 import CrossReferences from "../../components/CrossReferences.astro";
+import Transcript from "../../components/Transcript.astro";
 import LectureCard from "../../components/LectureCard.astro";
 import { lectures, getLecture } from "../../data/lectures";
 import { getModel } from "../../data/models";
 import { getFounder, initialsOf } from "../../data/founders";
+import { booksByModel } from "../../data/books";
+import BookCard from "../../components/BookCard.astro";
 
 export async function getStaticPaths() {
   return lectures.map((l) => ({ params: { slug: l.slug }, props: { lecture: l } }));
@@ -25,6 +28,7 @@ const related = lectures
 const ogImage = lecture.youtubeId
   ? `https://img.youtube.com/vi/${lecture.youtubeId}/maxresdefault.jpg`
   : undefined;
+const companionBooks = booksByModel(lecture.model).slice(0, 3);
 ---
 
 <Layout title={lecture.title} description={lecture.summary} image={ogImage}>
@@ -69,16 +73,35 @@ const ogImage = lecture.youtubeId
 
         <AnnotatedTimestamps lecture={lecture} />
 
+        <Transcript slug={lecture.slug} videoId={lecture.youtubeId} />
+
         {lecture.crossReferences.length > 0 && <CrossReferences lecture={lecture} />}
 
         <div class="card p-6">
-          <p class="eyebrow">Keywords</p>
+          <p class="eyebrow">Ideas in this lecture</p>
           <div class="mt-3 flex flex-wrap gap-2">
             {lecture.keywords.map((k) => (
-              <span class="rounded-full border border-ink-600 px-2.5 py-0.5 text-xs text-paper-300">{k}</span>
+              <a
+                href={`${base}tags/${k.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "")}/`}
+                class="rounded-full border border-ink-600 px-2.5 py-0.5 text-xs text-paper-300 transition hover:border-gold-500/60 hover:text-gold-300"
+              >
+                {k}
+              </a>
             ))}
           </div>
         </div>
+
+        {companionBooks.length > 0 && (
+          <div>
+            <div class="flex items-center justify-between">
+              <p class="eyebrow">Companion reads</p>
+              <a href={`${base}books/`} class="text-xs font-medium text-gold-400 hover:text-gold-300">All books →</a>
+            </div>
+            <div class="mt-4 grid gap-5 sm:grid-cols-2">
+              {companionBooks.map((b) => <BookCard book={b} />)}
+            </div>
+          </div>
+        )}
       </div>
 
       <aside class="lg:sticky lg:top-20 lg:self-start">

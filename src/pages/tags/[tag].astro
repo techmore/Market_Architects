@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LectureCard from "../../components/LectureCard.astro";
+import { allTags } from "../../data/tags";
+
+export async function getStaticPaths() {
+  return allTags().map((e) => ({
+    params: { tag: e.slug },
+    props: { keyword: e.keyword, items: e.items },
+  }));
+}
+
+const { keyword, items } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={`Idea: ${keyword}`} description={`Lectures in the Market Architects library tagged with "${keyword}".`}>
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <a href={`${base}tags/`} class="text-xs font-medium uppercase tracking-wider text-paper-500 hover:text-gold-300">
+        ← All ideas
+      </a>
+      <p class="eyebrow mt-6">Idea</p>
+      <h1 class="mt-2 font-display text-4xl font-semibold tracking-tight md:text-5xl">{keyword}</h1>
+      <p class="mt-4 text-sm text-paper-400">
+        {items.length} lecture{items.length === 1 ? "" : "s"} tagged with this idea — from {items.length} different perspectives.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {items.map((l) => <LectureCard lecture={l} />)}
+    </div>
+  </div>
+</Layout>

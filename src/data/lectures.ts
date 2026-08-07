@@ -3687,6 +3687,414 @@ export const lectures: Lecture[] = [
     ],
     keywords: ["cialdini", "persuasion", "influence", "reciprocity", "social proof", "scarcity", "marketing", "psychology"],
   },
+  {
+    slug: "nooyi-leadership",
+    title: "Forum on Leadership: Indra Nooyi",
+    founder: "indra-nooyi",
+    model: "operational-moats",
+    youtubeId: "QRehJ3IGmAg",
+    channel: "George W. Bush Presidential Center",
+    year: 2024,
+    length: "50 min",
+    source: "Forum on Leadership 2024",
+    featured: false,
+    summary:
+      "Nooyi on running PepsiCo with a 12-year horizon: the portfolio rebalancing, performance with purpose, and the discipline of doing the right long-term thing before it's fashionable.",
+    coreArgument:
+      "A big company — or a small one — wins by operating on a long horizon. Nooyi rebalanced PepsiCo toward healthier products knowing it would cost short-term sales, because the moat is the portfolio of the future, not the margin of this quarter. Values and performance are not opposites; done right, purpose is the operating system.",
+    timestamps: [
+      {
+        time: "06:40",
+        seconds: 400,
+        title: "Performance with purpose",
+        annotation:
+          "Nooyi's core doctrine: a company must serve a purpose beyond profit or it won't be around to make profit. The purpose becomes the strategic filter.",
+      },
+      {
+        time: "22:10",
+        seconds: 1330,
+        title: "The long-horizon portfolio",
+        annotation:
+          "The rebalancing of PepsiCo's portfolio took years and cost revenue — the moat is what you're building, not what you're harvesting.",
+      },
+      {
+        time: "38:00",
+        seconds: 2280,
+        title: "Leading through the lens of the future",
+        annotation:
+          "Nooyi on the CEO's real job: making decisions today that only pay off when you're no longer in the chair.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Name your portfolio of the future",
+        body: "Write the 2-3 offerings that will matter in 5 years — even if they're small now. Invest in those even when the current cash cow demands attention.",
+      },
+      {
+        title: "Pick your purpose as a filter",
+        body: "Define the one sentence your company serves beyond profit, then route every 'should we do this?' decision through it. Purpose is a strategy tool, not a poster.",
+      },
+      {
+        title: "Make decisions you won't reap",
+        body: "Reserve one decision a quarter that only pays off beyond your tenure — Nooyi's discipline. It's the surest sign of real ownership.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Nooyi's long-horizon portfolio and Bezos's 'long-term thinking is a competitive weapon' are the same doctrine from two very different industries.",
+      },
+      {
+        founder: "jim-collins",
+        take: "complementary",
+        tone: "complementary",
+        note: "Nooyi is Collins's hedgehog and flywheel in practice — a disciplined portfolio pursued for a decade with Level-5 humility-plus-will.",
+      },
+    ],
+    keywords: ["nooyi", "pepsico", "purpose", "long-term", "portfolio", "leadership", "values"],
+  },
+  {
+    slug: "huffington-thrive",
+    title: "Arianna Huffington on Fueling Human Potential",
+    founder: "arianna-huffington",
+    model: "purpose-leadership",
+    youtubeId: "F5qB3MKX_g8",
+    channel: "Gallup",
+    year: 2018,
+    length: "20 min",
+    source: "Gallup interview",
+    featured: false,
+    summary:
+      "Huffington on the burnout epidemic and the reframe that created Thrive Global: wellbeing isn't the reward for performance, it's the input.",
+    coreArgument:
+      "The culture that glorifies burnout is quietly destroying the very capacity it needs. Sleep, renewal, and wellbeing are not soft topics — they're the operating condition of sustainable high performance. The founder who runs on empty builds a company that runs on empty.",
+    timestamps: [
+      {
+        time: "03:10",
+        seconds: 190,
+        title: "The wake-up call",
+        annotation:
+          "Huffington describes collapsing from exhaustion — the moment she realized 'success' built on burnout was a failure, not a triumph.",
+      },
+      {
+        time: "09:40",
+        seconds: 580,
+        title: "Sleep is a performance tool",
+        annotation:
+          "The research reframe: sleep and renewal are inputs to productivity and creativity, not rewards for them. High performers sleep.",
+      },
+      {
+        time: "15:20",
+        seconds: 920,
+        title: "Redefining success",
+        annotation:
+          "The third metric: beyond money and power, wellbeing, wonder, and wisdom. The culture the leader sets is the culture the team runs on.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Audit your 'running on empty' culture",
+        body: "Ask your team honestly: is overwork rewarded or a symptom? If the answer is 'rewarded', you're funding burnout with your own margin.",
+      },
+      {
+        title: "Protect the founder's renewal",
+        body: "Your energy IS the business's capacity. Block the recovery time as deliberately as client work — Huffington's point is that it's not selfish, it's structural.",
+      },
+      {
+        title: "Make rest a visible standard",
+        body: "Model the off-switch. When the leader takes real time off, the team gets permission — and performance follows the culture, not the hours.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "cal-newport",
+        take: "complementary",
+        tone: "complementary",
+        note: "Newport protects the deep-work hours; Huffington protects the recovery after them. Together they're the sustainable attention system.",
+      },
+      {
+        founder: "brene-brown",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both are about the human operating system leaders ignore — Brown on courage and connection, Huffington on wellbeing and renewal.",
+      },
+    ],
+    keywords: ["huffington", "burnout", "wellbeing", "sleep", "performance", "purpose", "renewal"],
+  },
+  {
+    slug: "barra-crisis",
+    title: "GM CEO Mary Barra on Leading Through Crisis",
+    founder: "mary-barra",
+    model: "paradigm-pivots",
+    youtubeId: "_Dm9bIoD89o",
+    channel: "How Leaders Lead with David Novak",
+    year: 2021,
+    length: "30 min",
+    source: "David Novak leadership interview",
+    featured: false,
+    summary:
+      "Barra on the two crises that defined her tenure — the ignition-switch recall and the shift to electric — and the transparency and decisiveness that carried GM through both.",
+    coreArgument:
+      "A leader's reputation is set in the crisis they can't control. Barra's response to the ignition crisis — own it, fix it, change the culture, and keep moving toward the future — is the paradigm-pivot playbook: confront reality, act transparently, and bet the company on the transition before it's comfortable.",
+    timestamps: [
+      {
+        time: "04:20",
+        seconds: 260,
+        title: "Owning the crisis",
+        annotation:
+          "Barra describes the decision to be transparent about the ignition-switch problem even when the easy move was to fight it. Ownership, not deflection.",
+      },
+      {
+        time: "14:10",
+        seconds: 850,
+        title: "Culture change under fire",
+        annotation:
+          "Changing GM's culture while the crisis was live — the zero-defects mindset and the shift from 'how it's always been' to what's right.",
+      },
+      {
+        time: "24:30",
+        seconds: 1470,
+        title: "Betting on the future",
+        annotation:
+          "The EV transition as a bet-the-company move: Barra committing GM's future before the market demanded it.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Own the mistake before you're caught",
+        body: "When something goes wrong, tell the customer first, fix it, and name the process change. Barra's rule: transparency in a crisis is the cheapest insurance you can buy.",
+      },
+      {
+        title: "Use the crisis to change the culture",
+        body: "A crisis is the only time change is actually welcome. Pick the one cultural shift the crisis makes possible and drive it while the moment is open.",
+      },
+      {
+        title: "Pre-commit to the transition",
+        body: "Barra committed GM to EVs publicly before it was profitable. Name your industry's inevitable shift out loud and start allocating to it now.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "andy-grove",
+        take: "complementary",
+        tone: "complementary",
+        note: "Barra is Grove's paranoia in automotive form — confronting the inflection point (EVs) before the market forces the issue.",
+      },
+      {
+        founder: "jensen-huang",
+        take: "complementary",
+        tone: "complementary",
+        note: "Both bet their companies on a paradigm before it was obvious — Barra on electric, Huang on accelerated computing.",
+      },
+    ],
+    keywords: ["barra", "gm", "crisis", "transparency", "culture", "electric vehicles", "paradigm shift"],
+  },
+  {
+    slug: "kroc-1978",
+    title: "Ray Kroc in 1978: The Franchise Machine",
+    founder: "ray-kroc",
+    model: "operational-moats",
+    youtubeId: "gwDWOrdWGYc",
+    channel: "CBS 8 San Diego",
+    year: 1978,
+    length: "8 min",
+    source: "1978 television interview",
+    featured: false,
+    summary:
+      "A rare 1978 interview with the man who systematized the burger — on why the system, not the chef, is what scales.",
+    coreArgument:
+      "McDonald's moat was never the burger — it was the machine: a fully documented, repeatable operating system that any store could run to the same standard. Kroc's genius was treating the franchisee as a partner in a standardized business, not a customer of a recipe.",
+    timestamps: [
+      {
+        time: "00:50",
+        seconds: 50,
+        title: "The system is the product",
+        annotation:
+          "Kroc on why McDonald's was built on systems, not menus — standardization was the whole point, so quality could be identical in store number one and store ten thousand.",
+      },
+      {
+        time: "03:30",
+        seconds: 210,
+        title: "Franchisees as partners",
+        annotation:
+          "Kroc's model: the franchisee wins only when the store wins. The alignment of incentives IS the operational moat.",
+      },
+      {
+        time: "06:10",
+        seconds: 370,
+        title: "Putting the customer first",
+        annotation:
+          "Kroc's business philosophy in one line: love what you do, put the customer first, and the money follows.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Write the 'franchise' version of your business",
+        body: "Gerber's point, made by Kroc decades earlier: document every process as if a stranger will run it. The business that runs on systems can scale; the one that runs on you cannot.",
+      },
+      {
+        title: "Align the incentive, then the effort",
+        body: "If your partners, staff, or subcontractors win only when the customer wins, quality compounds. Design the pay structure to be the moat.",
+      },
+      {
+        title: "Standardize the quality bar",
+        body: "Define the one quality standard that must be identical every single time — Kroc's fries, your finishing detail — and make it non-negotiable.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "michael-gerber",
+        take: "complementary",
+        tone: "complementary",
+        note: "Gerber formalized what Kroc executed: the franchise prototype. Kroc is the proof that systems beat heroics at any scale.",
+      },
+      {
+        founder: "sam-walton",
+        take: "complementary",
+        tone: "complementary",
+        note: "Walton and Kroc built the two great operational machines of the 20th century — standardization and logistics as moats.",
+      },
+    ],
+    keywords: ["kroc", "mcdonalds", "franchise", "systems", "standardization", "operational moat", "alignment"],
+  },
+  {
+    slug: "disney-1963",
+    title: "Walt Disney, 1963: Imagination as Product",
+    founder: "walt-disney",
+    model: "product-intuition",
+    youtubeId: "4nMrLcmBCuI",
+    channel: "onstageDisney",
+    year: 1963,
+    length: "25 min",
+    source: "1963 television interview",
+    featured: false,
+    summary:
+      "Walt Disney on how imagination became an industry — the product intuition of building experiences people feel, not just things they buy.",
+    coreArgument:
+      "Disney's products were feelings, engineered with obsessive craft. He intuited that joy, wonder, and story were the actual goods — and that the way to build them was to control the whole experience end to end, from the drawing board to the ride. Product intuition is not decoration; it's the business.",
+    timestamps: [
+      {
+        time: "02:30",
+        seconds: 150,
+        title: "Imagination as an industry",
+        annotation:
+          "Disney on turning imagination into something people would pay to feel — the category he invented.",
+      },
+      {
+        time: "10:20",
+        seconds: 620,
+        title: "Control the whole experience",
+        annotation:
+          "Why Disneyland had to be built and run end to end — the theme park as product intuition at city scale.",
+      },
+      {
+        time: "18:40",
+        seconds: 1120,
+        title: "Craft over shortcut",
+        annotation:
+          "Disney's obsession with quality in every frame and every attraction — the willingness to do the expensive, careful version.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Define the feeling you sell",
+        body: "What should a customer feel when they use you — calm, confidence, delight? Name it, then design the experience to produce it deliberately.",
+      },
+      {
+        title: "Control the end-to-end experience",
+        body: "The more of the journey you own, the more consistent the feeling. Disney didn't outsource the magic; neither should you.",
+      },
+      {
+        title: "Spend on the felt details",
+        body: "Put your quality budget where the customer feels it first — the greeting, the finish, the follow-up. Craft in the felt layer is the brand.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "steve-jobs",
+        take: "complementary",
+        tone: "complementary",
+        note: "Jobs studied Disney obsessively — both built brands on the feeling the product produces, controlled end to end.",
+      },
+      {
+        founder: "brian-chesky",
+        take: "complementary",
+        tone: "complementary",
+        note: "Chesky's 10-star experience framework is Disney's 'imagineering' translated for the platform age.",
+      },
+    ],
+    keywords: ["walt disney", "imagination", "experience", "craft", "product", "story", "brand"],
+  },
+  {
+    slug: "musk-dealbook",
+    title: "Elon Musk on Trust and the Wild Storm (DealBook 2023)",
+    founder: "elon-musk",
+    model: "zero-to-one",
+    youtubeId: "2BfMuHDfGJI",
+    channel: "New York Times Events",
+    year: 2023,
+    length: "30 min",
+    source: "DealBook Summit 2023",
+    featured: false,
+    summary:
+      "Musk on first principles, advertising, and the storm in his mind — the founder's method of building from physics up and ignoring the consensus.",
+    coreArgument:
+      "First principles is the zero-to-one engine: reduce a problem to its fundamentals and rebuild rather than benchmark. Musk argues that questioning every assumption — including the ones your industry never questions — is how you find the non-consensus truth that becomes a monopoly. The method is uncomfortable and expensive, and it's the reason his companies re-founded their industries.",
+    timestamps: [
+      {
+        time: "04:10",
+        seconds: 250,
+        title: "First principles, not benchmarks",
+        annotation:
+          "Musk's method: strip a problem to its physics and rebuild. Most companies benchmark; great ones re-derive.",
+      },
+      {
+        time: "14:30",
+        seconds: 870,
+        title: "The algorithm of questioning",
+        annotation:
+          "The 'algorithm' Musk runs his companies on: question every requirement, delete the part, simplify, optimize, automate — in that order.",
+      },
+      {
+        time: "24:00",
+        seconds: 1440,
+        title: "Doing it even when the odds are bad",
+        annotation:
+          "On taking the hard bet anyway: when something is important enough, you do it even if the odds are not in your favor.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run the delete-before-optimize pass",
+        body: "For each of your processes, ask in order: does this need to exist? (delete) → simplify → optimize → automate. Most businesses optimize things that shouldn't exist.",
+      },
+      {
+        title: "Re-derive one 'obvious' assumption",
+        body: "Pick one assumption your industry treats as physics (pricing, turnaround, channel) and rebuild the answer from first principles. The gap between re-derived and benchmarked is your opportunity.",
+      },
+      {
+        title: "Take the important bet despite odds",
+        body: "Write the one project that's important but unlikely. Musk's rule: importance beats probability. Protect it from the spreadsheet of 'realistic' odds.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "peter-thiel",
+        take: "complementary",
+        tone: "complementary",
+        note: "Musk is Thiel's non-consensus thesis made flesh — first principles is the method, monopoly is the outcome.",
+      },
+      {
+        founder: "andy-grove",
+        take: "complementary",
+        tone: "complementary",
+        note: "Musk's willingness to bet everything on a new paradigm mirrors Grove's microprocessor call — paranoia plus conviction.",
+      },
+    ],
+    keywords: ["elon musk", "first principles", "the algorithm", "tesla", "spacex", "questioning", "zero to one"],
+  },
 ];
 
 export const getLecture = (slug: string): Lecture => {
