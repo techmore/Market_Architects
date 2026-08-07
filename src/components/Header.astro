@@ -2,12 +2,12 @@
 const base = import.meta.env.BASE_URL;
 const pathname = Astro.url.pathname.replace(/\/$/, "");
 const nav = [
+  { href: `${base}skill-tree/`, label: "Course" },
   { href: `${base}pathways/`, label: "Pathways" },
   { href: `${base}models/`, label: "Models" },
   { href: `${base}founders/`, label: "Leaders" },
   { href: `${base}playbooks/`, label: "Playbooks" },
   { href: `${base}books/`, label: "Books" },
-  { href: `${base}lectures/`, label: "Lectures" },
 ];
 function isActive(href: string): boolean {
   const clean = href.replace(/\/$/, "");
@@ -46,7 +46,7 @@ function isActive(href: string): boolean {
       })}
     </nav>
 
-    <a href={`${base}pathways/`} class="btn-primary hidden sm:inline-flex">Start here</a>
+    <a href={`${base}skill-tree/`} class="btn-primary hidden sm:inline-flex">Start the course</a>
 
     <button id="menu-toggle" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700 text-paper-200 md:hidden" aria-label="Toggle menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -62,7 +62,7 @@ function isActive(href: string): boolean {
           {n.label}
         </a>
       ))}
-      <a href={`${base}pathways/`} class="btn-primary mx-3 mt-2 w-fit">Start here</a>
+      <a href={`${base}skill-tree/`} class="btn-primary mx-3 mt-2 w-fit">Start the course</a>
     </nav>
   </div>
 </header>

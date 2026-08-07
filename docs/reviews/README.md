@@ -74,13 +74,24 @@ Three independent expert passes over the site (129 pages, 37 leaders, 8 models, 
 | Business S5 | Newsletter had no backend | ✅ Newsletter now posts to `PUBLIC_NEWSLETTER_ENDPOINT` (Formspree/Beehiiv/etc.) with a mailto fallback; `.env.example` documents it |
 | — | Stale hero copy | ✅ Hero now reads "63 thinkers / 9 mental models" |
 
-## Current scale (2026-08-07d)
+## Resolution log (iteration 2026-08-07e — the Learning Pathway pass)
 
-- **574 pages** · 63 leaders · 66 lectures (all embeds verified) · 56 books · 9 models · 8 playbooks · 4 pathways · 300+ idea tags · 28 transcripts
-- **8,872 internal links verified, zero broken**
+See [learning-pathway-review.md](./learning-pathway-review.md) for the full curriculum analysis.
+
+| Finding | Status |
+|---|---|
+| No curriculum progression (buffet, not a course) | ✅ **Organic Skill Tree** — `/skill-tree`, a "poor man's MBA": 6 tiers (Think → Create → Enter → Operate → Lead → Endure), 56 lessons with per-lesson completion tracking |
+| Back half of the business lifecycle missing (quality/manufacturing) | ✅ **New model 10 — Quality & Manufacturing Excellence**: Deming (SPC, 14 Points), Ohno (TPS, 7 wastes), Shingo (Zero Quality Control, poka-yoke), Goldratt (Theory of Constraints) + 4 lectures + 4 books |
+| Employee incentives/leadership under-served | ✅ Added McGregor (Theory X/Y), Herzberg (two-factor/KITA), Dan Pink (Drive) to model 07 + 3 lectures + 3 books |
+| Home didn't lead with the course | ✅ Hero CTA → "Start the free course"; course promo banner; "Course" nav item; footer updated |
+
+## Current scale (2026-08-07e)
+
+- **637 pages** · 70 leaders · 73 lectures (all embeds verified) · 63 books · **10 models** · 8 playbooks · 4 pathways · 300+ idea tags · 28 transcripts · **1 skill tree (56 lessons)**
+- **9,963 internal links verified, zero broken**
 
 ## Remaining backlog
 
-- Transcript backfill (28 → 66) when the YouTube rate limit resets (`npm run transcripts`)
+- Transcript backfill (28 → 73) when the YouTube rate limit resets (`npm run transcripts`)
 - Audio snippets (need an audio/podcast host per lecture)
-- More leaders (directory now 63 — strong coverage across founders + thinkers)
+- Per-tier worksheets for the skill tree ("Tier 3: document one process + add a poka-yoke")

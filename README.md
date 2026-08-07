@@ -10,24 +10,26 @@ translated into actions a small business owner can use this week.
   /data          → typed content: models, leaders, lectures, books, playbooks, pathways, tags
   /layouts       → Layout.astro (shell, header, footer)
   /components    → cards, VideoEmbed, Transcript, AnnotatedTimestamps, ApplyThisModel, CrossReferences, Newsletter
-  /pages         → /, /pathways/*, /models/*, /founders/*, /playbooks/*, /books/*, /lectures/*, /tags/*
+  /pages         → /, /skill-tree, /pathways/*, /models/*, /founders/*, /playbooks/*, /books/*, /lectures/*, /tags/*
 /public/transcripts → per-lecture transcript JSON (fetched on demand)
 /scripts        → gen_transcripts.py (npm run transcripts)
 ```
 
+- **/skill-tree** — the "poor man's MBA": a six-tier guided course (Think → Create → Enter →
+  Operate → Lead → Endure), 56 lessons with completion tracking
 - **/pathways** — the guided "unofficial pathway" layer: two entry doors ("looking for new
   ideas" / "hear from great founders") routing into 4 curated sequences of lectures, books,
   and playbooks
 - **/models** — the 9 core mental models (zero-to-one, product-intuition, operational-moats,
   distribution, bootstrapping, paradigm-pivots, purpose-leadership, execution-habits,
-  strategy-decision)
-- **/founders** — directory of 63 leaders (builders + thinkers) with a Builders/Thinkers filter
-- **/lectures** — 66 embedded YouTube lectures with annotated timestamps, transcripts,
+  strategy-decision, quality-manufacturing)
+- **/founders** — directory of 70 leaders (builders + thinkers) with a Builders/Thinkers filter
+- **/lectures** — 73 embedded YouTube lectures with annotated timestamps, transcripts,
   "Apply This Model" translations, and opposing/complementary takes
 - **/tags** — 300+ idea tags; click every keyword to see the same idea from many thinkers
 - **/playbooks** — problem-based routing (pricing, focus, cash flow, market shifts, hiring,
   retention, sales, local discovery)
-- **/books** — 56 book reviews that matter, mapped to mental models
+- **/books** — 63 book reviews that matter, mapped to mental models
 
 Transcripts are generated with `npm run transcripts` (uses the `youtube-transcript-api`
 package; YouTube rate-limits after ~30 rapid fetches — re-run to backfill).

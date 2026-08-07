@@ -239,6 +239,33 @@ export const models: Model[] = [
     ],
     color: "gold",
   },
+  {
+    slug: "quality-manufacturing",
+    index: "10",
+    title: "Quality & Manufacturing Excellence",
+    tagline: "Zero defects, lean systems, perfect process",
+    philosophy:
+      "Once you have customers, the moat moves from the market to the machine. The quality canon — statistical process control, lean and the seven wastes, zero-defect mistake-proofing, and the theory of constraints — is how a business turns good intentions into perfect, repeatable output.",
+    core: [
+      "Statistical process control",
+      "Lean and the seven wastes",
+      "Zero defects and poka-yoke",
+      "The theory of constraints",
+    ],
+    keyFrameworks: [
+      "Deming's 14 Points",
+      "The Toyota Production System",
+      "Zero Quality Control & Poka-Yoke",
+      "The Five Focusing Steps",
+    ],
+    epitomeFounders: [
+      "w-edwards-deming",
+      "taiichi-ohno",
+      "shigeo-shingo",
+      "eliyahu-goldratt",
+    ],
+    color: "gold",
+  },
 ];
 
 export const getModel = (slug: string): Model => {

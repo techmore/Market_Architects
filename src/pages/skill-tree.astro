@@ -1,0 +1,174 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { skillTree, getLectureForNode } from "../data/skilltree";
+import { getFounder, initialsOf } from "../data/founders";
+import { getModel } from "../data/models";
+
+const base = import.meta.env.BASE_URL;
+const totalNodes = skillTree.reduce((n, t) => n + t.nodes.length, 0);
+
+let cursor = 0;
+const tiers = skillTree.map((tier) => {
+  const modelSlugs = [...new Set(tier.nodes.map((n) => getLectureForNode(n).model))].map((mslug) => ({
+    slug: mslug,
+    title: getModel(mslug).title,
+  }));
+  const nodes = tier.nodes.map((node) => {
+    const lecture = getLectureForNode(node);
+    const founder = getFounder(lecture.founder);
+    const model = getModel(lecture.model);
+    const index = cursor++;
+    return { ...node, lecture, founder, model, index };
+  });
+  return { ...tier, modelSlugs, nodes };
+});
+---
+
+<Layout
+  title="The Skill Tree — a Poor Man's MBA"
+  description="A self-guided business course in six tiers — Think, Create, Enter, Operate, Lead, Endure — taught by 63 industry experts."
+>
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">The course</p>
+      <h1 class="mt-3 max-w-3xl font-display text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+        The Skill Tree: a <span class="text-gold-400">poor man's MBA</span>
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-200">
+        {totalNodes} lessons, {skillTree.length} tiers, taught by the people who actually did it. Not a
+        buffet — a progression. Every node unlocks the next: first you think clearly, then you create,
+        then you spread it, then you operate it perfectly, then you lead the people running it, and
+        finally you survive the market shifting under you.
+      </p>
+
+      <div id="tree-progress-wrap" class="mt-6 flex flex-wrap items-center gap-3" data-total={totalNodes}>
+        <div class="h-2 w-44 overflow-hidden rounded-full bg-ink-800">
+          <div id="tree-progress" class="h-full w-0 bg-gold-500 transition-all duration-300"></div>
+        </div>
+        <span id="tree-label" class="text-xs text-paper-400">0 of {totalNodes} lessons complete</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="relative space-y-16">
+      {tiers.map((tier) => (
+        <section id={`tier-${tier.level}`} class="relative">
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold-500 font-display text-xl font-bold text-ink-950">
+              {tier.level}
+            </span>
+            <div>
+              <h2 class="font-display text-3xl font-semibold tracking-tight">{tier.title}</h2>
+              <p class="mt-1 max-w-2xl text-sm leading-relaxed text-paper-400">{tier.subtitle}</p>
+            </div>
+            <div class="ml-auto hidden gap-1.5 md:flex">
+              {tier.modelSlugs.map((m) => (
+                <a href={`${base}models/${m.slug}/`} class="rounded-full border border-ink-600 px-2.5 py-1 text-[11px] text-paper-400 transition hover:border-gold-500/60 hover:text-gold-300">
+                  {m.title}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {tier.level < 5 && (
+            <div class="my-6 flex justify-center">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-gold-500/60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14M5 12l7 7 7-7"></path>
+              </svg>
+            </div>
+          )}
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {tier.nodes.map((node) => (
+              <div class="card flex flex-col p-5">
+                <div class="flex items-start justify-between gap-3">
+                  <div class="flex items-center gap-2">
+                    <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold-500/40 font-display text-xs font-semibold text-gold-400">
+                      {node.index + 1}
+                    </span>
+                    <span class="flex h-7 w-7 items-center justify-center rounded-full bg-ink-700 text-[9px] font-bold text-paper-100" title={node.founder.name}>
+                      {initialsOf(node.founder.name)}
+                    </span>
+                  </div>
+                  <button
+                    class="node-done shrink-0 rounded-full border border-ink-600 px-2.5 py-1 text-[10px] font-semibold text-paper-400 transition hover:border-gold-500/60 hover:text-gold-300"
+                    data-index={node.index}
+                    aria-pressed="false"
+                  >
+                    Mark done
+                  </button>
+                </div>
+                <a href={`${base}lectures/${node.lecture.slug}/`} class="group mt-3 block">
+                  <h3 class="font-display text-lg font-semibold leading-snug transition group-hover:text-gold-300">{node.title}</h3>
+                  <p class="mt-1 text-xs text-paper-500">{node.founder.name} · {node.model.title}</p>
+                </a>
+                <p class="mt-2 text-sm leading-relaxed text-paper-300">{node.unlock}</p>
+                <span class="mt-auto pt-3 text-xs font-medium text-gold-400 opacity-0 transition group-hover:opacity-100">Watch the lesson →</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div class="mt-16 rounded-2xl border border-ink-700 bg-ink-900 p-8 text-center">
+      <p class="eyebrow">Not here to take the course?</p>
+      <h2 class="mt-2 font-display text-2xl font-semibold">Have a problem instead?</h2>
+      <p class="mx-auto mt-2 max-w-md text-sm leading-relaxed text-paper-300">
+        The skill tree is the slow path. The playbooks are the fast path — jump straight to the problem
+        keeping you up tonight.
+      </p>
+      <a href={`${base}playbooks/`} class="btn-primary mt-5">Browse problem playbooks</a>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const wrap = document.getElementById("tree-progress-wrap");
+  const KEY = "ma-progress-tree";
+  const TOTAL = Number(wrap?.dataset.total ?? 0);
+  const bar = document.getElementById("tree-progress");
+  const label = document.getElementById("tree-label");
+
+  function read() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      const arr = raw ? JSON.parse(raw) : [];
+      return Array.isArray(arr) ? arr : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function render() {
+    const done = read().filter((n) => n !== null && n !== undefined);
+    const pct = TOTAL ? Math.round((done.length / TOTAL) * 100) : 0;
+    if (bar) bar.style.width = pct + "%";
+    if (label) label.textContent = done.length + " of " + TOTAL + " lessons complete";
+    document.querySelectorAll(".node-done").forEach((btn) => {
+      const idx = Number(btn.dataset.index);
+      const isDone = done.includes(idx);
+      btn.setAttribute("aria-pressed", String(isDone));
+      btn.textContent = isDone ? "✓ Done" : "Mark done";
+      btn.classList.toggle("border-gold-500/70", isDone);
+      btn.classList.toggle("text-gold-300", isDone);
+    });
+  }
+
+  document.querySelectorAll(".node-done").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const idx = Number(btn.dataset.index);
+      const current = read();
+      const next = current.includes(idx) ? current.filter((n) => n !== idx) : [...current, idx];
+      try {
+        localStorage.setItem(KEY, JSON.stringify(next));
+      } catch (e) {
+        /* private mode */
+      }
+      render();
+    });
+  });
+
+  render();
+</script>

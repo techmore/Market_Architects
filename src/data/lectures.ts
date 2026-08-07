@@ -4503,6 +4503,482 @@ export const lectures: Lecture[] = [
     ],
     keywords: ["wozniak", "apple", "craft", "engineering", "elegance", "maker", "product"],
   },
+  {
+    slug: "deming-quality",
+    title: "W. Edwards Deming — Rare Full-Length Interview (1984)",
+    founder: "w-edwards-deming",
+    model: "quality-manufacturing",
+    youtubeId: "0yGhR1ybmN8",
+    channel: "PQsystems",
+    year: 1984,
+    length: "45 min",
+    source: "February 1984 archival interview",
+    featured: true,
+    summary:
+      "Deming in his own voice on the 14 Points, statistical process control, and why quality is a management problem, not a worker problem.",
+    coreArgument:
+      "Most quality failures are designed in by the system, not caused by the people working in it. Deming's method: measure variation, take the variation out of the process with statistical control, and stop inspecting quality in at the end — because you cannot inspect quality into a product. The manager's job is to improve the system, not to blame the worker.",
+    timestamps: [
+      {
+        time: "06:20",
+        seconds: 380,
+        title: "Quality is a management problem",
+        annotation:
+          "Deming's founding claim: 85%+ of quality problems are the fault of the system, which only management can change. Blaming the worker is a way of not fixing the process.",
+      },
+      {
+        time: "18:40",
+        seconds: 1120,
+        title: "Variation is the enemy",
+        annotation:
+          "Statistical process control: understand the variation in your process, take special causes out, and you get predictable, improvable output.",
+      },
+      {
+        time: "31:10",
+        seconds: 1870,
+        title: "The 14 points",
+        annotation:
+          "Deming walks through the operating system — constant improvement, drive out fear, break down barriers, and 'cease dependence on inspection.'",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find the defect your process designs in",
+        body: "Pick the one recurring customer complaint or error. Trace it to the step in YOUR process that causes it — not the person who made it. Fix the step.",
+      },
+      {
+        title: "Measure variation before you judge",
+        body: "Track the metric for 30 days before reacting. If a bad week is within normal variation, the fix is the system, not a scolding. If it's special, find the special cause.",
+      },
+      {
+        title: "Stop inspecting quality in at the end",
+        body: "Every final-check that catches mistakes is a process failure upstream. Move the check earlier — Deming's rule: inspect the process, not the output.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "shigeo-shingo",
+        take: "complementary",
+        tone: "complementary",
+        note: "Deming diagnosed the disease; Shingo invented the cure — mistake-proof the process so defects can't happen in the first place.",
+      },
+      {
+        founder: "jack-welch",
+        take: "complementary",
+        tone: "complementary",
+        note: "Welch ran Six Sigma — Deming's statistical ideas industrialized. Deming is the theory, Welch's GE the scale.",
+      },
+    ],
+    keywords: ["deming", "quality", "statistical process control", "14 points", "variation", "systems", "management"],
+  },
+  {
+    slug: "ohno-tps",
+    title: "Taiichi Ohno Discusses the Toyota Production System",
+    founder: "taiichi-ohno",
+    model: "quality-manufacturing",
+    youtubeId: "I1jFcsGdY68",
+    channel: "Lean Strategies International",
+    year: 1990,
+    length: "20 min",
+    source: "Archival TPS footage",
+    featured: false,
+    summary:
+      "Ohno on the Toyota Production System: just-in-time, the seven wastes, and why inventory hides the problems you need to see.",
+    coreArgument:
+      "The factory is a system for exposing problems, not hiding them. Ohno's method: produce just-in-time so there's no buffer of inventory to mask defects; treat every 'waste' (overproduction, waiting, defects, motion) as a disease to eliminate; and give any worker the power to stop the line. The system gets better daily because it can't hide.",
+    timestamps: [
+      {
+        time: "03:00",
+        seconds: 180,
+        title: "Just-in-time",
+        annotation:
+          "Ohno on producing only what's needed when it's needed — the opposite of building inventory, which hides problems.",
+      },
+      {
+        time: "09:30",
+        seconds: 570,
+        title: "The seven wastes",
+        annotation:
+          "Overproduction, waiting, transport, over-processing, inventory, motion, and defects — Ohno's checklist of what to hunt daily.",
+      },
+      {
+        time: "15:40",
+        seconds: 940,
+        title: "Stop the line",
+        annotation:
+          "Any worker can stop the line when something's wrong — quality protected at the point of creation, not caught at the end.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Hunt your seven wastes",
+        body: "For one week, log the time your team spends on rework, waiting, over-delivering, and searching. Each is a waste Ohno would eliminate — name it and cut it.",
+      },
+      {
+        title: "Shrink the buffer to expose the problem",
+        body: "If you keep extra inventory, staff, or time 'just in case', you're hiding a defect. Reduce the buffer and the hidden problem surfaces — then fix it.",
+      },
+      {
+        title: "Give the front line the stop button",
+        body: "Empower the person doing the work to flag problems without fear. The team that surfaces problems daily is the team that improves daily.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "w-edwards-deming",
+        take: "complementary",
+        tone: "complementary",
+        note: "Deming gave quality the statistics; Ohno gave it the production system. Together they're the foundation of every lean operation.",
+      },
+      {
+        founder: "ray-kroc",
+        take: "complementary",
+        tone: "complementary",
+        note: "Kroc standardized the burger; Ohno standardized the factory. Both built moats from perfect, repeatable process.",
+      },
+    ],
+    keywords: ["ohno", "toyota production system", "lean", "just-in-time", "seven wastes", "kaizen", "inventory"],
+  },
+  {
+    slug: "shingo-zero-quality",
+    title: "Zero Quality Control: Poka-Yoke in JIT",
+    founder: "shigeo-shingo",
+    model: "quality-manufacturing",
+    youtubeId: "UfZXdGRcvoo",
+    channel: "Lean Strategies International",
+    year: 2000,
+    length: "15 min",
+    source: "Shingo method introduction",
+    featured: false,
+    summary:
+      "Shingo's radical standard: defects should be impossible, not improbable — poka-yoke mistake-proofing at the source, so quality control is zero because the error can't happen.",
+    coreArgument:
+      "Inspection catches defects after they're made; zero quality control prevents them at the moment of creation. Shingo's tools — poka-yoke (mistake-proofing) and source inspection — make the error physically impossible or instantly detected. When defects can't happen, quality costs nothing and the process is truly reliable.",
+    timestamps: [
+      {
+        time: "02:20",
+        seconds: 140,
+        title: "Prevention over detection",
+        annotation:
+          "Shingo's core inversion: stop catching defects, start making them impossible. The goal is zero quality control — not because you check everything, but because you don't have to.",
+      },
+      {
+        time: "07:40",
+        seconds: 460,
+        title: "Poka-yoke in action",
+        annotation:
+          "Mistake-proofing devices that make the wrong action physically impossible — from a jig that won't fit wrong to a form that won't submit incomplete.",
+      },
+      {
+        time: "12:10",
+        seconds: 730,
+        title: "Source inspection",
+        annotation:
+          "Check the causes at the source instead of the results at the end. Find the condition that causes the defect and control that.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find the mistake you keep catching",
+        body: "List the errors your team catches at final review. Each one is a poka-yoke opportunity — pick the most frequent and make it physically impossible to do wrong.",
+      },
+      {
+        title: "Design the fail-safe, not the warning",
+        body: "A warning says 'careful'; a poka-yoke makes the mistake impossible (a checklist that won't sign off, a template that auto-validates). Build the second kind.",
+      },
+      {
+        title: "Move the check to the source",
+        body: "Instead of reviewing the output, control the input condition that causes the error. Fix the cause; the effect disappears.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "w-edwards-deming",
+        take: "complementary",
+        tone: "complementary",
+        note: "Deming said variation is the enemy; Shingo showed how to eliminate it — make the defect structurally impossible.",
+      },
+      {
+        founder: "michael-gerber",
+        take: "complementary",
+        tone: "complementary",
+        note: "Gerber documents the system; Shingo mistake-proofs it. Together they make a business that runs without you, without errors.",
+      },
+    ],
+    keywords: ["shingo", "zero quality control", "poka-yoke", "mistake-proofing", "source inspection", "defects"],
+  },
+  {
+    slug: "goldratt-toc",
+    title: "Eli Goldratt on the Theory of Constraints",
+    founder: "eliyahu-goldratt",
+    model: "quality-manufacturing",
+    youtubeId: "W18n8m97uuk",
+    channel: "TOCICO",
+    year: 2010,
+    length: "20 min",
+    source: "TOCICO interview",
+    featured: false,
+    summary:
+      "Goldratt on the one idea that changed management: every system is limited by a single constraint, and you improve the whole by focusing on the bottleneck — not everywhere at once.",
+    coreArgument:
+      "Improving everything at once improves nothing — the system's output is capped by its one constraint, the bottleneck. Goldratt's five focusing steps: identify the constraint, exploit it, subordinate everything to it, elevate it, then repeat. Most 'improvement' is effort spent on non-bottlenecks, which adds capacity the system can't use.",
+    timestamps: [
+      {
+        time: "03:30",
+        seconds: 210,
+        title: "The chain and its weakest link",
+        annotation:
+          "Goldratt's framing: a chain's strength is its weakest link. Improving any other link doesn't make the chain stronger.",
+      },
+      {
+        time: "10:20",
+        seconds: 620,
+        title: "The five focusing steps",
+        annotation:
+          "Identify the constraint, exploit it, subordinate everything to it, elevate it, and repeat — the discipline of bottleneck-focused improvement.",
+      },
+      {
+        time: "16:10",
+        seconds: 970,
+        title: "An hour at the bottleneck is an hour for the whole system",
+        annotation:
+          "Why time lost at the constraint is the only time that truly matters — and why every other improvement is subordinated to protecting it.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find your bottleneck",
+        body: "Where does work pile up? That's your constraint. Goldratt's rule: improving anything else adds capacity your system can't use — improve the bottleneck.",
+      },
+      {
+        title: "Protect the bottleneck's time",
+        body: "Whatever the constraint is (a person, a machine, a process), its time is the whole system's time. Feed it perfectly and never let it wait.",
+      },
+      {
+        title: "Run the five steps quarterly",
+        body: "Identify → exploit → subordinate → elevate → repeat. A quarterly bottleneck review is the highest-ROI planning hour you'll schedule.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "taiichi-ohno",
+        take: "complementary",
+        tone: "complementary",
+        note: "Ohno cuts waste everywhere; Goldratt focuses only where it matters. Lean and TOC are two lenses on the same machine.",
+      },
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Drucker said concentrate on the few things that matter; Goldratt gives the exact method — find the constraint and protect it.",
+      },
+    ],
+    keywords: ["goldratt", "theory of constraints", "bottleneck", "the goal", "focusing steps", "throughput"],
+  },
+  {
+    slug: "mcgregor-theory-y",
+    title: "Douglas McGregor: Theory X and Theory Y",
+    founder: "douglas-mcgregor",
+    model: "purpose-leadership",
+    youtubeId: "CXAzZRnJo2o",
+    channel: "Organizational Communication Channel",
+    year: 2010,
+    length: "15 min",
+    source: "McGregor's The Human Side of Enterprise (explainer)",
+    featured: false,
+    summary:
+      "The two sets of assumptions every manager holds about their people — and why the Theory X manager creates the very behavior they fear.",
+    coreArgument:
+      "Management is a self-fulfilling prophecy. Theory X assumes people are lazy, need control, and avoid responsibility — and the manager who acts on it builds a culture of compliance and evasion. Theory Y assumes people are capable, want to do good work, and will take responsibility when trusted — and that manager gets engagement. The assumption, not the people, is the variable.",
+    timestamps: [
+      {
+        time: "02:10",
+        seconds: 130,
+        title: "Every manager runs on assumptions",
+        annotation:
+          "McGregor's premise: you can't manage without a theory of people, and your theory shapes everything you do.",
+      },
+      {
+        time: "07:30",
+        seconds: 450,
+        title: "Theory X: control and coercion",
+        annotation:
+          "The manager who assumes workers are lazy builds the systems — supervision, rules, carrots and sticks — that produce compliance and apathy.",
+      },
+      {
+        time: "11:40",
+        seconds: 700,
+        title: "Theory Y: trust and responsibility",
+        annotation:
+          "The manager who assumes people are capable designs for autonomy, responsibility, and meaning — and gets the engagement the X manager never sees.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Diagnose your default assumption",
+        body: "Look at your rules, check-ins, and reporting. If they exist to catch people slacking, you're running Theory X — and it's producing the behavior you fear.",
+      },
+      {
+        title: "Test one Theory Y experiment",
+        body: "Give one employee a real outcome with real autonomy for 30 days. McGregor's bet: trust releases responsibility the control never would.",
+      },
+      {
+        title: "Change the assumption, then the system",
+        body: "Replace a control mechanism (time tracking, approvals) with a trust mechanism (ownership, accountability to outcomes). The culture follows the assumption.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "frederick-herzberg",
+        take: "complementary",
+        tone: "complementary",
+        note: "McGregor explains the manager's assumptions; Herzberg explains what actually motivates. Read them as one theory.",
+      },
+      {
+        founder: "dan-pink",
+        take: "complementary",
+        tone: "complementary",
+        note: "Pink's autonomy-mastery-purpose is the modern evidence base for McGregor's Theory Y — trust is now scientifically justified.",
+      },
+    ],
+    keywords: ["mcgregor", "theory x", "theory y", "management assumptions", "autonomy", "trust", "motivation"],
+  },
+  {
+    slug: "herzberg-kita",
+    title: "Herzberg's KITA: Jumping for the Jelly Beans",
+    founder: "frederick-herzberg",
+    model: "purpose-leadership",
+    youtubeId: "o87s-2YtG4Y",
+    channel: "gec118",
+    year: 1968,
+    length: "10 min",
+    source: "Classic Herzberg training film (Part 1)",
+    featured: false,
+    summary:
+      "The classic Herzberg film: why 'KITA' — the kick in the pants — produces movement, not motivation, and the difference between hygiene factors and real motivators.",
+    coreArgument:
+      "You can't motivate by pushing — KITA (negative or positive 'kick in the pants') produces movement while the pressure is on, and stops the moment it's off. The only sustainable motivation is intrinsic: the work itself. Hygiene factors (pay, conditions, policy) prevent dissatisfaction but can never create satisfaction — that comes only from achievement, recognition, and growth in the job.",
+    timestamps: [
+      {
+        time: "01:10",
+        seconds: 70,
+        title: "What KITA really is",
+        annotation:
+          "Herzberg's blunt reframe of 'motivating' employees: bonuses, perks, and threats are a kick in the pants — they produce movement, not motivation.",
+      },
+      {
+        time: "05:20",
+        seconds: 320,
+        title: "Hygiene vs motivators",
+        annotation:
+          "Pay and conditions prevent dissatisfaction but can't create it. Only the work itself — achievement, recognition, growth — truly motivates.",
+      },
+      {
+        time: "08:00",
+        seconds: 480,
+        title: "Give them a good job to do",
+        annotation:
+          "The conclusion: enrich the job. The person doing interesting, meaningful work needs no kick.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Audit your hygiene floor",
+        body: "Is pay, policy, or conditions creating quiet dissatisfaction? Hygiene never motivates, but its absence demotivates everything — fix the floor first.",
+      },
+      {
+        title: "Stop buying motivation",
+        body: "Bonuses and perks are movement, not motivation — they stop when the reward stops. If your team only works for the carrot, the job isn't the motivator.",
+      },
+      {
+        title: "Enrich the job",
+        body: "Herzberg's prescription: give people achievement, recognition, and growth in the work itself. The 'good job' is the retention tool.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "dan-pink",
+        take: "complementary",
+        tone: "complementary",
+        note: "Herzberg invented the argument; Pink updated the science. The motivators (achievement, growth) ARE Pink's mastery and purpose.",
+      },
+      {
+        founder: "douglas-mcgregor",
+        take: "complementary",
+        tone: "complementary",
+        note: "Herzberg shows what motivates; McGregor explains why X-managers never see it. The job design and the assumption are the same fight.",
+      },
+    ],
+    keywords: ["herzberg", "two-factor theory", "kita", "hygiene factors", "motivators", "job enrichment", "intrinsic motivation"],
+  },
+  {
+    slug: "pink-motivation",
+    title: "The Puzzle of Motivation (Dan Pink, TED)",
+    founder: "dan-pink",
+    model: "purpose-leadership",
+    youtubeId: "rrkrvAUbU9Y",
+    channel: "TED",
+    year: 2009,
+    length: "18 min",
+    source: "TED Main",
+    featured: true,
+    summary:
+      "Pink on the science that upends carrot-and-stick management: for creative, knowledge work, autonomy, mastery, and purpose beat rewards every time.",
+    coreArgument:
+      "For routine tasks, rewards and punishments work. For the modern work that requires creativity and judgment, they backfire — narrowing focus and killing the intrinsic drive. The science points to three intrinsic motivators: autonomy (control over the work), mastery (getting better at it), and purpose (working toward something bigger). Pink's coda: 'Greatness and nearsightedness are incompatible.'",
+    timestamps: [
+      {
+        time: "03:20",
+        seconds: 200,
+        title: "The candle problem",
+        annotation:
+          "The famous experiment: rewards made participants SLOWER on the creative task — the foundation of Pink's case against carrots and sticks.",
+      },
+      {
+        time: "09:40",
+        seconds: 580,
+        title: "Autonomy, mastery, purpose",
+        annotation:
+          "The three drivers of intrinsic motivation — and the ones that pay, perks, and punishments can never buy.",
+      },
+      {
+        time: "14:50",
+        seconds: 890,
+        title: "Purpose as the operating system",
+        annotation:
+          "The strongest driver: working toward something larger than yourself. Purpose is what makes mastery and autonomy worth having.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Audit what you reward",
+        body: "If your incentives reward hours or output, you're paying for compliance. Pink's rule: for judgment work, rewards narrow thinking — design for autonomy instead.",
+      },
+      {
+        title: "Give one real autonomy slice",
+        body: "Let one employee own a whole outcome — their method, their schedule, their result. Autonomy over a real piece of work is the strongest motivator you have.",
+      },
+      {
+        title: "Connect work to purpose",
+        body: "Show each person how their task serves a real customer outcome. Purpose is the operating system — the 'why' that keeps the work going when the paycheck stops motivating.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "frederick-herzberg",
+        take: "complementary",
+        tone: "complementary",
+        note: "Pink is Herzberg with four more decades of evidence — autonomy-mastery-purpose is the modern map of the same motivators.",
+      },
+      {
+        founder: "tony-hsieh",
+        take: "complementary",
+        tone: "complementary",
+        note: "Zappos ran Pink's thesis at company scale — a culture engineered on purpose and autonomy that out-serviced everyone.",
+      },
+    ],
+    keywords: ["dan pink", "drive", "motivation", "autonomy", "mastery", "purpose", "intrinsic motivation", "rewards"],
+  },
 ];
 
 export const getLecture = (slug: string): Lecture => {

@@ -1065,6 +1065,139 @@ export const books: Book[] = [
     whyItMatters:
       "The maker's mind in their own words — read it to remember why product intuition beats feature lists.",
   },
+  {
+    slug: "out-of-the-crisis",
+    title: "Out of the Crisis",
+    author: "W. Edwards Deming",
+    year: 1982,
+    model: "quality-manufacturing",
+    rating: 4.5,
+    cover: "ink",
+    blurb: "The 14 Points and the system that made quality a management discipline.",
+    review:
+      "Deming's masterwork, written at the peak of his influence on Japan and then the West. The 14 Points — constancy of purpose, drive out fear, cease dependence on inspection, improve constantly — are a complete management system, not a quality checklist. Dense and sometimes dry, but this is the founding text of the quality canon, and its core claim — that the system, not the worker, produces defects — is the single most important operational idea in this library.",
+    takeaways: [
+      "85% of quality problems belong to the system, which only management can change.",
+      "Understand and reduce variation; don't react to noise as if it were signal.",
+      "Cease dependence on inspection — inspect the process, not the output.",
+    ],
+    whyItMatters:
+      "The source of everything in the quality model — read it when your defects feel like people problems and are actually process problems.",
+  },
+  {
+    slug: "toyota-production-system",
+    title: "Toyota Production System",
+    author: "Taiichi Ohno",
+    year: 1978,
+    model: "quality-manufacturing",
+    rating: 4.5,
+    cover: "clay",
+    blurb: "Beyond large-scale production — the just-in-time system and the elimination of waste.",
+    review:
+      "Ohno's original account of the system that made Toyota the most efficient manufacturer on earth. It's technical and assumes factory context, but the ideas — just-in-time, the seven wastes, kanban, and the factory as a system for exposing problems — transfer to any operation, including services. The chapter on why inventory is the root of all evil is worth the price alone.",
+    takeaways: [
+      "Inventory hides problems; shrink the buffer and the defects surface to be fixed.",
+      "Hunt the seven wastes — overproduction, waiting, transport, over-processing, inventory, motion, defects.",
+      "Kaizen: continuous improvement is the system's default state, not an event.",
+    ],
+    whyItMatters:
+      "The primary source on lean — read it when your operation feels busy but isn't improving.",
+  },
+  {
+    slug: "zero-quality-control",
+    title: "Zero Quality Control: Source Inspection and the Poka-Yoke System",
+    author: "Shigeo Shingo",
+    year: 1986,
+    model: "quality-manufacturing",
+    rating: 4,
+    cover: "green",
+    blurb: "The radical standard: make defects impossible, not improbable.",
+    review:
+      "Shingo's engineering answer to Deming's diagnosis. The book is a manual of mistake-proofing: source inspection that checks causes instead of results, and poka-yoke devices that make the wrong action physically impossible. The case studies are factory-specific, but the principle — design the error out at the point of creation — is the most immediately actionable idea in the quality canon for any business with a repeated process.",
+    takeaways: [
+      "Zero quality control means you don't inspect because defects can't happen.",
+      "Poka-yoke: make the mistake physically impossible, not just caught.",
+      "Inspect the source (cause), not the result (effect).",
+    ],
+    whyItMatters:
+      "The how-to for mistake-proofing — pick one recurring error and design it out this month.",
+  },
+  {
+    slug: "the-goal",
+    title: "The Goal",
+    author: "Eliyahu M. Goldratt",
+    year: 1984,
+    model: "quality-manufacturing",
+    rating: 4.5,
+    cover: "blue",
+    blurb: "A process of ongoing improvement — the novel that made the Theory of Constraints famous.",
+    review:
+      "The business novel that taught a generation that improving everything at once improves nothing. Through a struggling plant manager's story, Goldratt delivers the Theory of Constraints: every system is capped by its bottleneck, and the goal of a business is to make money, not to run machines at 100%. It's genuinely readable, and the five focusing steps are the most transferable operational framework in this library — they apply to a bakery as readily as a factory.",
+    takeaways: [
+      "The goal is to make money — local efficiency is not the goal.",
+      "Find the constraint and subordinate everything to it; an hour at the bottleneck is an hour for the whole system.",
+      "The five focusing steps: identify, exploit, subordinate, elevate, repeat.",
+    ],
+    whyItMatters:
+      "The most readable book in the quality model — read it to find where your real bottleneck is hiding.",
+  },
+  {
+    slug: "human-side-of-enterprise",
+    title: "The Human Side of Enterprise",
+    author: "Douglas McGregor",
+    year: 1960,
+    model: "purpose-leadership",
+    rating: 4,
+    cover: "ink",
+    blurb: "The classic that gave us Theory X and Theory Y — and the assumptions behind every management style.",
+    review:
+      "McGregor's 1960 classic is short, theoretical, and still the clearest statement of why management assumptions become self-fulfilling prophecies. The Theory X manager who assumes workers are lazy builds the coercive systems that create apathy; the Theory Y manager who assumes capacity and responsibility gets engagement. It's the intellectual foundation of every modern 'people-first' leader in this library.",
+    takeaways: [
+      "Every management act rests on assumptions about people — make yours explicit.",
+      "Theory X (control) creates the compliance it expects; Theory Y (trust) releases the engagement it expects.",
+      "Integrating individual goals with organizational goals is the manager's real job.",
+    ],
+    whyItMatters:
+      "The theory under every incentive decision — read it before you design another control system or another bonus.",
+  },
+  {
+    slug: "one-more-time",
+    title: "One More Time: How Do You Motivate Employees?",
+    author: "Frederick Herzberg",
+    year: 1968,
+    model: "purpose-leadership",
+    rating: 3.5,
+    cover: "green",
+    blurb: "The HBR classic — KITA, hygiene factors, and job enrichment, in the author's own words.",
+    review:
+      "The most reprinted Harvard Business Review article of all time, in book form. Herzberg's argument is blunt and timeless: you cannot motivate with a kick (KITA), you can only move people temporarily; pay and conditions are hygiene that prevent dissatisfaction but can't create it; and the only real motivators are achievement, recognition, and growth in the job. Short, provocative, and immediately applicable.",
+    takeaways: [
+      "KITA produces movement, not motivation — it stops the moment the pressure stops.",
+      "Hygiene factors (pay, policy, conditions) prevent dissatisfaction; they can never create satisfaction.",
+      "Enrich the job: the work itself is the only sustainable motivator.",
+    ],
+    whyItMatters:
+      "The shortest, sharpest argument in the incentives canon — read it before your next bonus scheme.",
+  },
+  {
+    slug: "drive",
+    title: "Drive: The Surprising Truth About What Motivates Us",
+    author: "Daniel H. Pink",
+    year: 2009,
+    model: "purpose-leadership",
+    rating: 4,
+    cover: "gold",
+    blurb: "The science of intrinsic motivation — autonomy, mastery, and purpose.",
+    review:
+      "Pink's synthesis of four decades of motivation research, made readable and actionable. The core finding — that rewards and punishments fail for creative, judgment-based work — overturns the carrot-and-stick default that most small businesses still run on. The practical chapters on designing autonomy, pursuing mastery, and anchoring purpose make it the most usable book in the incentives canon.",
+    takeaways: [
+      "For routine work, rewards work; for creative work, they backfire.",
+      "The three intrinsic drivers: autonomy, mastery, purpose.",
+      "Design the job for autonomy — control the outcome, own the method.",
+    ],
+    whyItMatters:
+      "The modern manual for motivating a team that isn't doing assembly-line work — which is most small businesses.",
+  },
 ];
 
 export const getBook = (slug: string): Book => {
