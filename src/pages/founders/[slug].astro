@@ -1,0 +1,118 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LectureCard from "../../components/LectureCard.astro";
+import CrossReferences from "../../components/CrossReferences.astro";
+import { founders, initialsOf } from "../../data/founders";
+import { getModel, models } from "../../data/models";
+import { lecturesByFounder } from "../../data/lectures";
+import { books } from "../../data/books";
+
+export async function getStaticPaths() {
+  return founders.map((f) => ({ params: { slug: f.slug }, props: { founder: f } }));
+}
+
+const { founder } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const modelObjs = founder.models.map((slug) => getModel(slug));
+const founderLectures = lecturesByFounder(founder.slug);
+const founderLastName = founder.name.split(" ").pop()?.toLowerCase() ?? "";
+const founderBooks = books.filter((b) =>
+  b.author.toLowerCase().includes(founderLastName)
+);
+---
+
+<Layout title={founder.name} description={`${founder.name} — ${founder.company}. Bio, curated lectures, annotated transcripts, and cross-references.`}>
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <a href={`${base}founders/`} class="text-xs font-medium uppercase tracking-wider text-paper-500 hover:text-gold-300">
+        ← All founders
+      </a>
+      <div class="mt-6 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+        <div class="flex items-center gap-5">
+          <span class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-ink-700 font-display text-3xl font-semibold text-gold-300 ring-1 ring-ink-600">
+            {initialsOf(founder.name)}
+          </span>
+          <div>
+            <h1 class="font-display text-4xl font-semibold tracking-tight md:text-5xl">{founder.name}</h1>
+            <p class="mt-1 text-base text-paper-300">{founder.company} · {founder.role}</p>
+            <p class="text-sm text-paper-500">{founder.years}</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2 md:justify-end">
+          {modelObjs.map((m) => (
+            <a href={`${base}models/${m.slug}/`} class="rounded-full border border-gold-500/50 px-3 py-1 text-xs font-medium text-gold-300 transition hover:bg-gold-500/10">
+              {m.title}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <blockquote class="mt-8 max-w-3xl border-l-2 border-gold-500 pl-5">
+        <p class="font-display text-xl italic leading-relaxed text-paper-100 md:text-2xl">“{founder.quote}”</p>
+      </blockquote>
+
+      <p class="mt-6 max-w-3xl text-base leading-relaxed text-paper-200">{founder.bio}</p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="grid gap-10 lg:grid-cols-3">
+      <div class="lg:col-span-2">
+        <p class="eyebrow">Curated lectures</p>
+        <div class="mt-4 grid gap-5 sm:grid-cols-2">
+          {founderLectures.map((l) => <LectureCard lecture={l} />)}
+        </div>
+
+        {founderBooks.length > 0 && (
+          <>
+            <p class="mt-10 eyebrow">Books that matter</p>
+            <div class="mt-4 space-y-4">
+              {founderBooks.map((b) => (
+                <a href={`${base}books/${b.slug}/`} class="card card-hover flex items-center justify-between gap-4 p-5">
+                  <div>
+                    <p class="font-display text-base font-semibold">{b.title}</p>
+                    <p class="text-xs text-paper-400">{b.author}</p>
+                  </div>
+                  <span class="text-sm text-gold-400">{b.rating}★ →</span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
+        <div class="mt-10">
+          <p class="eyebrow">Cross-references</p>
+          <div class="mt-4 space-y-4">
+            {founderLectures.map((l) => <CrossReferences lecture={l} />)}
+          </div>
+        </div>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="card p-5">
+          <p class="eyebrow">Known for</p>
+          <ul class="mt-4 space-y-3">
+            {founder.knownFor.map((k) => (
+              <li class="flex items-start gap-3 text-sm text-paper-200">
+                <span class="mt-0.5 text-gold-400">✦</span>
+                {k}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="card p-5">
+          <p class="eyebrow">Mental models</p>
+          <div class="mt-4 space-y-3">
+            {modelObjs.map((m) => (
+              <a href={`${base}models/${m.slug}/`} class="flex items-start gap-3 rounded-lg border border-ink-700 p-3 text-sm text-paper-200 transition hover:border-gold-500/60">
+                <span class="font-display text-gold-400">{m.index}</span>
+                <span>{m.title}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>

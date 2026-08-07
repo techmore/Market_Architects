@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { playbooks } from "../../data/playbooks";
+import { getModel } from "../../data/models";
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Playbooks" description="Problem-based routing for small businesses — find the mental model that solves your problem.">
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">Playbooks</p>
+      <h1 class="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        Don't know which model? Start with your problem.
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        Playbooks route the real problems of small businesses — pricing, focus, cash flow, market
+        shifts — to the mental models and lectures that solve them. Pick the problem, get the
+        playbook.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="grid gap-5 md:grid-cols-2">
+      {playbooks.map((p) => {
+        const modelObjs = p.models.map((slug) => getModel(slug));
+        return (
+          <a href={`${base}playbooks/${p.slug}/`} class="card card-hover group flex flex-col p-6">
+            <div class="flex flex-wrap gap-1.5">
+              {modelObjs.map((m) => (
+                <span class="rounded-full border border-gold-500/40 px-2.5 py-0.5 text-[11px] text-gold-300">{m.title}</span>
+              ))}
+            </div>
+            <h3 class="mt-4 font-display text-xl font-semibold leading-tight">“{p.title}”</h3>
+            <p class="mt-3 text-sm leading-relaxed text-paper-300 line-clamp-3">{p.problem}</p>
+            <div class="mt-auto flex items-center justify-between pt-5">
+              <span class="text-xs text-paper-500">{p.steps.length} steps</span>
+              <span class="text-sm font-medium text-gold-400 transition group-hover:translate-x-0.5">Open playbook →</span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Layout>

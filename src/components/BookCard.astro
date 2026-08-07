@@ -1,0 +1,62 @@
+---
+import type { Book } from "../data/types";
+import { getModel } from "../data/models";
+
+interface Props {
+  book: Book;
+}
+
+const { book } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const model = getModel(book.model);
+
+const coverBg: Record<string, string> = {
+  gold: "from-gold-600 via-gold-500 to-gold-400 text-ink-950",
+  clay: "from-clay-600 via-clay-500 to-clay-400 text-paper-50",
+  ink: "from-ink-800 via-ink-700 to-ink-600 text-paper-100",
+  green: "from-[#2f4a38] via-green-500 to-[#7fb08c] text-paper-50",
+  blue: "from-[#22324a] via-[#3a5a80] to-[#6f93bb] text-paper-50",
+};
+const bg = coverBg[book.cover] ?? coverBg.ink;
+
+function stars(rating: number) {
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.5;
+  let out = "";
+  for (let i = 0; i < full; i++) out += "★";
+  if (half) out += "½";
+  return out;
+}
+---
+
+<a href={`${base}books/${book.slug}/`} class="card card-hover group flex gap-5 p-5">
+  <div class={`flex w-20 shrink-0 flex-col justify-between rounded-md bg-gradient-to-br p-3 shadow-lg ${bg}`}>
+    <span class="text-[9px] font-bold uppercase tracking-widest opacity-80">Architect</span>
+    <div>
+      <p class="font-display text-[13px] font-bold leading-tight">{book.title}</p>
+      <p class="mt-1 text-[10px] opacity-80">{book.author}</p>
+    </div>
+  </div>
+
+  <div class="flex min-w-0 flex-1 flex-col">
+    <div class="flex items-center gap-2">
+      <h3 class="truncate font-display text-lg font-semibold">{book.title}</h3>
+      <span class="text-sm text-gold-400">{stars(book.rating)}</span>
+    </div>
+    <p class="text-xs text-paper-400">{book.author} · {book.year}</p>
+    <p class="mt-2 text-sm leading-relaxed text-paper-300 line-clamp-3">{book.blurb}</p>
+    <div class="mt-auto flex items-center justify-between pt-3">
+      <span class="rounded-full border border-ink-600 px-2.5 py-0.5 text-[11px] text-gold-400">{model.title}</span>
+      <span class="text-sm font-medium text-gold-400 transition group-hover:translate-x-0.5">Read review →</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

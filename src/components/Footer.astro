@@ -1,0 +1,45 @@
+---
+const base = import.meta.env.BASE_URL;
+const cols = [
+  { href: `${base}models/`, label: "Mental Models", items: ["Zero to One", "Product Intuition", "Operational Moats", "Distribution", "Bootstrapping", "Paradigm Pivots"] },
+  { href: `${base}founders/`, label: "Founders", items: ["Peter Thiel", "Steve Jobs", "Jeff Bezos", "Charlie Munger", "Jensen Huang", "Sara Blakely"] },
+  { href: `${base}playbooks/`, label: "Playbooks", items: ["Pricing vs incumbents", "Focus vs diversify", "Cash-flow survival", "Market shifts"] },
+  { href: `${base}books/`, label: "Books", items: ["Zero to One", "Poor Charlie's Almanack", "Only the Paranoid Survive", "Shoe Dog"] },
+];
+---
+
+<footer class="border-t border-ink-800 bg-ink-900">
+  <div class="container-site grid gap-10 py-14 md:grid-cols-5">
+    <div class="md:col-span-2">
+      <p class="font-display text-xl font-semibold tracking-tight">
+        Market<span class="text-gold-400">Architects</span>
+      </p>
+      <p class="mt-3 max-w-sm text-sm leading-relaxed text-paper-400">
+        The mental models of legendary founders — annotated lectures, transcripts, and
+        book reviews translated into actions a small business owner can use this week.
+      </p>
+      <p class="mt-6 text-xs text-paper-500">
+        Lecture clips and book recommendations are curated for education. All videos
+        are hosted on YouTube; we embed, we don't host.
+      </p>
+    </div>
+
+    {cols.map((col) => (
+      <div>
+        <a href={col.href} class="eyebrow">{col.label}</a>
+        <ul class="mt-4 space-y-2.5">
+          {col.items.map((item) => (
+            <li class="text-sm text-paper-300">{item}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="border-t border-ink-800">
+    <div class="container-site flex flex-col gap-2 py-5 text-xs text-paper-500 md:flex-row md:items-center md:justify-between">
+      <p>© {new Date().getFullYear()} Market Architects. Built for founders and small business owners.</p>
+      <p>Not affiliated with the founders, companies, or platforms referenced.</p>
+    </div>
+  </div>
+</footer>

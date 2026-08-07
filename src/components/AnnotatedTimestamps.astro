@@ -1,0 +1,47 @@
+---
+import type { Lecture } from "../data/types";
+
+interface Props {
+  lecture: Lecture;
+}
+
+const { lecture } = Astro.props;
+const ytBase = `https://www.youtube.com/watch?v=${lecture.youtubeId}`;
+---
+
+<div class="card p-5">
+  <div class="flex items-center justify-between">
+    <p class="eyebrow">Annotated timestamps</p>
+    <span class="text-xs text-paper-500">3–5 min core arguments</span>
+  </div>
+  <p class="mt-2 text-sm leading-relaxed text-paper-300">
+    Skip the full lecture — jump straight to the passages that matter. Each clip links to YouTube at
+    the exact moment.
+  </p>
+
+  <ol class="mt-5 space-y-4">
+    {lecture.timestamps.map((ts, i) => (
+      <li class="group">
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-gold-500/40 font-display text-xs font-semibold text-gold-400">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <div class="min-w-0">
+            <a
+              href={`${ytBase}&t=${ts.seconds}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex flex-wrap items-baseline gap-x-2"
+            >
+              <span class="font-display text-base font-semibold text-paper-50 transition group-hover:text-gold-300">
+                {ts.title}
+              </span>
+              <span class="text-sm tabular-nums text-gold-400">▶ {ts.time}</span>
+            </a>
+            <p class="mt-1 text-sm leading-relaxed text-paper-300">{ts.annotation}</p>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</div>

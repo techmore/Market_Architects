@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import FounderCard from "../../components/FounderCard.astro";
+import { founders } from "../../data/founders";
+import { lectures } from "../../data/lectures";
+---
+
+<Layout title="Founder Directory" description="An exhaustive directory of legendary founders and the mental models they embody.">
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">Founder directory</p>
+      <h1 class="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        The leaders behind the models
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        Every founder is tagged by the mental models they embody. Visit a founder to see their bio,
+        curated lectures, annotated transcripts, and how their thinking cross-references the rest of
+        the library.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <p class="text-sm text-paper-400">
+        {founders.length} founders · {lectures.length} lectures
+      </p>
+    </div>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {founders.map((f) => <FounderCard founder={f} />)}
+    </div>
+  </div>
+</Layout>

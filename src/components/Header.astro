@@ -1,0 +1,63 @@
+---
+const base = import.meta.env.BASE_URL;
+const nav = [
+  { href: `${base}models/`, label: "Models" },
+  { href: `${base}founders/`, label: "Founders" },
+  { href: `${base}playbooks/`, label: "Playbooks" },
+  { href: `${base}books/`, label: "Books" },
+  { href: `${base}lectures/`, label: "Lectures" },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-ink-800/80 bg-ink-950/90 backdrop-blur">
+  <div class="container-site flex h-16 items-center justify-between gap-6">
+    <a href={base} class="group flex items-center gap-2.5" aria-label="Market Architects home">
+      <span class="flex h-8 w-8 items-center justify-center rounded-md bg-ink-800 ring-1 ring-ink-700 transition group-hover:ring-gold-500/60">
+        <svg viewBox="0 0 24 24" class="h-4.5 w-4.5" fill="none" aria-hidden="true">
+          <path d="M5 18V7h2.1l4.4 6.6V7H14v11h-2.1L7.4 11.4V18z" fill="#d4a95c"/>
+        </svg>
+      </span>
+      <span class="font-display text-lg font-semibold tracking-tight">
+        Market<span class="text-gold-400">Architects</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+      {nav.map((n) => (
+        <a href={n.href} class="rounded-md px-3 py-2 text-sm font-medium text-paper-200 transition-colors hover:bg-ink-800 hover:text-gold-300">
+          {n.label}
+        </a>
+      ))}
+    </nav>
+
+    <a href={`${base}playbooks/`} class="btn-primary hidden sm:inline-flex">Apply a Model</a>
+
+    <button id="menu-toggle" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700 text-paper-200 md:hidden" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-ink-800 bg-ink-900 md:hidden">
+    <nav class="container-site flex flex-col py-3" aria-label="Mobile">
+      {nav.map((n) => (
+        <a href={n.href} class="rounded-md px-3 py-2.5 text-sm font-medium text-paper-200 hover:bg-ink-800 hover:text-gold-300">
+          {n.label}
+        </a>
+      ))}
+      <a href={`${base}playbooks/`} class="btn-primary mx-3 mt-2 w-fit">Apply a Model</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("hidden") === false;
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+  }
+</script>

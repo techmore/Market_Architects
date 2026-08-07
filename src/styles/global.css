@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-ink-950: #0a0c10;
+  --color-ink-900: #0f1218;
+  --color-ink-850: #141822;
+  --color-ink-800: #1a1f2b;
+  --color-ink-700: #232a38;
+  --color-ink-600: #2f384a;
+
+  --color-paper-50: #f6f1e6;
+  --color-paper-100: #ece4d1;
+  --color-paper-200: #dcd0b6;
+  --color-paper-300: #c3b594;
+  --color-paper-400: #a89c7e;
+  --color-paper-500: #8a7f62;
+
+  --color-gold-200: #eccf96;
+  --color-gold-300: #e2bc74;
+  --color-gold-400: #d4a95c;
+  --color-gold-500: #c39446;
+  --color-gold-600: #a87c34;
+
+  --color-clay-400: #c67a54;
+  --color-clay-500: #b05f3c;
+  --color-clay-600: #8f4a2e;
+
+  --color-green-500: #5f8a6a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-950 text-paper-50 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-500);
+    color: var(--color-ink-950);
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-400;
+  }
+
+  .card {
+    @apply rounded-xl border border-ink-700 bg-ink-850 transition-colors duration-200;
+  }
+
+  .card-hover {
+    @apply hover:border-gold-500/60 hover:bg-ink-800;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-950 transition-colors hover:bg-gold-400;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-lg border border-ink-600 px-4 py-2 text-sm font-medium text-paper-100 transition-colors hover:border-gold-500/60 hover:text-gold-300;
+  }
+}

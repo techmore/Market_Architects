@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ModelCard from "../components/ModelCard.astro";
+import LectureCard from "../components/LectureCard.astro";
+import BookCard from "../components/BookCard.astro";
+import { models } from "../data/models";
+import { lectures, featuredLectures } from "../data/lectures";
+import { books } from "../data/books";
+import { getFounder, initialsOf } from "../data/founders";
+
+const featured = featuredLectures();
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Mental Models for Small Business Owners" description="Annotated lectures, transcripts, and book reviews — the mental models of legendary founders, translated into actions for small business owners.">
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-ink-800">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(196,148,70,0.12),transparent_55%),radial-gradient(ellipse_at_bottom_left,rgba(95,138,106,0.08),transparent_55%)]"></div>
+    <div class="container-site relative py-20 md:py-28">
+      <p class="eyebrow">The founder mental-model library</p>
+      <h1 class="mt-4 max-w-3xl font-display text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
+        Great founders think in <span class="text-gold-400">systems</span>, not hustle.
+      </h1>
+      <p class="mt-6 max-w-2xl text-base leading-relaxed text-paper-300 md:text-lg">
+        Market Architects distills the thinking of legendary founders into 6 mental models — with
+        annotated 3-minute video clips, “Apply This Model” translations, and book reviews that
+        matter. Built for small business owners, not MBA students.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#featured" class="btn-primary">
+          Start with a lecture
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href={`${base}models/`} class="btn-ghost">Browse 6 models</a>
+      </div>
+
+      <!-- Model filter chips -->
+      <div class="mt-12 flex flex-wrap gap-2" role="group" aria-label="Filter lectures by mental model">
+        <button data-filter="all" class="filter-chip rounded-full border border-gold-500 bg-gold-500 px-4 py-1.5 text-sm font-semibold text-ink-950">
+          All
+        </button>
+        {models.map((m) => (
+          <button data-filter={m.slug} class="filter-chip rounded-full border border-ink-600 px-4 py-1.5 text-sm font-medium text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300">
+            {m.title}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured lectures with search -->
+  <section id="featured" class="container-site py-16 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow">Featured lectures</p>
+        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">The core arguments, isolated</h2>
+      </div>
+      <div class="w-full max-w-sm">
+        <label class="sr-only" for="search">Search lectures</label>
+        <div class="relative">
+          <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-paper-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input
+            id="search"
+            type="search"
+            placeholder="Search monopolies, flywheels, cash-flow…"
+            class="w-full rounded-lg border border-ink-600 bg-ink-900 py-2.5 pl-10 pr-3 text-sm text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="lecture-grid" class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {lectures.map((lecture) => (
+        <div class="lecture-item" data-model={lecture.model} data-title={lecture.title.toLowerCase()}>
+          <LectureCard lecture={lecture} />
+        </div>
+      ))}
+    </div>
+    <p id="no-results" class="mt-10 hidden text-center text-sm text-paper-500">
+      No lectures match that search. Try “competition”, “design”, or “cash”.
+    </p>
+  </section>
+
+  <!-- Models -->
+  <section class="border-t border-ink-800 bg-ink-900">
+    <div class="container-site py-16 md:py-20">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">The taxonomy</p>
+          <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">6 primary mental models</h2>
+        </div>
+        <a href={`${base}models/`} class="text-sm font-medium text-gold-400 hover:text-gold-300">All models →</a>
+      </div>
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {models.map((m) => <ModelCard model={m} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section class="container-site py-16 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow">Book reviews that matter</p>
+        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">Read the source material</h2>
+      </div>
+      <a href={`${base}books/`} class="text-sm font-medium text-gold-400 hover:text-gold-300">All books →</a>
+    </div>
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+      {books.slice(0, 4).map((b) => <BookCard book={b} />)}
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const grid = document.getElementById("lecture-grid");
+  const search = document.getElementById("search");
+  const noResults = document.getElementById("no-results");
+  const chips = Array.from(document.querySelectorAll(".filter-chip"));
+
+  let activeModel = "all";
+
+  function applyFilter() {
+    const q = (search?.value ?? "").trim().toLowerCase();
+    let visible = 0;
+    document.querySelectorAll(".lecture-item").forEach((el) => {
+      const matchesModel = activeModel === "all" || el.dataset.model === activeModel;
+      const matchesQuery = !q || (el.dataset.title ?? "").includes(q);
+      const show = matchesModel && matchesQuery;
+      el.style.display = show ? "" : "none";
+      if (show) visible++;
+    });
+    if (noResults) noResults.classList.toggle("hidden", visible > 0);
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      activeModel = chip.dataset.filter ?? "all";
+      chips.forEach((c) => {
+        if (c === chip) {
+          c.classList.remove("border-ink-600", "text-paper-200");
+          c.classList.add("border-gold-500", "bg-gold-500", "text-ink-950");
+        } else {
+          c.classList.add("border-ink-600", "text-paper-200");
+          c.classList.remove("border-gold-500", "bg-gold-500", "text-ink-950");
+        }
+      });
+      applyFilter();
+    });
+  });
+
+  search?.addEventListener("input", applyFilter);
+</script>

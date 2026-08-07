@@ -1,0 +1,50 @@
+---
+import type { Lecture } from "../data/types";
+import { getFounder, initialsOf } from "../data/founders";
+
+interface Props {
+  lecture: Lecture;
+}
+
+const { lecture } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<div class="card p-5">
+  <div class="flex items-center justify-between">
+    <p class="eyebrow">Founder cross-references</p>
+    <span class="text-xs text-paper-500">opposing & complementary takes</span>
+  </div>
+
+  <ul class="mt-4 space-y-3">
+    {lecture.crossReferences.map((ref) => {
+      const f = getFounder(ref.founder);
+      return (
+        <li class="rounded-lg border border-ink-700 bg-ink-900 p-4">
+          <div class="flex items-center gap-3">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink-700 text-[10px] font-bold text-gold-300">
+              {initialsOf(f.name)}
+            </span>
+            <div class="min-w-0">
+              <a href={`${base}founders/${f.slug}/`} class="text-sm font-semibold text-paper-50 hover:text-gold-300">
+                {f.name}
+              </a>
+              <p class="text-xs font-medium uppercase tracking-wide text-paper-500">{ref.take}</p>
+            </div>
+            <span
+              class:list={[
+                "ml-auto rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider",
+                ref.tone === "complementary"
+                  ? "bg-green-500/15 text-[#8fc79b]"
+                  : "bg-clay-500/15 text-clay-400",
+              ]}
+            >
+              {ref.tone}
+            </span>
+          </div>
+          <p class="mt-2.5 text-sm leading-relaxed text-paper-300">{ref.note}</p>
+        </li>
+      );
+    })}
+  </ul>
+</div>

@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BookCard from "../../components/BookCard.astro";
+import { books } from "../../data/books";
+import { models } from "../../data/models";
+---
+
+<Layout title="Book Reviews" description="Book reviews that matter — business theory books reviewed through the lens of what a small business owner can actually use.">
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">Reading list</p>
+      <h1 class="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        Book reviews that matter
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        Every book in this library maps to a mental model — and every review answers the only
+        question that matters: <em class="text-paper-100 not-italic">what do I actually do differently
+        after reading this?</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="grid gap-5 md:grid-cols-2">
+      {books.map((b) => <BookCard book={b} />)}
+    </div>
+
+    <div class="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-ink-700 bg-ink-850 p-6">
+      <div>
+        <p class="eyebrow">Read by model</p>
+        <p class="mt-2 text-sm text-paper-300">
+          Each model has a companion reading list — pick the one you're working on.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        {models.map((m) => (
+          <a href={`${import.meta.env.BASE_URL}models/${m.slug}/`} class="rounded-full border border-ink-600 px-3 py-1 text-xs font-medium text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300">
+            {m.title}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

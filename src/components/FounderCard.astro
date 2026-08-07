@@ -1,0 +1,42 @@
+---
+import type { Founder } from "../data/types";
+import { getModel, models } from "../data/models";
+import { initialsOf } from "../data/founders";
+
+interface Props {
+  founder: Founder;
+}
+
+const { founder } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<a href={`${base}founders/${founder.slug}/`} class="card card-hover group flex flex-col p-5">
+  <div class="flex items-center gap-4">
+    <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-ink-700 font-display text-lg font-semibold text-gold-300 ring-1 ring-ink-600">
+      {initialsOf(founder.name)}
+    </span>
+    <div class="min-w-0">
+      <h3 class="truncate font-display text-lg font-semibold">{founder.name}</h3>
+      <p class="truncate text-xs text-paper-400">{founder.company}</p>
+    </div>
+  </div>
+  <p class="mt-3 text-sm leading-relaxed text-paper-300 line-clamp-3">"{founder.quote}"</p>
+  <div class="mt-4 flex flex-wrap gap-1.5">
+    {founder.models.map((slug) => {
+      const m = getModel(slug);
+      return (
+        <span class="rounded-full border border-ink-600 px-2.5 py-0.5 text-[11px] text-gold-400">{m.title}</span>
+      );
+    })}
+  </div>
+</a>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

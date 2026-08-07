@@ -1,0 +1,30 @@
+---
+import type { Lecture } from "../data/types";
+
+interface Props {
+  lecture: Lecture;
+}
+
+const { lecture } = Astro.props;
+---
+
+<aside class="rounded-xl border border-gold-500/40 bg-gradient-to-b from-ink-850 to-ink-900 p-5">
+  <p class="eyebrow text-gold-400">Apply this model</p>
+  <h3 class="mt-2 font-display text-xl font-semibold">For your small business</h3>
+  <p class="mt-1 text-sm text-paper-400">
+    The tech-theory translation: what this founder's argument means if you run a local service
+    business or an indie product.
+  </p>
+
+  <ul class="mt-5 space-y-4">
+    {lecture.applyThisModel.map((item) => (
+      <li>
+        <h4 class="flex items-start gap-2 font-display text-base font-semibold text-paper-50">
+          <span class="mt-1 text-gold-400" aria-hidden="true">▸</span>
+          {item.title}
+        </h4>
+        <p class="mt-1.5 pl-6 text-sm leading-relaxed text-paper-300">{item.body}</p>
+      </li>
+    ))}
+  </ul>
+</aside>

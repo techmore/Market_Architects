@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ModelCard from "../../components/ModelCard.astro";
+import { models } from "../../data/models";
+import { lectures } from "../../data/lectures";
+import { books } from "../../data/books";
+import { founders } from "../../data/founders";
+---
+
+<Layout title="Mental Models" description="The 6 primary mental models behind legendary founders — browse by way of thinking.">
+  <div class="container-site py-16 md:py-20">
+    <p class="eyebrow">The taxonomy</p>
+    <h1 class="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+      6 primary mental models
+    </h1>
+    <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+      Instead of organizing by company or industry, Market Architects organizes by
+      <em class="text-paper-100 not-italic font-medium">way of thinking</em>. Every founder below
+      embodies a mode of reasoning that small business owners can borrow directly.
+    </p>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {models.map((m) => <ModelCard model={m} />)}
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-3">
+      <div class="card p-6">
+        <p class="eyebrow">Lectures</p>
+        <p class="mt-3 font-display text-4xl font-semibold text-gold-400">{lectures.length}</p>
+        <p class="mt-1 text-sm text-paper-400">annotated clips with timestamps and “Apply This Model” panels</p>
+      </div>
+      <div class="card p-6">
+        <p class="eyebrow">Founders</p>
+        <p class="mt-3 font-display text-4xl font-semibold text-gold-400">{founders.length}</p>
+        <p class="mt-1 text-sm text-paper-400">epitome leaders, cross-referenced across models</p>
+      </div>
+      <div class="card p-6">
+        <p class="eyebrow">Books</p>
+        <p class="mt-3 font-display text-4xl font-semibold text-gold-400">{books.length}</p>
+        <p class="mt-1 text-sm text-paper-400">reviews that matter — with takeaways you can act on</p>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import type { Lecture } from "../data/types";
+
+interface Props {
+  lecture: Lecture;
+}
+
+const { lecture } = Astro.props;
+const yt = `https://www.youtube-nocookie.com/embed/${lecture.youtubeId}?rel=0`;
+const ytWatch = `https://www.youtube.com/watch?v=${lecture.youtubeId}`;
+---
+
+{lecture.youtubeId ? (
+  <div class="overflow-hidden rounded-xl border border-ink-700 bg-ink-900">
+    <div class="relative aspect-video">
+      <iframe
+        src={yt}
+        title={lecture.title}
+        class="absolute inset-0 h-full w-full"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-2 px-4 py-3">
+      <p class="text-sm text-paper-300">
+        {lecture.channel} <span class="text-paper-500">·</span> {lecture.length}{" "}
+        <span class="text-paper-500">·</span> {lecture.source}
+      </p>
+      <a
+        href={ytWatch}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 text-sm font-medium text-gold-400 hover:text-gold-300"
+      >
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true">
+          <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.8 4.5 12 4.5 12 4.5s-5.8 0-7.5.6A3 3 0 0 0 2.4 7.2 31 31 0 0 0 1.8 12a31 31 0 0 0 .6 4.8 3 3 0 0 0 2.1 2.1c1.7.6 7.5.6 7.5.6s5.8 0 7.5-.6a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .6-4.8 31 31 0 0 0-.6-4.8zM9.8 15V9l5.2 3z"/>
+        </svg>
+        Open in YouTube
+      </a>
+    </div>
+  </div>
+) : (
+  <div class="flex aspect-video flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-ink-600 bg-ink-900 text-center">
+    <p class="font-display text-lg">Video coming soon</p>
+    <p class="max-w-sm text-sm text-paper-400">
+      We're sourcing the canonical recording of this lecture. Check back, or search YouTube for
+      “{lecture.title}”.
+    </p>
+  </div>
+)}

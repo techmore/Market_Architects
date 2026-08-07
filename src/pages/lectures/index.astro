@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LectureCard from "../../components/LectureCard.astro";
+import VideoEmbed from "../../components/VideoEmbed.astro";
+import AnnotatedTimestamps from "../../components/AnnotatedTimestamps.astro";
+import ApplyThisModel from "../../components/ApplyThisModel.astro";
+import CrossReferences from "../../components/CrossReferences.astro";
+import { lectures } from "../../data/lectures";
+import { getModel, models } from "../../data/models";
+import { getFounder } from "../../data/founders";
+---
+
+<Layout title="Lectures" description="Every annotated lecture in the Market Architects library.">
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">The library</p>
+      <h1 class="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        All annotated lectures
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        Every lecture comes with an embedded YouTube video, 3–5 minute annotated timestamps, an
+        “Apply This Model” translation for small business owners, and opposing or complementary
+        takes from other founders.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {lectures.map((l) => <LectureCard lecture={l} />)}
+    </div>
+  </div>
+</Layout>

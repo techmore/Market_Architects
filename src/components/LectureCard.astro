@@ -1,0 +1,61 @@
+---
+import type { Lecture } from "../data/types";
+import { getFounder, initialsOf } from "../data/founders";
+import { getModel } from "../data/models";
+
+interface Props {
+  lecture: Lecture;
+}
+
+const { lecture } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const founder = getFounder(lecture.founder);
+const model = getModel(lecture.model);
+const thumb = lecture.youtubeId ? `https://img.youtube.com/vi/${lecture.youtubeId}/mqdefault.jpg` : null;
+---
+
+<a href={`${base}lectures/${lecture.slug}/`} class="card card-hover group flex flex-col overflow-hidden">
+  <div class="relative aspect-video overflow-hidden bg-ink-800">
+    {thumb ? (
+      <img
+        src={thumb}
+        alt={`Thumbnail for ${lecture.title}`}
+        loading="lazy"
+        class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+      />
+    ) : (
+      <div class="flex h-full items-center justify-center bg-gradient-to-br from-ink-700 to-ink-800">
+        <span class="font-display text-3xl font-semibold text-paper-500">{founder.name}</span>
+      </div>
+    )}
+    <span class="absolute bottom-2 right-2 rounded bg-ink-950/80 px-1.5 py-0.5 text-[11px] font-medium text-paper-100">
+      {lecture.length}
+    </span>
+  </div>
+
+  <div class="flex flex-1 flex-col p-4">
+    <div class="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider">
+      <span class="flex items-center gap-1.5 text-gold-400">
+        <span class="flex h-4 w-4 items-center justify-center rounded-full bg-ink-700 text-[8px]">{initialsOf(founder.name)}</span>
+        {founder.name}
+      </span>
+      <span class="text-paper-500">·</span>
+      <span class="text-paper-400">{model.title}</span>
+    </div>
+    <h3 class="mt-2 font-display text-base font-semibold leading-snug line-clamp-2">{lecture.title}</h3>
+    <p class="mt-2 text-xs text-paper-400 line-clamp-2">{lecture.summary}</p>
+    <div class="mt-auto flex items-center justify-between pt-3">
+      <span class="text-xs text-paper-500">{lecture.source}</span>
+      <span class="text-sm font-medium text-gold-400 transition group-hover:translate-x-0.5">Watch →</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
