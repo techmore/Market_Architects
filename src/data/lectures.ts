@@ -4095,6 +4095,414 @@ export const lectures: Lecture[] = [
     ],
     keywords: ["elon musk", "first principles", "the algorithm", "tesla", "spacex", "questioning", "zero to one"],
   },
+  {
+    slug: "lake-stitch-fix",
+    title: "Katrina Lake: Building Stitch Fix",
+    founder: "katrina-lake",
+    model: "product-intuition",
+    youtubeId: "_S-VTy2cWf8",
+    channel: "On with Kara Swisher",
+    year: 2018,
+    length: "45 min",
+    source: "Code 2018 full interview",
+    featured: false,
+    summary:
+      "Lake on building a company where the product is a point of view: data-driven personalization that still feels human, and the founder conviction behind the youngest woman-led IPO.",
+    coreArgument:
+      "The product IS the point of view. Stitch Fix didn't compete on price or selection — it competed on a belief about the future: retail would be personal. Lake held that conviction through years of 'no', and built a company where data and human taste work together. Product intuition is conviction about the customer's future, made concrete.",
+    timestamps: [
+      {
+        time: "05:10",
+        seconds: 310,
+        title: "The point of view about the future",
+        annotation:
+          "Lake's founding belief: the best companies are built on a view of where the customer is going, not where they've been.",
+      },
+      {
+        time: "18:40",
+        seconds: 1120,
+        title: "Data plus human taste",
+        annotation:
+          "Stitch Fix's hybrid model: algorithms for scale, stylists for feeling. The moat is the combination, not either side.",
+      },
+      {
+        time: "33:20",
+        seconds: 2000,
+        title: "Persistence through the 'no's",
+        annotation:
+          "Lake on the years of rejection before the product found its market — and why the conviction had to come from inside.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Write your point of view about the future",
+        body: "Lake's test: one sentence about where your customer is headed. If your current offer doesn't serve that future, the gap is the opportunity.",
+      },
+      {
+        title: "Combine the machine and the human touch",
+        body: "Use data/automation for scale and humans for the felt layer. The combination — not either alone — is usually the defensible part.",
+      },
+      {
+        title: "Fund the conviction from inside",
+        body: "Lake held her view through years of rejection. Protect one belief about your market that you refuse to drop, and keep the evidence notebook on it.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "melanie-perkins",
+        take: "complementary",
+        tone: "complementary",
+        note: "Two women founders who persisted through years of 'no' on a product conviction — Perkins on simplicity, Lake on personalization.",
+      },
+      {
+        founder: "jeff-bezos",
+        take: "complementary",
+        tone: "complementary",
+        note: "Bezos's customer obsession and Lake's data-driven personalization are the same instinct — the customer decides, and you build the machinery to hear them.",
+      },
+    ],
+    keywords: ["katrina lake", "stitch fix", "personalization", "data", "conviction", "product", "retail"],
+  },
+  {
+    slug: "burch-empire",
+    title: "Tory Burch: Building a Fashion Empire Her Way",
+    founder: "tory-burch",
+    model: "bootstrapping",
+    youtubeId: "3I8niXFJmag",
+    channel: "Glamour",
+    year: 2023,
+    length: "15 min",
+    source: "Step Into My Office, Glamour",
+    featured: false,
+    summary:
+      "Burch on starting from a home office with a point of view and a flat, and building a global brand without surrendering control or her aesthetic.",
+    coreArgument:
+      "A brand can be built slowly, on taste and word-of-mouth, without outside capital dictating the pace. Burch's founding move was an unmistakable point of view — the 'Tory' flat — that people repeated to friends. The organic brand is the opposite of the blitz: it compounds trust one person at a time.",
+    timestamps: [
+      {
+        time: "02:00",
+        seconds: 120,
+        title: "From home office to brand",
+        annotation:
+          "Burch started alone from home — no backers, no plan beyond a strong aesthetic and a single product people loved.",
+      },
+      {
+        time: "07:30",
+        seconds: 450,
+        title: "The product people repeat",
+        annotation:
+          "The 'Tory' flat became the thing worth remarking about — the organic brand's engine is one memorable product that spreads by story.",
+      },
+      {
+        time: "12:10",
+        seconds: 730,
+        title: "Control through growth",
+        annotation:
+          "Burch's insistence on doing it her way — keeping the vision even as the business scaled.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find your 'Tory flat'",
+        body: "What's the one product, detail, or service so distinctive that customers would describe it to a friend by name? Build around that — it's your word-of-mouth engine.",
+      },
+      {
+        title: "Grow at the pace your vision allows",
+        body: "Burch chose control over maximum speed. Decide which growth levers you'll refuse (debt, investors, discount channels) and hold the line.",
+      },
+      {
+        title: "Let the aesthetic be the strategy",
+        body: "A consistent point of view IS positioning. Make every touchpoint unmistakably yours — the organic brand is the sum of that consistency.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "sara-blakely",
+        take: "complementary",
+        tone: "complementary",
+        note: "Two women who built global brands from a single distinctive product and word-of-mouth, without conventional marketing budgets.",
+      },
+      {
+        founder: "seth-godin",
+        take: "complementary",
+        tone: "complementary",
+        note: "Burch is Godin's purple cow in fashion — one remarkable product, a tribe that repeats it, and growth by story.",
+      },
+    ],
+    keywords: ["tory burch", "brand", "bootstrapping", "word of mouth", "aesthetic", "point of view", "organic growth"],
+  },
+  {
+    slug: "sandberg-lean-in",
+    title: "Why We Have Too Few Women Leaders",
+    founder: "sheryl-sandberg",
+    model: "purpose-leadership",
+    youtubeId: "18uDutylDa4",
+    channel: "TED",
+    year: 2010,
+    length: "15 min",
+    source: "TED Women",
+    featured: false,
+    summary:
+      "Sandberg's TED talk that launched Lean In: the internal and systemic barriers that keep women from leadership, and why 'sitting at the table' matters.",
+    coreArgument:
+      "Leadership is a choice and a skill, not a destiny — and ambition is systematically socialized out of women. Sandberg's thesis: women (and men) under-claim their own ambition, and organizations lose when they do. The fix is on both sides: individuals must 'lean in' and sit at the table, and leaders must build workplaces that keep everyone in the game.",
+    timestamps: [
+      {
+        time: "03:20",
+        seconds: 200,
+        title: "The leadership ambition gap",
+        annotation:
+          "Sandberg on the research showing women systematically under-claim their own leadership ambition — starting early and compounding.",
+      },
+      {
+        time: "08:40",
+        seconds: 520,
+        title: "Sit at the table",
+        annotation:
+          "The famous lesson: negotiate for yourself, believe you belong, and don't let impostor feelings make your seat. 'No one gets the promotion if they don't think they deserve it.'",
+      },
+      {
+        time: "12:30",
+        seconds: 750,
+        title: "Make your partner a real partner",
+        annotation:
+          "Leadership is a team sport at home too — the 'partner who does 50%' argument that reframes the caregiving divide.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Run the 'am I under-claiming' audit",
+        body: "Sandberg's question for you and your team: is anyone not applying, not asking, not raising their hand? Ambition under-claimed is capacity the business never gets.",
+      },
+      {
+        title: "Make the seat explicit",
+        body: "In meetings, deliberately invite the quiet voice to the table. Sandberg's point: belief precedes the seat — and the leader creates that belief.",
+      },
+      {
+        title: "Build a 50% partner culture",
+        body: "For the owner juggling everything: what could be genuinely shared? The sustainable business is the one not running on one person's burnout.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "arianna-huffington",
+        take: "complementary",
+        tone: "complementary",
+        note: "Sandberg gets women to the table; Huffington asks what table it is. Together they're the two halves of modern leadership culture.",
+      },
+      {
+        founder: "john-maxwell",
+        take: "complementary",
+        tone: "complementary",
+        note: "Sandberg's ambition thesis is Maxwell's 'leadership is influence' applied to who gets to influence — the ceiling is often internal.",
+      },
+    ],
+    keywords: ["sandberg", "lean in", "women leaders", "ambition", "leadership", "sitting at the table", "culture"],
+  },
+  {
+    slug: "ford-assembly",
+    title: "Henry Ford: Creator of the First American Car",
+    founder: "henry-ford",
+    model: "operational-moats",
+    youtubeId: "y584yQSu0uo",
+    channel: "Biography",
+    year: 2022,
+    length: "44 min",
+    source: "Biography documentary",
+    featured: false,
+    summary:
+      "The story of the assembly line and the Model T — how Ford turned a luxury into a mass product and created the first true scale-economics moat.",
+    coreArgument:
+      "Ford's moat was the process, not the car. The moving assembly line cut the cost of a Model T by 60%, opening a market competitors couldn't reach — because they couldn't copy the machinery. Standardize the process, collapse the cost, and the scale advantage compounds into market ownership.",
+    timestamps: [
+      {
+        time: "06:10",
+        seconds: 370,
+        title: "The car for the many",
+        annotation:
+          "Ford's founding bet: make a car the ordinary family could afford — a niche (mass market) nobody was serving.",
+      },
+      {
+        time: "18:40",
+        seconds: 1120,
+        title: "The moving assembly line",
+        annotation:
+          "The process innovation that cut build time from 12 hours to 90 minutes — the original scale-economics moat.",
+      },
+      {
+        time: "30:20",
+        seconds: 1820,
+        title: "The $5 day",
+        annotation:
+          "Paying workers enough to buy the product they made — the flywheel between production, wages, and demand.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Find your assembly line",
+        body: "What repeated task in your business could be broken into a standardized sequence that anyone can run? The process IS the scale advantage.",
+      },
+      {
+        title: "Collapse the cost of the core offer",
+        body: "Ford's move: drop the cost so hard that the market opens up. Look for the 60%-cost lever in your delivery, not a 5% tweak.",
+      },
+      {
+        title: "Close the flywheel with your own team",
+        body: "The $5 day made workers into customers. Ask: could your own team afford what you sell, and what would change if they could?",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "ray-kroc",
+        take: "complementary",
+        tone: "complementary",
+        note: "Kroc systematized the burger the way Ford systematized the car — standardization as the original operational moat.",
+      },
+      {
+        founder: "sam-walton",
+        take: "complementary",
+        tone: "complementary",
+        note: "Walton's logistics machine is Ford's assembly line applied to retail — the same cost-collapse discipline, a century later.",
+      },
+    ],
+    keywords: ["henry ford", "assembly line", "model t", "scale economics", "mass production", "process", "cost"],
+  },
+  {
+    slug: "welch-leadership",
+    title: "Jack Welch on Leadership and the Welch Way",
+    founder: "jack-welch",
+    model: "operational-moats",
+    youtubeId: "vUYQ8D1oRbc",
+    channel: "Australasian Leadership Academy",
+    year: 2008,
+    length: "35 min",
+    source: "Leadership interview",
+    featured: false,
+    summary:
+      "Welch on the management discipline that multiplied GE 40x: candor, talent intensity, and the insistence on being first or second in every market.",
+    coreArgument:
+      "Management is a game played with candor and talent. Welch's operating system — speak the unvarnished truth, rank talent ruthlessly, and prune the portfolio to #1-or-#2 businesses — is the operational-moats mindset applied to an entire conglomerate. The moat is the quality of the people and the honesty of the conversation.",
+    timestamps: [
+      {
+        time: "03:40",
+        seconds: 220,
+        title: "Candor as the operating principle",
+        annotation:
+          "Welch's core: 'Candor is the most powerful management principle.' Teams that can't be honest can't improve.",
+      },
+      {
+        time: "14:20",
+        seconds: 860,
+        title: "Talent is the moat",
+        annotation:
+          "The rank-and-yank system: differentiate your people, invest in the top, and move the bottom out — harsh, and the source of GE's talent intensity.",
+      },
+      {
+        time: "27:00",
+        seconds: 1620,
+        title: "Be #1 or #2 in every market",
+        annotation:
+          "Welch's portfolio rule: fix, sell, or close every business that can't be first or second. Strategy as ruthless pruning.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Install candor in one ritual",
+        body: "Add a standing question to your reviews: 'What are we not saying to each other?' Welch's point: the honest answer is where the improvement is hiding.",
+      },
+      {
+        title: "Do the portfolio prune",
+        body: "List every offering or client segment and ask: is this top-2 in its niche, or should we fix/sell/close it? Ruthless pruning is how focus becomes a moat.",
+      },
+      {
+        title: "Invest in the top performers visibly",
+        body: "Differentiation is uncomfortable but decisive: make the investment in your best people obvious, and be honest with the rest about where they stand.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "charlie-munger",
+        take: "opposing",
+        tone: "opposing",
+        note: "Welch's rank-and-yank intensity versus Munger's patient moat-buying — both build advantages, from opposite temperaments.",
+      },
+      {
+        founder: "peter-drucker",
+        take: "complementary",
+        tone: "complementary",
+        note: "Drucker gave the discipline, Welch ran it at scale — decide what to do, decide what not to do, decide who does it.",
+      },
+    ],
+    keywords: ["jack welch", "ge", "candor", "talent", "portfolio", "management", "first or second"],
+  },
+  {
+    slug: "wozniak-real",
+    title: "Steve Wozniak: The Real Steve Jobs",
+    founder: "steve-wozniak",
+    model: "product-intuition",
+    youtubeId: "0Wg-tEn7UYg",
+    channel: "Steve-O's Wild Ride! - Clips",
+    year: 2023,
+    length: "25 min",
+    source: "Interview clip",
+    featured: false,
+    summary:
+      "Wozniak on designing the Apple I and II — engineering elegance, the maker's love of the work, and the partnership with Jobs that started the personal computer.",
+    coreArgument:
+      "The best products are built by someone who loves the craft and wants to delight the user — not by committee or roadmap. Wozniak built the Apple II alone, in his spare time, because he wanted a computer he'd love. That personal standard, not market research, is the origin of the personal computer — and the purest version of product intuition.",
+    timestamps: [
+      {
+        time: "04:10",
+        seconds: 250,
+        title: "Building the thing he wanted",
+        annotation:
+          "Wozniak describes designing the Apple I for himself — the maker's instinct that became a product category.",
+      },
+      {
+        time: "12:30",
+        seconds: 750,
+        title: "Elegance over features",
+        annotation:
+          "Why the Apple II used fewer chips and ran cooler — craft as the differentiator, not the spec sheet.",
+      },
+      {
+        time: "20:10",
+        seconds: 1210,
+        title: "Jobs did the packaging",
+        annotation:
+          "Wozniak on the partnership: he made the machine, Jobs made it reach people. The builder and the brander, together.",
+      },
+    ],
+    applyThisModel: [
+      {
+        title: "Build for the customer who is you",
+        body: "Wozniak's method: make the thing you yourself would love, then find the others like you. A product you're proud to use is the honest version of market research.",
+      },
+      {
+        title: "Ship fewer, better parts",
+        body: "Elegance is subtraction — fewer steps, fewer options, less friction. Audit your offer for the 'extra chips' you can remove without losing the function.",
+      },
+      {
+        title: "Pair the builder with the brander",
+        body: "Wozniak built, Jobs packaged. If you're only one of those, find your complementary partner early — the craft and the story are both required.",
+      },
+    ],
+    crossReferences: [
+      {
+        founder: "steve-jobs",
+        take: "complementary",
+        tone: "complementary",
+        note: "Wozniak and Jobs are the two halves of product intuition: the craft and the packaging. Neither alone built Apple.",
+      },
+      {
+        founder: "jony-ive",
+        take: "complementary",
+        tone: "complementary",
+        note: "Ive is Wozniak's successor — engineering elegance and material craft as the soul of the product.",
+      },
+    ],
+    keywords: ["wozniak", "apple", "craft", "engineering", "elegance", "maker", "product"],
+  },
 ];
 
 export const getLecture = (slug: string): Lecture => {

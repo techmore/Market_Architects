@@ -20,13 +20,13 @@ translated into actions a small business owner can use this week.
   and playbooks
 - **/models** — the 8 core mental models (zero-to-one, product-intuition, operational-moats,
   distribution, bootstrapping, paradigm-pivots, purpose-leadership, execution-habits)
-- **/founders** — directory of 57 leaders (builders + thinkers) with a Builders/Thinkers filter
-- **/lectures** — 60 embedded YouTube lectures with annotated timestamps, transcripts,
+- **/founders** — directory of 63 leaders (builders + thinkers) with a Builders/Thinkers filter
+- **/lectures** — 66 embedded YouTube lectures with annotated timestamps, transcripts,
   "Apply This Model" translations, and opposing/complementary takes
 - **/tags** — 300+ idea tags; click every keyword to see the same idea from many thinkers
 - **/playbooks** — problem-based routing (pricing, focus, cash flow, market shifts, hiring,
   retention, sales, local discovery)
-- **/books** — 52 book reviews that matter, mapped to mental models
+- **/books** — 56 book reviews that matter, mapped to mental models
 
 Transcripts are generated with `npm run transcripts` (uses the `youtube-transcript-api`
 package; YouTube rate-limits after ~30 rapid fetches — re-run to backfill).

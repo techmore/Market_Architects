@@ -989,6 +989,82 @@ export const books: Book[] = [
     whyItMatters:
       "The most complete look at first-principles method in action — and the honest cost of running a company that way.",
   },
+  {
+    slug: "lean-in",
+    title: "Lean In",
+    author: "Sheryl Sandberg",
+    year: 2013,
+    model: "purpose-leadership",
+    rating: 4,
+    cover: "clay",
+    blurb: "Women, work, and the will to lead — the book that put ambition back on the table.",
+    review:
+      "Sandberg's argument is deceptively simple: the ambition gap between men and women is socialized, not natural, and closing it starts with individuals claiming their seat and leaders building cultures that keep them there. It's half memoir, half manifesto, and its practical chapters — negotiate for yourself, make your partner a partner, lean into your strengths — apply to any owner building a team where everyone contributes fully.",
+    takeaways: [
+      "Ambition is a leadership skill; under-claiming it costs teams their best capacity.",
+      "Sit at the table — believe you belong before you're invited.",
+      "Make the home a 50/50 partnership; burnout is a team failure, not a badge.",
+    ],
+    whyItMatters:
+      "The framework for building a workplace where everyone — regardless of who they are — actually contributes. Read it before your next promotion or hiring decision.",
+  },
+  {
+    slug: "my-life-and-work",
+    title: "My Life and Work",
+    author: "Henry Ford",
+    year: 1922,
+    model: "operational-moats",
+    rating: 4,
+    cover: "ink",
+    blurb: "Ford's own account of the assembly line, mass production, and the philosophy of the machine.",
+    review:
+      "Ford's original manifesto on mass production — part autobiography, part operating doctrine. His insistence that the process is the product, that waste is the enemy, and that paying workers well creates the market for what they build is startlingly modern. It's a century old and reads like a lean-manufacturing bible; the assembly-line and $5-day chapters are worth the price alone.",
+    takeaways: [
+      "The process is the product — standardize until the work flows like a machine.",
+      "Collapse cost hard enough and you open a market competitors can't reach.",
+      "Wages are a flywheel input, not just an expense — the $5 day created the buyers.",
+    ],
+    whyItMatters:
+      "The primary source of the operational-moats mindset — read it to see scale economics and process thinking from the founder who invented them.",
+  },
+  {
+    slug: "jack-straight-from-the-gut",
+    title: "Jack: Straight from the Gut",
+    author: "Jack Welch",
+    year: 2001,
+    model: "operational-moats",
+    rating: 4,
+    cover: "blue",
+    blurb: "The memoir of the manager who ran GE for 20 years — candor, talent, and the Welch Way.",
+    review:
+      "Welch's no-nonsense account of two decades at GE. The chapters on candor, the rank-and-yank talent system, and the 'be #1 or #2' portfolio discipline read like a management masterclass from the operating room — brutal, direct, and effective. It's self-justifying in places, but the management doctrine is the real content, and it transfers directly to any business with more than a few employees.",
+    takeaways: [
+      "Candor is the most powerful management principle — say what's true, early.",
+      "Differentiate your talent and invest visibly in the top.",
+      "Fix, sell, or close any business that can't be first or second in its market.",
+    ],
+    whyItMatters:
+      "The executive's operating manual — read it when you need to run your business with more intensity and honesty.",
+  },
+  {
+    slug: "iwoz",
+    title: "iWoz",
+    author: "Steve Wozniak",
+    year: 2006,
+    model: "product-intuition",
+    rating: 4,
+    cover: "green",
+    blurb: "The maker's memoir — how a kid who loved engineering built the personal computer.",
+    review:
+      "Wozniak's charming account of building the Apple I and II — a story about craft, curiosity, and building for the joy of it. It's the anti-marketing origin story: no grand strategy, just an engineer who wanted a computer he'd love, whose product became a category. For anyone who runs a business on taste and craft rather than process, it's both validation and a warning about what happens when the brand takes over.",
+    takeaways: [
+      "Build the thing you yourself would love; craft is its own market research.",
+      "Elegance is subtraction — fewer chips, fewer steps, more delight.",
+      "The builder and the brander are a partnership, not a competition.",
+    ],
+    whyItMatters:
+      "The maker's mind in their own words — read it to remember why product intuition beats feature lists.",
+  },
 ];
 
 export const getBook = (slug: string): Book => {
