@@ -112,3 +112,21 @@ export interface Pathway {
   steps: PathwayStep[];
   estimated: string;
 }
+
+export interface ArchetypeValue {
+  dimension: "Competition" | "Hiring" | "Training" | "Promotion" | "Scaling";
+  belief: string;
+}
+
+export interface Archetype {
+  slug: string;
+  name: string;
+  tagline: string;
+  philosophy: string;
+  values: ArchetypeValue[];
+  marketFit: string;
+  model: string;
+  founders: string[];
+  books: string[];
+  lecture?: string;
+}

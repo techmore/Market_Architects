@@ -72,6 +72,13 @@
   .skip-link:focus {
     left: 0;
   }
+
+  button, a, input, textarea, select {
+    &:focus-visible {
+      outline: 2px solid var(--color-gold-300);
+      outline-offset: 3px;
+    }
+  }
 }
 
 @layer components {
@@ -97,5 +104,38 @@
 
   .btn-ghost {
     @apply inline-flex items-center gap-2 rounded-lg border border-ink-600 px-4 py-2 text-sm font-medium text-paper-100 transition-colors hover:border-gold-500/60 hover:text-gold-300;
+  }
+}
+
+@media print {
+  header, footer, .skip-link, nav[aria-label="Breadcrumb"], .print-worksheet,
+  .node-done, #tree-progress-wrap, #course-done, aside, iframe, .btn-primary, .btn-ghost {
+    display: none !important;
+  }
+
+  body, main, .card, .bg-ink-900, .bg-ink-850 {
+    background: white !important;
+    color: black !important;
+  }
+
+  .worksheet-body {
+    display: block !important;
+    border-color: #bbb !important;
+  }
+
+  .text-paper-50, .text-paper-100, .text-paper-200, .text-paper-300,
+  .text-paper-400, .text-paper-500, .text-gold-300, .text-gold-400 {
+    color: #111 !important;
+  }
+
+  .card { break-inside: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

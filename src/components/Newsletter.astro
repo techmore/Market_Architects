@@ -1,12 +1,16 @@
 ---
 interface Props {
   compact?: boolean;
+  instanceId?: string;
 }
 
-const { compact = false } = Astro.props;
+const { compact = false, instanceId = "default" } = Astro.props;
+const formId = `newsletter-form-${instanceId}`;
+const emailId = `newsletter-email-${instanceId}`;
+const messageId = `newsletter-msg-${instanceId}`;
 ---
 
-<form id="newsletter-form" class:list={["rounded-2xl border border-ink-700 bg-ink-900 p-6", compact ? "" : "md:p-8"]}>
+<form id={formId} aria-describedby={messageId} class:list={["rounded-2xl border border-ink-700 bg-ink-900 p-6", compact ? "" : "md:p-8"]}>
   <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
     <div>
       <p class="eyebrow">The Monday Model</p>
@@ -17,9 +21,9 @@ const { compact = false } = Astro.props;
       </p>
     </div>
     <div class="flex w-full max-w-sm flex-col gap-2">
-      <label class="sr-only" for="newsletter-email">Email address</label>
+      <label class="sr-only" for={emailId}>Email address</label>
       <input
-        id="newsletter-email"
+        id={emailId}
         name="email"
         type="email"
         required
@@ -29,15 +33,15 @@ const { compact = false } = Astro.props;
       <button type="submit" class="btn-primary w-full justify-center">Subscribe</button>
     </div>
   </div>
-  <p id="newsletter-msg" class="mt-3 hidden text-sm font-medium text-[#8fc79b]">
+  <p id={messageId} aria-live="polite" class="mt-3 hidden text-sm font-medium text-[#8fc79b]">
     Thanks — you're on the list. We'll see you Monday.
   </p>
 </form>
 
-<script>
-  const form = document.getElementById("newsletter-form");
-  const msg = document.getElementById("newsletter-msg");
-  const emailInput = document.getElementById("newsletter-email");
+<script define:vars={{ formId, messageId, emailId }}>
+  const form = document.getElementById(formId);
+  const msg = document.getElementById(messageId);
+  const emailInput = document.getElementById(emailId);
   // Set PUBLIC_NEWSLETTER_ENDPOINT in your build env (e.g. a Formspree/Beehiiv/Buttondown
   // URL). Without it, the form opens a pre-filled email instead.
   const ENDPOINT = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT;
@@ -65,10 +69,9 @@ const { compact = false } = Astro.props;
         msg.classList.add("text-clay-400");
       }
     } else {
-      const subject = encodeURIComponent("Subscribe: The Monday Model");
-      const body = encodeURIComponent("Add me to The Monday Model newsletter.\n\nEmail: " + email);
-      window.location.href = `mailto:hello@marketarchitects.example?subject=${subject}&body=${body}`;
-      msg.textContent = "This opens your email app — send it and you're in.";
+      msg.textContent = "Newsletter signup is not configured yet. Please ask the site owner to configure an endpoint.";
+      msg.classList.remove("text-[#8fc79b]");
+      msg.classList.add("text-clay-400");
     }
     msg?.classList.remove("hidden");
     form?.reset();

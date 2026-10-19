@@ -142,6 +142,18 @@ const otherEntry = pathways.find((p) => p.entry === siblingEntry);
           )}
         </div>
 
+        {pathway.slug === "owners-compass" && (
+          <div class="card p-5 border-gold-500/40">
+            <p class="eyebrow">Build your philosophy</p>
+            <a href={`${base}archetypes/`} class="mt-4 block rounded-lg border border-ink-700 bg-ink-900 p-4 transition hover:border-gold-500/60">
+              <p class="text-sm font-semibold text-paper-100">The six archetypes →</p>
+              <p class="mt-1 text-xs text-paper-400">
+                Adopt a lived operating philosophy — Steward, Operator, Monopolist, Missionary, Craftsman, Allocator — instead of reinventing one.
+              </p>
+            </a>
+          </div>
+        )}
+
         <div class="card p-5">
           <p class="eyebrow">Related pathways</p>
           <div class="mt-4 space-y-3">

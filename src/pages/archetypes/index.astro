@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { archetypes } from "../../data/archetypes";
+import { getModel } from "../../data/models";
+
+const base = import.meta.env.BASE_URL;
+const dimensions = ["Competition", "Hiring", "Training", "Promotion", "Scaling"];
+---
+
+<Layout
+  title="Business Archetypes"
+  description="Six proven operating philosophies — the Steward, Operator, Monopolist, Missionary, Craftsman, and Allocator — each mapped to its founders, books, and mental model so you can adopt a template instead of reinventing one."
+>
+  <div class="border-b border-ink-800 bg-ink-900">
+    <div class="container-site py-14 md:py-16">
+      <p class="eyebrow">Archetype reference</p>
+      <h1 class="mt-3 max-w-3xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+        Six ways to run a business
+      </h1>
+      <p class="mt-5 max-w-2xl text-base leading-relaxed text-paper-300">
+        You don't have to derive an operating philosophy from scratch. These six archetypes are
+        complete, lived philosophies drawn from the leaders in this library — each with a clear stance
+        on competition, hiring, training, promotion, and scaling. Pick the one closest to your wiring
+        and adopt it as your starting draft, then edit.
+      </p>
+    </div>
+  </div>
+
+  <div class="container-site py-14">
+    <div class="grid gap-6 lg:grid-cols-2">
+      {archetypes.map((a) => {
+        const model = getModel(a.model);
+        return (
+          <a href={`${base}archetypes/${a.slug}/`} class="card card-hover group flex flex-col p-6">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <p class="eyebrow">Archetype</p>
+                <h2 class="mt-2 font-display text-2xl font-semibold leading-tight">{a.name}</h2>
+                <p class="mt-1 text-sm font-medium text-gold-300">{a.tagline}</p>
+              </div>
+              <span class="shrink-0 rounded-full border border-gold-500/40 px-3 py-1.5 text-xs font-medium text-gold-300">
+                Model {model.index}
+              </span>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-paper-300 line-clamp-4">{a.philosophy}</p>
+            <div class="mt-5 flex flex-wrap items-center gap-2">
+              {dimensions.map((d) => (
+                <span class="rounded-full border border-ink-600 px-2.5 py-0.5 text-[11px] text-paper-400">{d}</span>
+              ))}
+            </div>
+            <div class="mt-4 flex items-center justify-between border-t border-ink-800 pt-4">
+              <span class="text-xs text-paper-500">
+                {a.founders.length} leaders · {a.books.length} books
+              </span>
+              <span class="text-sm font-medium text-gold-400 transition group-hover:translate-x-0.5">
+                Explore →
+              </span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

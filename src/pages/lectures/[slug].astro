@@ -121,3 +121,13 @@ const companionBooks = booksByModel(lecture.model).slice(0, 3);
     </div>
   )}
 </Layout>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: lecture.title,
+  description: lecture.summary,
+  author: { "@type": "Person", name: founder.name },
+  isPartOf: { "@type": "WebSite", name: "Market Architects" },
+  ...(lecture.youtubeId ? { video: { "@type": "VideoObject", name: lecture.title, embedUrl: `https://www.youtube-nocookie.com/embed/${lecture.youtubeId}` } } : {}),
+})} />

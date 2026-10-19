@@ -21,6 +21,7 @@ const thumb = lecture.youtubeId ? `https://img.youtube.com/vi/${lecture.youtubeI
         src={thumb}
         alt={`Thumbnail for ${lecture.title}`}
         loading="lazy"
+        decoding="async"
         class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
       />
     ) : (

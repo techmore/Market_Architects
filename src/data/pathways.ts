@@ -277,6 +277,90 @@ export const pathways: Pathway[] = [
       },
     ],
   },
+  {
+    slug: "owners-compass",
+    entry: "ideas",
+    title: "The Owner's Compass",
+    audience: "Looking for new ideas",
+    estimated: "8 stops · values-driven",
+    intro:
+      "For the owner who has customers but no written philosophy — who makes every call by gut and wonders whether the calls are consistent. This is a working session, not a tour: at each stop you meet an industry-standard way of thinking about one hard operating question — competition, hiring, training, promotion, scaling — and use it to write down what YOU believe. Then you pressure-test those values against your market's structure and pick a proven archetype to model, so you don't reinvent a philosophy from zero. Finish with a one-page operating philosophy you can actually hand to a new hire.",
+    outcome:
+      "A written owner's compass: your stance on competition, hiring, training, promotion, and scaling — tempered by your market structure and anchored to a proven archetype, drawn from standards and stated in your own words.",
+    steps: [
+      {
+        station: "Stop 01",
+        title: "Write down what you stand for",
+        narrative:
+          "Before any operating decision, you need a why. Sinek's Golden Circle is the industry-standard prompt: customers and employees follow belief, not features. Spend this stop writing one sentence on why your business exists beyond money — the line every later decision gets measured against.",
+        lecture: "sinek-start-with-why",
+        book: "start-with-why",
+        model: "purpose-leadership",
+      },
+      {
+        station: "Stop 02",
+        title: "Decide your stance on competition",
+        narrative:
+          "Most owners inherit their competitive instinct — undercut, match, beat them. Thiel's standard flips it: a market you have to fight in is one you've already lost. Write your rule: do you benchmark rivals, or build a category only you can serve? Your pricing, positioning, and partnerships all flow from this one answer.",
+        lecture: "thiel-competition",
+        book: "zero-to-one",
+        model: "zero-to-one",
+      },
+      {
+        station: "Stop 03",
+        title: "Set your hiring bar",
+        narrative:
+          "Hiring is where values become real. Collison's Stripe lesson — treat hiring as product strategy and filter for the skill that compounds — is the proven standard. Write your rule: do you hire for values-fit or raw talent, and which single ability must every hire share? The playbook turns it into a first-90-days system.",
+        lecture: "collison-blitzscaling",
+        playbook: "hire-your-first-employee",
+        model: "purpose-leadership",
+      },
+      {
+        station: "Stop 04",
+        title: "Commit to how you train people",
+        narrative:
+          "Do you grow your people or just use them? Maxwell's 5 Levels make development the line between a boss people tolerate and a leader they follow. Write your rule: what do you owe every employee in skills and judgment, and who owns their growth — them, you, or the system? A trained team is the moat that doesn't leave when someone gets a better offer.",
+        lecture: "maxwell-5-levels",
+        book: "five-levels-of-leadership",
+        model: "purpose-leadership",
+      },
+      {
+        station: "Stop 05",
+        title: "Define how people get promoted",
+        narrative:
+          "Promotion is the clearest signal of what you value. Collins's 'first who, then what' and Drucker's effective executive set the standard: promote on contribution and judgment, not tenure or likeability. Write your rule: what earns the next rung — results, years, or living the values from Stop 01? Get this wrong and your best people leave for a place that rewards what they actually do.",
+        book: "good-to-great",
+        lecture: "collison-altman",
+        model: "strategy-decision",
+      },
+      {
+        station: "Stop 06",
+        title: "Choose your scaling posture",
+        narrative:
+          "Scaling is where philosophy gets tested under money. Hoffman's blitzscaling (speed over efficiency) and Bezos's Day 1 (customer obsession, high-velocity decisions) are the two proven postures. Write your rule: when growth arrives, do you protect quality or chase pace, and at what size do you stop? Chouinard's sustainable growth is the third door — pick one and state it.",
+        lecture: "hoffman-blitzscaling",
+        book: "blitzscaling",
+        model: "operational-moats",
+      },
+      {
+        station: "Stop 07",
+        title: "Let the market structure shape your values",
+        narrative:
+          "Your values aren't chosen in a vacuum — the structure of your market decides which ones are survivable. Porter's Five Forces is the industry-standard lens: in a fragmented local market, trust and craft win and scale-obsession burns you out; in a winner-take-most tech market, monopoly-thinking is the only philosophy that compounds; in a capital-intensive commodity business, operational discipline and cost are the values that matter. Diagnose your structure first, then let it veto the values that can't survive there — you'll save years of fighting gravity.",
+        lecture: "porter-strategy",
+        book: "competitive-strategy",
+        model: "strategy-decision",
+      },
+      {
+        station: "Stop 08",
+        title: "Model an archetype — don't reinvent one",
+        narrative:
+          "You don't have to derive a philosophy from scratch; the library already holds complete, lived ones. Pick the archetype closest to your wiring and adopt its values as your starting draft: The Steward (Chouinard — grow on your own terms, values over pace), The Operator (Bezos & Walton — systems, flywheels, Day 1), The Monopolist (Thiel — own a niche, refuse the fight), The Missionary (Sinek — belief-led, people-first), The Craftsman (Jobs & Ive — taste and the power of no), The Allocator (Buffett & Collins — capital discipline, first who then what). Each maps to a mental model and a set of founders — start from one and edit, rather than reinvestigating every solution alone.",
+        book: "made-in-america",
+        model: "operational-moats",
+      },
+    ],
+  },
 ];
 
 export const getPathway = (slug: string): Pathway => {

@@ -46,6 +46,7 @@ const tiers = skillTree.map((tier) => {
           <div id="tree-progress" class="h-full w-0 bg-gold-500 transition-all duration-300"></div>
         </div>
         <span id="tree-label" class="text-xs text-paper-400">0 of {totalNodes} lessons complete</span>
+        <button id="reset-tree" type="button" class="text-xs text-paper-500 underline decoration-ink-600 underline-offset-2 hover:text-gold-300">Reset progress</button>
       </div>
 
       <div id="course-done" class="mt-6 hidden rounded-xl border border-green-500/60 bg-green-500/10 p-5">
@@ -61,6 +62,7 @@ const tiers = skillTree.map((tier) => {
         <span class="flex items-center gap-2"><span class="text-gold-400">✎</span> Finish the tier worksheet — that's where it sticks</span>
         <span class="flex items-center gap-2"><span class="text-gold-400">⤴</span> Lessons build on each other — follow the order</span>
       </div>
+      <button type="button" class="print-worksheet btn-ghost mt-5">Print the worksheets</button>
     </div>
   </div>
 
@@ -177,7 +179,7 @@ const tiers = skillTree.map((tier) => {
     try {
       const raw = localStorage.getItem(KEY);
       const arr = raw ? JSON.parse(raw) : [];
-      return Array.isArray(arr) ? arr : [];
+      return Array.isArray(arr) ? [...new Set(arr.filter((n) => Number.isInteger(n) && n >= 0 && n < TOTAL))] : [];
     } catch (e) {
       return [];
     }
@@ -222,6 +224,16 @@ const tiers = skillTree.map((tier) => {
       const chevron = btn.querySelector(".worksheet-chevron");
       if (chevron) chevron.style.transform = open ? "rotate(180deg)" : "";
     });
+  });
+
+  document.getElementById("reset-tree")?.addEventListener("click", () => {
+    if (!window.confirm("Reset all course progress? This cannot be undone.")) return;
+    localStorage.removeItem(KEY);
+    render();
+  });
+
+  document.querySelectorAll(".print-worksheet").forEach((button) => {
+    button.addEventListener("click", () => window.print());
   });
 
   render();

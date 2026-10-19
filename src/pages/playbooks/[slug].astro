@@ -33,6 +33,7 @@ const modelObjs = playbook.models.map((slug) => getModel(slug));
           </a>
         ))}
       </div>
+      <button type="button" class="print-worksheet btn-ghost mt-5">Print this playbook</button>
     </div>
   </div>
 
@@ -97,3 +98,9 @@ const modelObjs = playbook.models.map((slug) => getModel(slug));
     </div>
   </div>
 </Layout>
+
+<script>
+  document.querySelectorAll(".print-worksheet").forEach((button) => {
+    button.addEventListener("click", () => window.print());
+  });
+</script>
