@@ -71,6 +71,26 @@ check_refs("archetypes.ts", "founder", "founders")
 check_refs("archetypes.ts", "book", "books")
 check_refs("archetypes.ts", "lecture", "lectures")
 
+
+def check_array_refs(source_name: str, key: str, target: str) -> None:
+    """Check array-valued references such as `models: ["a", "b"]` or `founders: [...]`."""
+    for block in re.findall(rf"\b{key}:\s*\[([^\]]*)\]", text(source_name)):
+        for value in re.findall(r"[\"']([^\"']+)[\"']", block):
+            if value not in collections[target]:
+                errors.append(f"{source_name}: {key}[] entry '{value}' does not resolve in {target}")
+
+
+check_array_refs("founders.ts", "models", "models")
+check_array_refs("founders.ts", "books", "books")
+check_array_refs("models.ts", "epitomeFounders", "founders")
+check_array_refs("playbooks.ts", "models", "models")
+check_array_refs("archetypes.ts", "founders", "founders")
+check_array_refs("archetypes.ts", "books", "books")
+
+# Skill tree lessons must point at real lectures.
+if (DATA / "skilltree.ts").exists():
+    check_refs("skilltree.ts", "lecture", "lectures")
+
 lecture_source = text("lectures.ts")
 for youtube_id in re.findall(r"youtubeId:\s*['\"]([^'\"]+)['\"]", lecture_source):
     if not re.fullmatch(r"[A-Za-z0-9_-]{11}", youtube_id):
@@ -90,4 +110,4 @@ if errors:
     print("\n".join(f"- {error}" for error in errors))
     sys.exit(1)
 
-print("Content validation passed: collections, references, YouTube IDs, and transcript JSON are valid.")
+print("Content validation passed: collections, references (incl. arrays and skill tree), YouTube IDs, and transcript JSON are valid.")

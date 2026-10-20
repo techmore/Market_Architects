@@ -29,6 +29,10 @@ jobs:
         run: npm ci
       - name: Validate content graph
         run: npm run validate
+      - name: Type-check (astro check)
+        run: npm run check
+      - name: Unit tests (vitest)
+        run: npm test
       - name: Build
         run: npm run build
       - name: Upload Pages artifact

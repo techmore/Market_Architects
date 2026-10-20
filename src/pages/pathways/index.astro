@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { pathways } from "../../data/pathways";
 import { getLecture } from "../../data/lectures";
+import { stats } from "../../data/stats";
 
 const base = import.meta.env.BASE_URL;
 
@@ -10,7 +11,7 @@ const entries = [
     key: "ideas",
     kicker: "Route 01",
     title: "I'm looking for new ideas",
-    body: "A guided tour through all 8 mental models — competition, distribution, moats, focus, purpose. Each stop adds a framework you can steal for your own business.",
+    body: `A guided tour through all ${stats.models} mental models — competition, distribution, moats, focus, purpose. Each stop adds a framework you can steal for your own business.`,
     accent: "from-gold-600 to-gold-400",
     paths: pathways.filter((p) => p.entry === "ideas"),
   },
