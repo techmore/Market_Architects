@@ -25,17 +25,13 @@ const thinkers = founders.filter((f) => f.kind === "thinker");
 
   <div class="container-site py-14">
     <div class="flex flex-wrap items-center justify-between gap-4">
-      <p class="text-sm text-paper-400">
+      <p id="founder-count" class="text-sm text-paper-400" role="status" aria-live="polite">
         {founders.length} leaders · {lectures.length} lectures
       </p>
       <div class="flex gap-2" role="group" aria-label="Filter by kind">
-        <button data-kind="all" class="kind-chip rounded-full border border-gold-500 bg-gold-500 px-4 py-1.5 text-sm font-semibold text-ink-950">All</button>
-        <button data-kind="builder" class="kind-chip rounded-full border border-ink-600 px-4 py-1.5 text-sm font-medium text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300">
-          Builders · {builders.length}
-        </button>
-        <button data-kind="thinker" class="kind-chip rounded-full border border-ink-600 px-4 py-1.5 text-sm font-medium text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300">
-          Thinkers · {thinkers.length}
-        </button>
+        <button type="button" data-kind="all" class="chip" aria-pressed="true">All <span class="chip-count">{founders.length}</span></button>
+        <button type="button" data-kind="builder" class="chip" aria-pressed="false">Builders <span class="chip-count">{builders.length}</span></button>
+        <button type="button" data-kind="thinker" class="chip" aria-pressed="false">Thinkers <span class="chip-count">{thinkers.length}</span></button>
       </div>
     </div>
 
@@ -50,28 +46,30 @@ const thinkers = founders.filter((f) => f.kind === "thinker");
 </Layout>
 
 <script>
-  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>(".kind-chip"));
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>(".chip[data-kind]"));
+  const items = Array.from(document.querySelectorAll<HTMLElement>(".founder-item"));
+  const count = document.getElementById("founder-count");
+  const lectureTotal = count?.textContent?.match(/(\d+) lectures/)?.[1] ?? "";
   let active = "all";
 
   function apply() {
-    document.querySelectorAll<HTMLElement>(".founder-item").forEach((el) => {
-      el.style.display = active === "all" || el.dataset.kind === active ? "" : "none";
-    });
+    let visible = 0;
+    for (const el of items) {
+      const show = active === "all" || el.dataset.kind === active;
+      el.hidden = !show;
+      if (show) visible++;
+    }
+    if (count) {
+      const label = active === "all" ? "leaders" : active === "builder" ? "builders" : "thinkers";
+      count.textContent = `${visible} ${label} · ${lectureTotal} lectures`;
+    }
   }
 
-  chips.forEach((chip) => {
+  for (const chip of chips) {
     chip.addEventListener("click", () => {
       active = chip.dataset.kind ?? "all";
-      chips.forEach((c) => {
-        if (c === chip) {
-          c.classList.remove("border-ink-600", "text-paper-200");
-          c.classList.add("border-gold-500", "bg-gold-500", "text-ink-950");
-        } else {
-          c.classList.add("border-ink-600", "text-paper-200");
-          c.classList.remove("border-gold-500", "bg-gold-500", "text-ink-950");
-        }
-      });
+      for (const c of chips) c.setAttribute("aria-pressed", String(c === chip));
       apply();
     });
-  });
+  }
 </script>

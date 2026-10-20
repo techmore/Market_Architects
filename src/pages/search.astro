@@ -2,31 +2,54 @@
 import Layout from "../layouts/Layout.astro";
 import { lectures } from "../data/lectures";
 import { books } from "../data/books";
-import { founders } from "../data/founders";
+import { founders, getFounder } from "../data/founders";
 import { models } from "../data/models";
 import { playbooks } from "../data/playbooks";
+import { pathways } from "../data/pathways";
+import { archetypes } from "../data/archetypes";
 import { allTags } from "../data/tags";
 
 const base = import.meta.env.BASE_URL;
 const entries = [
-  ...lectures.map((x) => ({ type: "Lecture", title: x.title, text: `${x.founder} ${x.keywords.join(" ")}`, href: `${base}lectures/${x.slug}/` })),
-  ...books.map((x) => ({ type: "Book", title: x.title, text: `${x.author} ${x.review}`, href: `${base}books/${x.slug}/` })),
-  ...founders.map((x) => ({ type: "Leader", title: x.name, text: `${x.company} ${x.bio} ${x.knownFor.join(" ")}`, href: `${base}founders/${x.slug}/` })),
-  ...models.map((x) => ({ type: "Model", title: x.title, text: `${x.tagline} ${x.philosophy}`, href: `${base}models/${x.slug}/` })),
-  ...playbooks.map((x) => ({ type: "Playbook", title: x.title, text: `${x.problem} ${x.summary}`, href: `${base}playbooks/${x.slug}/` })),
-  ...allTags().map((x) => ({ type: "Idea", title: x.keyword, text: `${x.keyword} ${x.items.map((l) => l.title).join(" ")}`, href: `${base}tags/${x.slug}/` })),
-];
+  ...lectures.map((x) => ({ type: "Lecture", title: x.title, meta: getFounder(x.founder).name, text: `${getFounder(x.founder).name} ${x.summary} ${x.keywords.join(" ")}`, href: `${base}lectures/${x.slug}/` })),
+  ...books.map((x) => ({ type: "Book", title: x.title, meta: x.author, text: `${x.author} ${x.blurb} ${x.review}`, href: `${base}books/${x.slug}/` })),
+  ...founders.map((x) => ({ type: "Leader", title: x.name, meta: x.company, text: `${x.company} ${x.role} ${x.bio} ${x.knownFor.join(" ")}`, href: `${base}founders/${x.slug}/` })),
+  ...models.map((x) => ({ type: "Model", title: x.title, meta: x.tagline, text: `${x.tagline} ${x.philosophy} ${x.keyFrameworks.join(" ")}`, href: `${base}models/${x.slug}/` })),
+  ...playbooks.map((x) => ({ type: "Playbook", title: x.title, meta: "Problem playbook", text: `${x.problem} ${x.summary}`, href: `${base}playbooks/${x.slug}/` })),
+  ...pathways.map((x) => ({ type: "Pathway", title: x.title, meta: x.estimated, text: `${x.audience} ${x.intro}`, href: `${base}pathways/${x.slug}/` })),
+  ...archetypes.map((x) => ({ type: "Archetype", title: x.name, meta: x.tagline, text: `${x.tagline} ${x.philosophy}`, href: `${base}archetypes/${x.slug}/` })),
+  ...allTags().map((x) => ({ type: "Idea", title: x.keyword, meta: `${x.items.length} lecture${x.items.length === 1 ? "" : "s"}`, text: x.items.map((l) => l.title).join(" "), href: `${base}tags/${x.slug}/` })),
+].map((e) => ({ ...e, haystack: `${e.title} ${e.text}`.toLowerCase() }));
+
+const MAX_RESULTS = 60;
 ---
 
-<Layout title="Search" description="Search Market Architects lectures, books, leaders, models, playbooks, and ideas.">
+<Layout title="Search" description="Search Market Architects lectures, books, leaders, models, playbooks, pathways, archetypes, and ideas.">
   <section class="container-site py-14 md:py-16">
     <p class="eyebrow">Find your next idea</p>
     <h1 class="mt-3 font-display text-4xl font-semibold tracking-tight md:text-5xl">Search the library</h1>
+    <p class="mt-3 max-w-2xl text-sm text-paper-400">
+      {entries.length} entries — lectures, books, leaders, models, playbooks, pathways, archetypes and ideas. Matches title and description.
+    </p>
     <label for="site-search" class="sr-only">Search the library</label>
-    <input id="site-search" type="search" autofocus placeholder="Try “cash flow”, “Jobs”, or “flywheel”" class="mt-8 w-full rounded-lg border border-ink-600 bg-ink-900 px-4 py-3 text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none" />
-    <p id="search-count" class="mt-4 text-sm text-paper-400"></p>
+    <div class="relative mt-8">
+      <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-paper-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input
+        id="site-search"
+        type="search"
+        autofocus
+        autocomplete="off"
+        placeholder="Try “cash flow”, “Jobs”, or “flywheel”"
+        class="input py-3 pl-12 text-base"
+        data-max={MAX_RESULTS}
+      />
+    </div>
+    <p id="search-count" class="mt-4 text-sm text-paper-400" role="status" aria-live="polite"></p>
     <div id="search-results" class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
-    <p id="search-empty" class="mt-10 hidden text-center text-sm text-paper-500">No results. Try a broader idea or a founder’s name.</p>
+    <div id="search-empty" class="mt-10 hidden rounded-xl border border-dashed border-ink-600 p-10 text-center">
+      <p class="font-display text-xl font-semibold">No results.</p>
+      <p class="mt-2 text-sm text-paper-400">Try a broader idea, a founder's last name, or a book title.</p>
+    </div>
   </section>
 </Layout>
 
@@ -35,30 +58,50 @@ const entries = [
   const results = document.getElementById("search-results");
   const empty = document.getElementById("search-empty");
   const count = document.getElementById("search-count");
+  const MAX = Number(input?.dataset.max ?? 60);
+
+  function card(entry) {
+    const link = document.createElement("a");
+    link.href = entry.href;
+    link.className = "card card-hover flex flex-col p-5";
+    const type = document.createElement("p");
+    type.className = "eyebrow";
+    type.textContent = entry.type;
+    const title = document.createElement("h2");
+    title.className = "mt-2 font-display text-lg font-semibold leading-snug";
+    title.textContent = entry.title;
+    const meta = document.createElement("p");
+    meta.className = "mt-1 text-xs text-paper-400";
+    meta.textContent = entry.meta;
+    const explore = document.createElement("span");
+    explore.className = "mt-auto pt-4 text-sm text-gold-400";
+    explore.textContent = "Explore →";
+    link.append(type, title, meta, explore);
+    return link;
+  }
+
   function render() {
     const query = (input?.value ?? "").trim().toLowerCase();
-    const matches = entries.filter((entry) => !query || `${entry.title} ${entry.text}`.toLowerCase().includes(query)).slice(0, 60);
-    if (count) count.textContent = `${matches.length} result${matches.length === 1 ? "" : "s"}`;
-    if (empty) empty.classList.toggle("hidden", matches.length > 0);
-    if (results) {
-      results.replaceChildren(...matches.map((entry) => {
-        const link = document.createElement("a");
-        link.href = entry.href;
-        link.className = "card card-hover block p-5";
-        const type = document.createElement("p");
-        type.className = "eyebrow";
-        type.textContent = entry.type;
-        const title = document.createElement("h2");
-        title.className = "mt-2 font-display text-lg font-semibold";
-        title.textContent = entry.title;
-        const explore = document.createElement("span");
-        explore.className = "mt-4 inline-block text-sm text-gold-400";
-        explore.textContent = "Explore →";
-        link.append(type, title, explore);
-        return link;
-      }));
+    const terms = query.split(/\s+/).filter(Boolean);
+    const all = terms.length ? entries.filter((e) => terms.every((t) => e.haystack.includes(t))) : entries;
+    // Title matches first, then everything else, keeping the collection order.
+    const ranked = terms.length
+      ? [...all.filter((e) => e.title.toLowerCase().includes(query)), ...all.filter((e) => !e.title.toLowerCase().includes(query))]
+      : all;
+    const shown = ranked.slice(0, MAX);
+    if (count) {
+      if (!terms.length) count.textContent = `Showing the first ${shown.length} of ${entries.length} entries — start typing to search.`;
+      else if (ranked.length > MAX) count.textContent = `${ranked.length} results — showing the first ${MAX}. Add a word to narrow it down.`;
+      else count.textContent = `${ranked.length} result${ranked.length === 1 ? "" : "s"} for “${query}”`;
     }
+    empty?.classList.toggle("hidden", shown.length > 0);
+    results?.replaceChildren(...shown.map(card));
   }
-  input?.addEventListener("input", render);
+
+  let timer;
+  input?.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(render, 80);
+  });
   render();
 </script>

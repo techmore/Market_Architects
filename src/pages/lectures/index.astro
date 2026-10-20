@@ -2,10 +2,15 @@
 import Layout from "../../layouts/Layout.astro";
 import LectureCard from "../../components/LectureCard.astro";
 import { lectures } from "../../data/lectures";
+import { models } from "../../data/models";
+import { getFounder } from "../../data/founders";
 import { stats } from "../../data/stats";
+
+const base = import.meta.env.BASE_URL;
+const countByModel = new Map(models.map((m) => [m.slug, lectures.filter((l) => l.model === m.slug).length]));
 ---
 
-<Layout title="Lectures" description="Every annotated lecture in the Market Architects library.">
+<Layout title="Lectures" description={`Every annotated lecture in the Market Architects library — ${stats.lectures} talks from ${stats.leaders} founders and thinkers, filterable by mental model.`}>
   <div class="border-b border-ink-800 bg-ink-900">
     <div class="container-site py-14 md:py-16">
       <p class="eyebrow">The library</p>
@@ -17,15 +22,99 @@ import { stats } from "../../data/stats";
         "Apply This Model" translation for small business owners, and opposing or complementary
         takes from other founders.
       </p>
-      <a href={`${import.meta.env.BASE_URL}tags/`} class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-gold-400 hover:text-gold-300">
+      <a href={`${base}tags/`} class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-gold-400 hover:text-gold-300">
         Browse all {stats.lectures} lectures by {stats.tags} ideas →
       </a>
     </div>
   </div>
 
-  <div class="container-site py-14">
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {lectures.map((l) => <LectureCard lecture={l} />)}
+  <div class="container-site py-10 md:py-14">
+    <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+      <div class="flex flex-wrap gap-2" role="group" aria-label="Filter lectures by mental model">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">
+          All <span class="chip-count">{lectures.length}</span>
+        </button>
+        {models.map((m) => (
+          <button type="button" class="chip" data-filter={m.slug} aria-pressed="false">
+            {m.title} <span class="chip-count">{countByModel.get(m.slug)}</span>
+          </button>
+        ))}
+      </div>
+      <div class="w-full md:max-w-xs">
+        <label class="sr-only" for="lecture-search">Search lectures by title, speaker, or idea</label>
+        <div class="relative">
+          <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-paper-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="lecture-search" type="search" autocomplete="off" placeholder="Title, speaker, or idea…" class="input pl-10" />
+        </div>
+      </div>
+    </div>
+
+    <p id="lecture-count" class="mt-5 text-sm text-paper-400" role="status" aria-live="polite">
+      Showing all {lectures.length} lectures
+    </p>
+
+    <div id="lecture-grid" class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {lectures.map((l) => (
+        <div
+          class="lecture-item"
+          data-model={l.model}
+          data-search={`${l.title} ${getFounder(l.founder).name} ${l.keywords.join(" ")}`.toLowerCase()}
+        >
+          <LectureCard lecture={l} />
+        </div>
+      ))}
+    </div>
+
+    <div id="lecture-empty" class="mt-10 hidden rounded-xl border border-dashed border-ink-600 p-10 text-center">
+      <p class="font-display text-xl font-semibold">No lectures match.</p>
+      <p class="mt-2 text-sm text-paper-400">Try a founder's name, a broader idea like "pricing" or "focus", or clear the filter.</p>
+      <button type="button" id="lecture-clear" class="btn-ghost mt-5">Clear search and filters</button>
     </div>
   </div>
 </Layout>
+
+<script>
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>(".chip[data-filter]"));
+  const items = Array.from(document.querySelectorAll<HTMLElement>(".lecture-item"));
+  const search = document.getElementById("lecture-search") as HTMLInputElement | null;
+  const count = document.getElementById("lecture-count");
+  const empty = document.getElementById("lecture-empty");
+  const clear = document.getElementById("lecture-clear");
+  let activeModel = "all";
+
+  function apply() {
+    const q = (search?.value ?? "").trim().toLowerCase();
+    let visible = 0;
+    for (const el of items) {
+      const show = (activeModel === "all" || el.dataset.model === activeModel) && (!q || (el.dataset.search ?? "").includes(q));
+      el.hidden = !show;
+      if (show) visible++;
+    }
+    empty?.classList.toggle("hidden", visible > 0);
+    if (count) {
+      const filtered = activeModel !== "all" || q;
+      count.textContent = filtered
+        ? `Showing ${visible} of ${items.length} lectures`
+        : `Showing all ${items.length} lectures`;
+    }
+  }
+
+  for (const chip of chips) {
+    chip.addEventListener("click", () => {
+      activeModel = chip.dataset.filter ?? "all";
+      for (const c of chips) c.setAttribute("aria-pressed", String(c === chip));
+      apply();
+    });
+  }
+
+  search?.addEventListener("input", apply);
+  clear?.addEventListener("click", () => {
+    if (search) search.value = "";
+    activeModel = "all";
+    for (const c of chips) c.setAttribute("aria-pressed", String(c.dataset.filter === "all"));
+    apply();
+    search?.focus();
+  });
+
+  apply();
+</script>
