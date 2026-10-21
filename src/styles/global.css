@@ -34,6 +34,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
@@ -100,6 +101,27 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 rounded-lg bg-gold-500 px-4 py-2 text-sm font-semibold text-ink-950 transition-colors hover:bg-gold-400;
+  }
+
+  /* Toggle chips: state lives in aria-pressed so scripts only flip the attribute. */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-600 px-4 py-1.5 text-sm font-medium text-paper-200 transition-colors hover:border-gold-500/60 hover:text-gold-300;
+  }
+
+  .chip[aria-pressed="true"] {
+    @apply border-gold-500 bg-gold-500 font-semibold text-ink-950 hover:text-ink-950;
+  }
+
+  .chip-count {
+    @apply rounded-full bg-ink-700 px-1.5 text-[11px] font-medium text-paper-400;
+  }
+
+  .chip[aria-pressed="true"] .chip-count {
+    @apply bg-ink-950/15 text-ink-950;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-ink-600 bg-ink-900 px-4 py-2.5 text-sm text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none;
   }
 
   .btn-ghost {

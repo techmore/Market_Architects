@@ -10,6 +10,16 @@ const base = import.meta.env.BASE_URL;
     <p class="mt-3 max-w-md text-paper-400">
       The page you're looking for doesn't exist — or hasn't been architected yet.
     </p>
-    <a href={base} class="btn-primary mt-8">Back to home</a>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a href={base} class="btn-primary">Back to home</a>
+      <a href={`${base}search/`} class="btn-ghost">Search the library</a>
+    </div>
+    <nav aria-label="Popular sections" class="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+      <a href={`${base}skill-tree/`} class="text-gold-400 hover:text-gold-300">The course</a>
+      <a href={`${base}models/`} class="text-gold-400 hover:text-gold-300">Mental models</a>
+      <a href={`${base}founders/`} class="text-gold-400 hover:text-gold-300">Leaders</a>
+      <a href={`${base}lectures/`} class="text-gold-400 hover:text-gold-300">Lectures</a>
+      <a href={`${base}books/`} class="text-gold-400 hover:text-gold-300">Books</a>
+    </nav>
   </div>
 </Layout>

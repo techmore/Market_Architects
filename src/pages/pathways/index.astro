@@ -57,13 +57,13 @@ function lectureCount(path: (typeof pathways)[number]) {
             <h2 class="mt-2 font-display text-3xl font-bold leading-tight text-ink-950">{entry.title}</h2>
             <p class="mt-3 max-w-xl text-sm leading-relaxed text-ink-950/80">{entry.body}</p>
           </div>
-          <div class="flex shrink-0 gap-2 md:flex-col">
+          <div class="flex shrink-0 flex-col gap-2">
             {entry.paths.map((p) => (
               <a
                 href={`${base}pathways/${p.slug}/`}
-                class="rounded-lg bg-ink-950/85 px-4 py-2.5 text-sm font-semibold text-paper-50 transition hover:bg-ink-950"
+                class="rounded-lg bg-ink-950/85 px-4 py-2.5 text-left text-sm font-semibold text-paper-50 transition hover:bg-ink-950"
               >
-                {lectureCount(p)} talks · walk →
+                Walk {p.title} <span class="text-paper-50/60">· {lectureCount(p)} talks</span>
               </a>
             ))}
           </div>

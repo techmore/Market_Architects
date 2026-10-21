@@ -27,9 +27,13 @@ const { slug, videoId } = Astro.props;
     </svg>
   </button>
 
-  <div id="transcript-body" class="hidden border-t border-ink-700">
-    <div id="transcript-status" class="px-5 py-6 text-sm text-paper-400">
-      Loading transcript…
+  <div id="transcript-body" class="hidden border-t border-ink-700" aria-busy="false">
+    <div id="transcript-status" class="px-5 py-6 text-sm text-paper-400" role="status" aria-live="polite">
+      <div data-state="loading" class="space-y-3" aria-label="Loading transcript">
+        <div class="h-3 w-5/6 animate-pulse rounded bg-ink-700"></div>
+        <div class="h-3 w-full animate-pulse rounded bg-ink-700"></div>
+        <div class="h-3 w-2/3 animate-pulse rounded bg-ink-700"></div>
+      </div>
     </div>
     <ol id="transcript-list" class="hidden space-y-4 px-5 py-5"></ol>
   </div>
@@ -81,8 +85,23 @@ const { slug, videoId } = Astro.props;
         list?.appendChild(li);
       });
     } catch (e) {
-      if (status) status.textContent =
-        "Transcript not available yet — it was rate-limited on generation. Try again soon, or watch the lecture directly.";
+      if (status) {
+        status.replaceChildren();
+        const p = document.createElement("p");
+        p.textContent = "No transcript for this lecture yet. ";
+        if (videoId) {
+          const a = document.createElement("a");
+          a.href = `https://www.youtube.com/watch?v=${videoId}`;
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+          a.className = "text-gold-400 underline underline-offset-2 hover:text-gold-300";
+          a.textContent = "Watch it on YouTube";
+          p.append(a, " — captions are usually available there.");
+        }
+        status.append(p);
+      }
+    } finally {
+      body?.setAttribute("aria-busy", "false");
     }
   }
 
@@ -93,6 +112,7 @@ const { slug, videoId } = Astro.props;
     if (chevron) chevron.style.transform = open ? "rotate(180deg)" : "";
     if (open && !loaded) {
       loaded = true;
+      body?.setAttribute("aria-busy", "true");
       load();
     }
   });

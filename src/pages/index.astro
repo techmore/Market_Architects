@@ -6,6 +6,7 @@ import BookCard from "../components/BookCard.astro";
 import Newsletter from "../components/Newsletter.astro";
 import { models } from "../data/models";
 import { lectures } from "../data/lectures";
+import { getFounder } from "../data/founders";
 import { books } from "../data/books";
 import { pathways } from "../data/pathways";
 import { stats } from "../data/stats";
@@ -37,11 +38,9 @@ const base = import.meta.env.BASE_URL;
 
       <!-- Model filter chips -->
       <div class="mt-12 flex flex-wrap gap-2" role="group" aria-label="Filter lectures by mental model">
-        <button data-filter="all" class="filter-chip rounded-full border border-gold-500 bg-gold-500 px-4 py-1.5 text-sm font-semibold text-ink-950">
-          All
-        </button>
+        <button type="button" data-filter="all" class="chip filter-chip" aria-pressed="true">All</button>
         {models.map((m) => (
-          <button data-filter={m.slug} class="filter-chip rounded-full border border-ink-600 px-4 py-1.5 text-sm font-medium text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300">
+          <button type="button" data-filter={m.slug} class="chip filter-chip" aria-pressed="false">
             {m.title}
           </button>
         ))}
@@ -154,14 +153,15 @@ const base = import.meta.env.BASE_URL;
         <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">The core arguments, isolated</h2>
       </div>
       <div class="w-full max-w-sm">
-        <label class="sr-only" for="search">Search lectures</label>
+        <label class="sr-only" for="search">Search lectures by title, speaker, or idea</label>
         <div class="relative">
           <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-paper-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <input
             id="search"
             type="search"
-            placeholder="Search monopolies, flywheels, cash-flow…"
-            class="w-full rounded-lg border border-ink-600 bg-ink-900 py-2.5 pl-10 pr-3 text-sm text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none"
+            placeholder="Title, speaker, or idea…"
+            autocomplete="off"
+            class="input pl-10"
           />
         </div>
       </div>
@@ -172,14 +172,14 @@ const base = import.meta.env.BASE_URL;
           <div
             class:list={["lecture-item", lecture.featured ? "" : "lecture-more hidden"]}
           data-model={lecture.model}
-          data-title={lecture.title.toLowerCase()}
+          data-search={`${lecture.title} ${getFounder(lecture.founder).name} ${lecture.keywords.join(" ")}`.toLowerCase()}
         >
           <LectureCard lecture={lecture} />
         </div>
       ))}
     </div>
-    <p id="no-results" class="mt-10 hidden text-center text-sm text-paper-500">
-      No lectures match that search. Try "competition", "design", or "cash".
+    <p id="no-results" class="mt-10 hidden rounded-xl border border-dashed border-ink-600 p-8 text-center text-sm text-paper-400" role="status">
+      No lectures match that search. Try "competition", "design", or "cash" — or search the whole library on the <a href={`${base}search/`} class="text-gold-400 underline underline-offset-2 hover:text-gold-300">search page</a>.
     </p>
     <div class="mt-8 flex justify-center">
       <button id="show-all" class:list={["btn-ghost", lectures.some((lecture) => !lecture.featured) ? "" : "hidden"]}>
@@ -242,7 +242,7 @@ const base = import.meta.env.BASE_URL;
     let visible = 0;
     items.forEach((el) => {
       const matchesModel = activeModel === "all" || el.dataset.model === activeModel;
-      const matchesQuery = !q || (el.dataset.title ?? "").includes(q);
+      const matchesQuery = !q || (el.dataset.search ?? "").includes(q);
       const isHidden = !expanded && el.classList.contains("lecture-more");
       const show = matchesModel && matchesQuery && !isHidden;
       el.style.display = show ? "" : "none";
@@ -260,15 +260,9 @@ const base = import.meta.env.BASE_URL;
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
       activeModel = chip.dataset.filter ?? "all";
-      chips.forEach((c) => {
-        if (c === chip) {
-          c.classList.remove("border-ink-600", "text-paper-200");
-          c.classList.add("border-gold-500", "bg-gold-500", "text-ink-950");
-        } else {
-          c.classList.add("border-ink-600", "text-paper-200");
-          c.classList.remove("border-gold-500", "bg-gold-500", "text-ink-950");
-        }
-      });
+      chips.forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+      // Filtering by model implies the visitor wants to see every match, not just featured ones.
+      if (activeModel !== "all") expanded = true;
       applyFilter();
     });
   });

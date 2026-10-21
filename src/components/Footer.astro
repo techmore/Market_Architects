@@ -1,12 +1,50 @@
 ---
 import Newsletter from "./Newsletter.astro";
+import { models } from "../data/models";
+import { getFounder } from "../data/founders";
+import { getBook } from "../data/books";
+import { stats } from "../data/stats";
+
 const base = import.meta.env.BASE_URL;
+
+// Every footer link resolves to a real page; the getters throw at build time if a slug goes away.
+const featuredLeaders = ["peter-thiel", "steve-jobs", "jeff-bezos", "simon-sinek", "brene-brown", "jim-collins", "seth-godin", "james-clear"].map(getFounder);
+const featuredBooks = ["zero-to-one", "poor-charlies-almanack", "only-the-paranoid-survive", "atomic-habits", "start-with-why", "deep-work"].map(getBook);
+
 const cols = [
-  { href: `${base}skill-tree/`, label: "Course", items: ["The Skill Tree: Poor Man's MBA", "Pathways", "Problem playbooks", "Browse by idea"] },
-  { href: `${base}models/`, label: "Mental Models", items: ["Zero to One", "Product Intuition", "Operational Moats", "Distribution", "Bootstrapping", "Paradigm Pivots", "Purpose & Leadership", "Execution & Habits", "Strategy & Decision", "Quality & Manufacturing"] },
-  { href: `${base}founders/`, label: "Leaders", items: ["Peter Thiel", "Steve Jobs", "Jeff Bezos", "Simon Sinek", "Brené Brown", "Jim Collins", "Seth Godin", "James Clear"] },
-  { href: `${base}books/`, label: "Books", items: ["Zero to One", "Poor Charlie's Almanack", "Only the Paranoid Survive", "Atomic Habits", "Start With Why", "Deep Work"] },
-  { href: `${base}tags/`, label: "Browse by Idea", items: ["Monopoly & competition", "Compounding & flywheels", "Trust & culture", "Focus & habits", "Pricing & negotiation", "Resilience & grit"] },
+  {
+    label: "Learn",
+    href: `${base}skill-tree/`,
+    items: [
+      { label: "The course: a poor man's MBA", href: `${base}skill-tree/` },
+      { label: "Guided pathways", href: `${base}pathways/` },
+      { label: "Problem playbooks", href: `${base}playbooks/` },
+      { label: "Business archetypes", href: `${base}archetypes/` },
+      { label: `Browse ${stats.tags} ideas`, href: `${base}tags/` },
+      { label: "Search the library", href: `${base}search/` },
+    ],
+  },
+  {
+    label: "Mental models",
+    href: `${base}models/`,
+    items: models.map((m) => ({ label: m.title, href: `${base}models/${m.slug}/` })),
+  },
+  {
+    label: "Leaders",
+    href: `${base}founders/`,
+    items: [
+      ...featuredLeaders.map((f) => ({ label: f.name, href: `${base}founders/${f.slug}/` })),
+      { label: `All ${stats.leaders} leaders →`, href: `${base}founders/` },
+    ],
+  },
+  {
+    label: "Books",
+    href: `${base}books/`,
+    items: [
+      ...featuredBooks.map((b) => ({ label: b.title, href: `${base}books/${b.slug}/` })),
+      { label: `All ${stats.books} reviews →`, href: `${base}books/` },
+    ],
+  },
 ];
 ---
 
@@ -15,14 +53,17 @@ const cols = [
     <Newsletter compact instanceId="footer" />
   </div>
 
-  <div class="container-site grid gap-10 py-12 md:grid-cols-6">
-    <div class="md:col-span-2">
+  <nav class="container-site grid gap-10 py-12 sm:grid-cols-2 md:grid-cols-6" aria-label="Footer">
+    <div class="sm:col-span-2">
       <p class="font-display text-xl font-semibold tracking-tight">
         Market<span class="text-gold-400">Architects</span>
       </p>
       <p class="mt-3 max-w-sm text-sm leading-relaxed text-paper-400">
         The mental models of legendary founders — annotated lectures, transcripts, and
         book reviews translated into actions a small business owner can use this week.
+      </p>
+      <p class="mt-4 text-xs text-paper-500">
+        {stats.models} models · {stats.leaders} leaders · {stats.lectures} lectures · {stats.books} books
       </p>
       <p class="mt-6 text-xs text-paper-500">
         Lecture clips and book recommendations are curated for education. All videos
@@ -32,15 +73,17 @@ const cols = [
 
     {cols.map((col) => (
       <div>
-        <a href={col.href} class="eyebrow">{col.label}</a>
+        <a href={col.href} class="eyebrow hover:text-gold-300">{col.label}</a>
         <ul class="mt-4 space-y-2.5">
           {col.items.map((item) => (
-            <li class="text-sm text-paper-300">{item}</li>
+            <li>
+              <a href={item.href} class="text-sm text-paper-300 transition-colors hover:text-gold-300">{item.label}</a>
+            </li>
           ))}
         </ul>
       </div>
     ))}
-  </div>
+  </nav>
 
   <div class="border-t border-ink-800">
     <div class="container-site flex flex-col gap-2 py-5 text-xs text-paper-500 md:flex-row md:items-center md:justify-between">

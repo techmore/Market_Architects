@@ -13,13 +13,13 @@ const nav = [
 ];
 function isActive(href: string): boolean {
   const clean = href.replace(/\/$/, "");
-  return pathname === clean || pathname.startsWith(clean + "/") || (clean === base.replace(/\/$/, "") && pathname === "");
+  return pathname === clean || pathname.startsWith(clean + "/");
 }
 ---
 
-<header class="sticky top-0 z-40 border-b border-ink-800/80 bg-ink-950/90 backdrop-blur">
-  <div class="container-site flex h-16 items-center justify-between gap-6">
-    <a href={base} class="group flex items-center gap-2.5" aria-label="Market Architects home">
+<header id="site-header" class="sticky top-0 z-40 border-b border-ink-800/80 bg-ink-950/90 backdrop-blur">
+  <div class="container-site flex h-16 items-center justify-between gap-4">
+    <a href={base} class="group flex shrink-0 items-center gap-2.5" aria-label="Market Architects home">
       <span class="flex h-8 w-8 items-center justify-center rounded-md bg-ink-800 ring-1 ring-ink-700 transition group-hover:ring-gold-500/60">
         <svg viewBox="0 0 24 24" class="h-4.5 w-4.5" fill="none" aria-hidden="true">
           <path d="M5 18V7h2.1l4.4 6.6V7H14v11h-2.1L7.4 11.4V18z" fill="#d4a95c"/>
@@ -30,7 +30,7 @@ function isActive(href: string): boolean {
       </span>
     </a>
 
-    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+    <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
       {nav.map((n) => {
         const active = isActive(n.href);
         return (
@@ -38,7 +38,7 @@ function isActive(href: string): boolean {
             href={n.href}
             aria-current={active ? "page" : undefined}
             class:list={[
-              "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+              "rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors",
               active ? "bg-ink-800 text-gold-300" : "text-paper-200 hover:bg-ink-800 hover:text-gold-300",
             ]}
           >
@@ -48,34 +48,83 @@ function isActive(href: string): boolean {
       })}
     </nav>
 
-    <a href={`${base}skill-tree/`} class="btn-primary hidden sm:inline-flex">Start the course</a>
+    <!-- The 8-item nav plus the CTA only fit together from xl up; between md and lg the nav lives in the menu. -->
+    <a href={`${base}skill-tree/`} class="btn-primary hidden whitespace-nowrap md:inline-flex lg:hidden xl:inline-flex">Start the course</a>
 
-    <button id="menu-toggle" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ink-700 text-paper-200 md:hidden" aria-label="Toggle menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ink-700 text-paper-200 transition hover:border-gold-500/60 hover:text-gold-300 lg:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg data-icon="open" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
         <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <svg data-icon="close" viewBox="0 0 24 24" class="hidden h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"/>
       </svg>
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-ink-800 bg-ink-900 md:hidden">
+  <div id="mobile-menu" class="hidden border-t border-ink-800 bg-ink-900 lg:hidden">
     <nav class="container-site flex flex-col py-3" aria-label="Mobile">
-      {nav.map((n) => (
-        <a href={n.href} class="rounded-md px-3 py-2.5 text-sm font-medium text-paper-200 hover:bg-ink-800 hover:text-gold-300">
-          {n.label}
-        </a>
-      ))}
-      <a href={`${base}skill-tree/`} class="btn-primary mx-3 mt-2 w-fit">Start the course</a>
+      {nav.map((n) => {
+        const active = isActive(n.href);
+        return (
+          <a
+            href={n.href}
+            aria-current={active ? "page" : undefined}
+            class:list={[
+              "rounded-md px-3 py-3 text-base font-medium",
+              active ? "bg-ink-800 text-gold-300" : "text-paper-200 hover:bg-ink-800 hover:text-gold-300",
+            ]}
+          >
+            {n.label}
+          </a>
+        );
+      })}
+      <a href={`${base}skill-tree/`} class="btn-primary mx-3 mt-3 w-fit">Start the course</a>
     </nav>
   </div>
 </header>
 
 <script>
+  const header = document.getElementById("site-header");
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("mobile-menu");
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      const open = menu.classList.toggle("hidden") === false;
-      toggle.setAttribute("aria-expanded", String(open));
-    });
+  const iconOpen = toggle?.querySelector<SVGElement>('[data-icon="open"]');
+  const iconClose = toggle?.querySelector<SVGElement>('[data-icon="close"]');
+
+  function isOpen(): boolean {
+    return toggle?.getAttribute("aria-expanded") === "true";
   }
+
+  function setOpen(open: boolean) {
+    if (!toggle || !menu) return;
+    menu.classList.toggle("hidden", !open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    iconOpen?.classList.toggle("hidden", open);
+    iconClose?.classList.toggle("hidden", !open);
+  }
+
+  toggle?.addEventListener("click", () => setOpen(!isOpen()));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && isOpen()) {
+      setOpen(false);
+      toggle?.focus();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (isOpen() && header && !header.contains(event.target as Node)) setOpen(false);
+  });
+
+  // Close the menu if the viewport grows past the breakpoint where the full nav appears.
+  window.matchMedia("(min-width: 1024px)").addEventListener("change", (mq) => {
+    if (mq.matches) setOpen(false);
+  });
 </script>
