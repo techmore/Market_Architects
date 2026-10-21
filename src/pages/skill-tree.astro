@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { skillTree, getLectureForNode } from "../data/skilltree";
 import { getFounder, initialsOf } from "../data/founders";
 import { getModel } from "../data/models";
+import { stats } from "../data/stats";
 
 const base = import.meta.env.BASE_URL;
 const totalNodes = skillTree.reduce((n, t) => n + t.nodes.length, 0);
@@ -26,7 +27,7 @@ const tiers = skillTree.map((tier) => {
 
 <Layout
   title="The Skill Tree — a Poor Man's MBA"
-  description="A self-guided business course in six tiers — Think, Create, Enter, Operate, Lead, Endure — taught by 63 industry experts."
+  description={`A self-guided business course in ${stats.tiers} tiers — Think, Create, Enter, Operate, Lead, Endure — ${totalNodes} lessons taught by ${stats.leaders} founders and thinkers.`}
 >
   <div class="border-b border-ink-800 bg-ink-900">
     <div class="container-site py-14 md:py-16">
@@ -191,7 +192,7 @@ const tiers = skillTree.map((tier) => {
     if (bar) bar.style.width = pct + "%";
     if (label) label.textContent = done.length + " of " + TOTAL + " lessons complete";
     if (doneBanner) doneBanner.classList.toggle("hidden", done.length < TOTAL);
-    document.querySelectorAll(".node-done").forEach((btn) => {
+    document.querySelectorAll<HTMLButtonElement>(".node-done").forEach((btn) => {
       const idx = Number(btn.dataset.index);
       const isDone = done.includes(idx);
       btn.setAttribute("aria-pressed", String(isDone));
@@ -201,7 +202,7 @@ const tiers = skillTree.map((tier) => {
     });
   }
 
-  document.querySelectorAll(".node-done").forEach((btn) => {
+  document.querySelectorAll<HTMLButtonElement>(".node-done").forEach((btn) => {
     btn.addEventListener("click", () => {
       const idx = Number(btn.dataset.index);
       const current = read();
@@ -217,11 +218,11 @@ const tiers = skillTree.map((tier) => {
 
   document.querySelectorAll(".worksheet-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const id = btn.getAttribute("aria-controls");
+      const id = btn.getAttribute("aria-controls") ?? "";
       const body = document.getElementById(id);
       const open = body?.classList.toggle("hidden") === false;
       btn.setAttribute("aria-expanded", String(open));
-      const chevron = btn.querySelector(".worksheet-chevron");
+      const chevron = btn.querySelector<HTMLElement>(".worksheet-chevron");
       if (chevron) chevron.style.transform = open ? "rotate(180deg)" : "";
     });
   });

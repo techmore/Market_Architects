@@ -81,7 +81,7 @@ const { slug, videoId } = Astro.props;
         list?.appendChild(li);
       });
     } catch (e) {
-      status.textContent =
+      if (status) status.textContent =
         "Transcript not available yet — it was rate-limited on generation. Try again soon, or watch the lecture directly.";
     }
   }

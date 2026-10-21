@@ -1,13 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import LectureCard from "../../components/LectureCard.astro";
-import VideoEmbed from "../../components/VideoEmbed.astro";
-import AnnotatedTimestamps from "../../components/AnnotatedTimestamps.astro";
-import ApplyThisModel from "../../components/ApplyThisModel.astro";
-import CrossReferences from "../../components/CrossReferences.astro";
 import { lectures } from "../../data/lectures";
-import { getModel, models } from "../../data/models";
-import { getFounder } from "../../data/founders";
+import { stats } from "../../data/stats";
 ---
 
 <Layout title="Lectures" description="Every annotated lecture in the Market Architects library.">
@@ -23,7 +18,7 @@ import { getFounder } from "../../data/founders";
         takes from other founders.
       </p>
       <a href={`${import.meta.env.BASE_URL}tags/`} class="mt-5 inline-flex items-center gap-2 text-sm font-medium text-gold-400 hover:text-gold-300">
-        Browse all 54 lectures by idea →
+        Browse all {stats.lectures} lectures by {stats.tags} ideas →
       </a>
     </div>
   </div>

@@ -1,9 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { books, getBook } from "../../data/books";
+import { books } from "../../data/books";
 import { getModel } from "../../data/models";
 import { lecturesByModel } from "../../data/lectures";
-import { getFounder } from "../../data/founders";
 import LectureCard from "../../components/LectureCard.astro";
 
 export async function getStaticPaths() {

@@ -5,11 +5,11 @@ import LectureCard from "../components/LectureCard.astro";
 import BookCard from "../components/BookCard.astro";
 import Newsletter from "../components/Newsletter.astro";
 import { models } from "../data/models";
-import { lectures, featuredLectures } from "../data/lectures";
+import { lectures } from "../data/lectures";
 import { books } from "../data/books";
 import { pathways } from "../data/pathways";
+import { stats } from "../data/stats";
 
-const featured = featuredLectures();
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -23,8 +23,8 @@ const base = import.meta.env.BASE_URL;
         Great founders think in <span class="text-gold-400">systems</span>, not hustle.
       </h1>
       <p class="mt-6 max-w-2xl text-base leading-relaxed text-paper-300 md:text-lg">
-        Market Architects distills 63 of the world's most useful business thinkers — founders,
-        authors, and professors — into 10 mental models, with annotated 3-minute video clips,
+        Market Architects distills {stats.leaders} of the world's most useful business thinkers — founders,
+        authors, and professors — into {stats.models} mental models, with annotated 3-minute video clips,
         "Apply This Model" translations, and book reviews that matter.
       </p>
       <div class="mt-8 flex flex-wrap gap-3">
@@ -32,7 +32,7 @@ const base = import.meta.env.BASE_URL;
           Start the free course
           <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href={`${base}models/`} class="btn-ghost">Browse 10 models</a>
+        <a href={`${base}models/`} class="btn-ghost">Browse {stats.models} models</a>
       </div>
 
       <!-- Model filter chips -->
@@ -68,7 +68,7 @@ const base = import.meta.env.BASE_URL;
           <p class="text-xs font-bold uppercase tracking-widest text-ink-950/70">Door 01</p>
           <h3 class="mt-2 font-display text-3xl font-bold leading-tight text-ink-950">I'm looking for new ideas</h3>
           <p class="mt-3 max-w-md text-sm leading-relaxed text-ink-950/80">
-            Walk The Idea Explorer — a guided tour through all 10 mental models, one framework per
+            Walk The Idea Explorer — a guided tour through all {stats.models} mental models, one framework per
             stop, from competition to purpose.
           </p>
           <span class="mt-6 inline-flex items-center gap-2 rounded-lg bg-ink-950/85 px-4 py-2 text-sm font-semibold text-paper-50 transition group-hover:bg-ink-950">
@@ -108,7 +108,7 @@ const base = import.meta.env.BASE_URL;
       </div>
 
       <!-- Continue your path (revealed by JS when progress exists) -->
-      <div id="continue-path" class="mt-6 hidden">
+      <div id="continue-path" class="mt-6 hidden" data-lessons={stats.lessons}>
         <div class="flex flex-col items-start justify-between gap-4 rounded-xl border border-gold-500/50 bg-ink-850 p-6 md:flex-row md:items-center">
           <div>
             <p class="eyebrow text-gold-400">Continue your path</p>
@@ -130,7 +130,7 @@ const base = import.meta.env.BASE_URL;
     <div class="container-site flex flex-col items-start justify-between gap-6 py-12 md:flex-row md:items-center">
       <div class="max-w-2xl">
         <p class="eyebrow">The poor man's MBA</p>
-        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">Take the full course — 60 lessons in 6 tiers</h2>
+        <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">Take the full course — {stats.lessons} lessons in {stats.tiers} tiers</h2>
         <p class="mt-3 text-sm leading-relaxed text-paper-300">
           Think first → create → spread it → operate it perfectly → lead the team → survive the shift.
           A guided progression from the people who actually did it, with nothing to pay and no exams.
@@ -195,7 +195,7 @@ const base = import.meta.env.BASE_URL;
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p class="eyebrow">The taxonomy</p>
-          <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">10 core mental models</h2>
+          <h2 class="mt-2 font-display text-3xl font-semibold tracking-tight">{stats.models} core mental models</h2>
         </div>
         <a href={`${base}models/`} class="text-sm font-medium text-gold-400 hover:text-gold-300">All models →</a>
       </div>
@@ -227,11 +227,12 @@ const base = import.meta.env.BASE_URL;
 
 <script>
   const BASE = document.body?.dataset.base ?? "/Market_Architects/";
-  const grid = document.getElementById("lecture-grid");
-  const search = document.getElementById("search");
+  const search = document.getElementById("search") as HTMLInputElement | null;
   const noResults = document.getElementById("no-results");
   const showAll = document.getElementById("show-all");
-  const chips = Array.from(document.querySelectorAll(".filter-chip"));
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>(".filter-chip"));
+  const items = Array.from(document.querySelectorAll<HTMLElement>(".lecture-item"));
+  const totalLectures = items.length;
 
   let activeModel = "all";
   let expanded = false;
@@ -239,7 +240,7 @@ const base = import.meta.env.BASE_URL;
   function applyFilter() {
     const q = (search?.value ?? "").trim().toLowerCase();
     let visible = 0;
-    document.querySelectorAll(".lecture-item").forEach((el) => {
+    items.forEach((el) => {
       const matchesModel = activeModel === "all" || el.dataset.model === activeModel;
       const matchesQuery = !q || (el.dataset.title ?? "").includes(q);
       const isHidden = !expanded && el.classList.contains("lecture-more");
@@ -251,7 +252,8 @@ const base = import.meta.env.BASE_URL;
     if (showAll) {
       const anyMore = !!document.querySelector(".lecture-item.lecture-more");
       showAll.classList.toggle("hidden", !anyMore);
-      if (expanded) showAll.textContent = "Show fewer";
+      showAll.textContent = expanded ? "Show fewer lectures" : `Show all ${totalLectures} lectures`;
+      showAll.setAttribute("aria-expanded", String(expanded));
     }
   }
 
@@ -281,7 +283,7 @@ const base = import.meta.env.BASE_URL;
 
   // Continue-your-path: reveal if the visitor has saved progress on any pathway
   const continueBox = document.getElementById("continue-path");
-  const continueLink = document.getElementById("continue-link");
+  const continueLink = document.getElementById("continue-link") as HTMLAnchorElement | null;
   const continueMeta = document.getElementById("continue-meta");
   const continueTreeLink = document.getElementById("continue-tree-link");
   const continueTreeMeta = document.getElementById("continue-tree-meta");
@@ -307,7 +309,8 @@ const base = import.meta.env.BASE_URL;
     if (Array.isArray(treeVal) && treeVal.length > 0 && continueBox && continueTreeLink && continueTreeMeta) {
       continueBox.classList.remove("hidden");
       continueTreeLink.classList.remove("hidden");
-      continueTreeMeta.textContent = `Course — ${treeVal.length} of 54 lessons complete`;
+      const totalLessons = Number(continueBox.dataset.lessons ?? 0);
+      continueTreeMeta.textContent = `Course — ${treeVal.length} of ${totalLessons} lessons complete`;
       sawProgress = true;
     }
     if (!sawProgress && continueBox) continueBox.classList.add("hidden");

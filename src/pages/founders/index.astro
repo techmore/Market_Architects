@@ -50,11 +50,11 @@ const thinkers = founders.filter((f) => f.kind === "thinker");
 </Layout>
 
 <script>
-  const chips = Array.from(document.querySelectorAll(".kind-chip"));
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>(".kind-chip"));
   let active = "all";
 
   function apply() {
-    document.querySelectorAll(".founder-item").forEach((el) => {
+    document.querySelectorAll<HTMLElement>(".founder-item").forEach((el) => {
       el.style.display = active === "all" || el.dataset.kind === active ? "" : "none";
     });
   }

@@ -8,9 +8,19 @@ const { compact = false, instanceId = "default" } = Astro.props;
 const formId = `newsletter-form-${instanceId}`;
 const emailId = `newsletter-email-${instanceId}`;
 const messageId = `newsletter-msg-${instanceId}`;
+// Set PUBLIC_NEWSLETTER_ENDPOINT in the build environment (see .env.example) to a form
+// backend that accepts a JSON POST { email } — e.g. Formspree, Buttondown, Beehiiv.
+// Without it the form stays inert and tells the visitor signup isn't live yet.
+const endpoint = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT ?? "";
 ---
 
-<form id={formId} aria-describedby={messageId} class:list={["rounded-2xl border border-ink-700 bg-ink-900 p-6", compact ? "" : "md:p-8"]}>
+<form
+  id={formId}
+  class:list={["newsletter-form rounded-2xl border border-ink-700 bg-ink-900 p-6", compact ? "" : "md:p-8"]}
+  data-endpoint={endpoint}
+  aria-describedby={messageId}
+  novalidate
+>
   <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
     <div>
       <p class="eyebrow">The Monday Model</p>
@@ -26,54 +36,80 @@ const messageId = `newsletter-msg-${instanceId}`;
         id={emailId}
         name="email"
         type="email"
+        autocomplete="email"
+        inputmode="email"
         required
         placeholder="you@yourbusiness.com"
-        class="w-full rounded-lg border border-ink-600 bg-ink-950 px-4 py-2.5 text-sm text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none"
+        class="w-full rounded-lg border border-ink-600 bg-ink-950 px-4 py-2.5 text-sm text-paper-50 placeholder:text-paper-500 focus:border-gold-500 focus:outline-none aria-[invalid=true]:border-clay-500"
       />
       <button type="submit" class="btn-primary w-full justify-center">Subscribe</button>
     </div>
   </div>
-  <p id={messageId} aria-live="polite" class="mt-3 hidden text-sm font-medium text-[#8fc79b]">
-    Thanks — you're on the list. We'll see you Monday.
-  </p>
+  <p id={messageId} role="status" aria-live="polite" class="newsletter-msg mt-3 hidden text-sm font-medium"></p>
 </form>
 
-<script define:vars={{ formId, messageId, emailId }}>
-  const form = document.getElementById(formId);
-  const msg = document.getElementById(messageId);
-  const emailInput = document.getElementById(emailId);
-  // Set PUBLIC_NEWSLETTER_ENDPOINT in your build env (e.g. a Formspree/Beehiiv/Buttondown
-  // URL). Without it, the form opens a pre-filled email instead.
-  const ENDPOINT = import.meta.env.PUBLIC_NEWSLETTER_ENDPOINT;
+<script>
+  // One module script serves every newsletter form on the page (Astro dedupes it).
+  const OK = "text-[#8fc79b]";
+  const ERR = "text-clay-400";
 
-  form?.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = emailInput?.value ?? "";
-    if (ENDPOINT) {
+  function isValidEmail(value: string): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  document.querySelectorAll<HTMLFormElement>("form.newsletter-form").forEach((form) => {
+    const endpoint = form.dataset.endpoint ?? "";
+    const input = form.querySelector<HTMLInputElement>("input[type=email]");
+    const msg = form.querySelector<HTMLElement>(".newsletter-msg");
+    const button = form.querySelector<HTMLButtonElement>("button[type=submit]");
+
+    function show(text: string, ok: boolean) {
+      if (!msg) return;
+      msg.textContent = text;
+      msg.classList.remove("hidden", OK, ERR);
+      msg.classList.add(ok ? OK : ERR);
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const email = (input?.value ?? "").trim();
+      if (!isValidEmail(email)) {
+        input?.setAttribute("aria-invalid", "true");
+        show("Please enter a valid email address.", false);
+        input?.focus();
+        return;
+      }
+      input?.removeAttribute("aria-invalid");
+
+      if (!endpoint) {
+        show("Signup isn't live yet — check back soon. Nothing was sent.", false);
+        return;
+      }
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = "Subscribing…";
+      }
       try {
-        const res = await fetch(ENDPOINT, {
+        const res = await fetch(endpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
           body: JSON.stringify({ email }),
         });
         if (res.ok) {
-          msg.textContent = "Thanks — you're on the list. We'll see you Monday.";
+          show("Thanks — you're on the list. We'll see you Monday.", true);
+          form.reset();
         } else {
-          msg.textContent = "Something went wrong — please try again, or email us directly.";
-          msg.classList.remove("text-[#8fc79b]");
-          msg.classList.add("text-clay-400");
+          show("Something went wrong on our end — please try again in a moment.", false);
         }
-      } catch (err) {
-        msg.textContent = "Network error — please try again, or email us directly.";
-        msg.classList.remove("text-[#8fc79b]");
-        msg.classList.add("text-clay-400");
+      } catch {
+        show("Network error — please check your connection and try again.", false);
+      } finally {
+        if (button) {
+          button.disabled = false;
+          button.textContent = "Subscribe";
+        }
       }
-    } else {
-      msg.textContent = "Newsletter signup is not configured yet. Please ask the site owner to configure an endpoint.";
-      msg.classList.remove("text-[#8fc79b]");
-      msg.classList.add("text-clay-400");
-    }
-    msg?.classList.remove("hidden");
-    form?.reset();
+    });
   });
 </script>

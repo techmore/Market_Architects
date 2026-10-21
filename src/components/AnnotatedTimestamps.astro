@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { lecture } = Astro.props;
-const ytBase = `https://www.youtube.com/watch?v=${lecture.youtubeId}`;
+const ytBase = lecture.youtubeId ? `https://www.youtube.com/watch?v=${lecture.youtubeId}` : null;
 ---
 
 <div class="card p-5">
@@ -28,9 +28,9 @@ const ytBase = `https://www.youtube.com/watch?v=${lecture.youtubeId}`;
           </span>
           <div class="min-w-0">
             <a
-              href={`${ytBase}&t=${ts.seconds}`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={ytBase ? `${ytBase}&t=${ts.seconds}` : undefined}
+              target={ytBase ? "_blank" : undefined}
+              rel={ytBase ? "noopener noreferrer" : undefined}
               class="inline-flex flex-wrap items-baseline gap-x-2"
             >
               <span class="font-display text-base font-semibold text-paper-50 transition group-hover:text-gold-300">

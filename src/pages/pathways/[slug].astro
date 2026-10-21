@@ -1,11 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { pathways, getPathway } from "../../data/pathways";
+import { pathways } from "../../data/pathways";
 import { getLecture } from "../../data/lectures";
 import { getBook } from "../../data/books";
 import { getPlaybook } from "../../data/playbooks";
 import { getModel } from "../../data/models";
-import { getFounder } from "../../data/founders";
 
 export async function getStaticPaths() {
   return pathways.map((p) => ({ params: { slug: p.slug }, props: { pathway: p } }));
@@ -60,7 +59,6 @@ const otherEntry = pathways.find((p) => p.entry === siblingEntry);
             const book = step.book ? getBook(step.book) : null;
             const playbook = step.playbook ? getPlaybook(step.playbook) : null;
             const model = step.model ? getModel(step.model) : null;
-            const founder = lecture ? getFounder(lecture.founder) : playbook ? null : null;
             return (
               <div class="relative flex gap-5">
                 <span class="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-gold-500/50 bg-ink-900 font-display text-sm font-bold text-gold-400">
@@ -193,7 +191,7 @@ const otherEntry = pathways.find((p) => p.entry === siblingEntry);
     const pct = TOTAL ? Math.round((done.length / TOTAL) * 100) : 0;
     if (bar) bar.style.width = pct + "%";
     if (label) label.textContent = `${done.length} of ${TOTAL} stops complete`;
-    document.querySelectorAll(".mark-done").forEach((btn) => {
+    document.querySelectorAll<HTMLButtonElement>(".mark-done").forEach((btn) => {
       const idx = Number(btn.dataset.index);
       const isDone = done.includes(idx);
       btn.setAttribute("aria-pressed", String(isDone));
@@ -203,7 +201,7 @@ const otherEntry = pathways.find((p) => p.entry === siblingEntry);
     });
   }
 
-  document.querySelectorAll(".mark-done").forEach((btn) => {
+  document.querySelectorAll<HTMLButtonElement>(".mark-done").forEach((btn) => {
     btn.addEventListener("click", () => {
       const idx = Number(btn.dataset.index);
       const current = readProgress();
